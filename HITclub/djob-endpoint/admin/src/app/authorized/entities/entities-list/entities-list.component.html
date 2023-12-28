@@ -1,0 +1,165 @@
+<div class="w-100 mb-3 page-block">
+    <div class="col-12 col-sm-4 d-inline-flex align-items-center justify-content-center pt-3 pb-3">
+        <input type="text" class="form-control" [(ngModel)]="search" (keyup)="searchRefresh()" placeholder="Поиск...">
+    </div>
+    <div class="col-12 col-sm-4 d-inline-flex align-items-center justify-content-center pt-3 pb-3"></div>
+    <div class="col-12 col-sm-4 d-inline-flex align-items-center justify-content-end pt-3 pb-3">
+        <button class="btn btn-default" (click)="openEntityDetails(entityInfo)">Добавить</button>
+    </div>
+</div>
+
+
+<div class="card mb-3">
+    <div class="card-header">
+        <div>
+            Справочник юр. Лиц
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table table-hover table-striped text-center">
+            <thead>
+            <tr>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Название</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">E-mail</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Phone</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Кол-во исполнителей</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Баланс</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Код</div>
+                </th><!--
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Дата регистрации</div>
+                </th>-->
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Орган регистрации</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Создан</div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of list" (click)="openEntityDetails(entityInfo, item)" class="c-pointer">
+                <td>{{item.name}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.phone}}</td>
+                <td>{{item.amountOfExecutors}}</td>
+                <td>{{item.balance}}</td>
+                <td>{{item.code}}</td>
+                <!--<td>{{item.register_date}}</td>-->
+                <td>{{item.register_agency}}</td>
+                <td>{{item.createdAt}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <app-my-pagination *ngIf="countEntities" [countItems]="countEntities" [showInPages]="countShowInPage" (changePage)="pageChanged($event)"></app-my-pagination>
+</div>
+
+<ng-template #entityInfo let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">{{selectedEntity.name ? selectedEntity.name : 'Новый пользователь'}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <ngb-tabset>
+            <ngb-tab>
+                <ng-template ngbTabTitle>Ииформация</ng-template>
+                <ng-template ngbTabContent>
+                    <div class="d-flex flex-column">
+                        <div class="d-flex mb-2">
+                            <span class="w-50">Название:</span>
+                            <input type="text" [(ngModel)]="selectedEntity.name" class="form-control w50">
+                        </div>
+                        <div class="d-flex mb-2">
+                            <span class="w-50">Email:</span>
+                            <input type="text" [(ngModel)]="selectedEntity.email" class="form-control w50">
+                        </div>
+                        <div class="d-flex mb-2">
+                            <span class="w-50">Телефон:</span>
+                            <input type="text" [(ngModel)]="selectedEntity.phone" class="form-control w50">
+                        </div>
+                        <div class="d-flex mb-2">
+                            <span class="w-50">Пароль:</span>
+                            <input type="text" [(ngModel)]="selectedEntity.password" (click)="clearPassword()" class="form-control w50">
+                        </div>
+                        <div class="d-flex mb-2">
+                            <span class="w-50">Баланс:</span>
+                            <input type="text" [(ngModel)]="selectedEntity.balance" class="form-control w50">
+                        </div>
+                        <div class="d-flex mb-2">
+                            <span class="w-50">Код:</span>
+                            <input type="text" [(ngModel)]="selectedEntity.code" class="form-control w50">
+                        </div>
+                        <div class="d-flex mb-2">
+                            <span class="w-50">Дата регистрации:</span>
+                            <app-date-time-picker [val]="selectedEntity.register_date" (change)="changeRegisterDate($event)"></app-date-time-picker>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <span class="w-50">Орган регистрации:</span>
+                            <input type="text" [(ngModel)]="selectedEntity.register_agency" class="form-control w50">
+                        </div>
+                    </div>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab [disabled]="!selectedEntity.id">
+                <ng-template ngbTabTitle>Исполнители</ng-template>
+                <ng-template ngbTabContent>
+                    <div class="row mt-1">
+                        <div class="col-12">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Имя</th>
+                                    <th scope="col">Телефон</th>
+                                    <th scope="col"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let item of selectedEntity.executors">
+                                    <td>{{item.id}}</td>
+                                    <td>{{item.name}}</td>
+                                    <td>{{item.phone}}</td>
+                                    <td><i class="fa fa-remove c-pointer" title="удалить" (click)="deleteExecutor($event, selectedEntity)"></i></td>
+                                </tr>
+
+                                <tr id="addExecutorRow" *ngIf="isAddExecutorRowVisible">
+                                    <td></td>
+                                    <td></td>
+                                    <td><input type="text" placeholder="поиск по телефону" (input)="searchExecutor($event, selectedEntity.id)"></td>
+                                    <td><i class="fa fa-remove c-pointer" title="удалить" (click)="toggleSearchExecutor('close')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa fa-plus c-pointer" title="добавить" (click)="toggleSearchExecutor('open')"></i></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </ng-template>
+            </ngb-tab>
+        </ngb-tabset>
+    </div>
+    <div class="modal-footer">
+        <button *ngIf="selectedEntity.executors && selectedEntity.executors.length <= 0" type="button" class="btn btn-secondary mr-2" (click)="deleteEntity()">Удалить компанию</button>
+        <button type="button" class="btn btn-secondary mr-2" (click)="saveEntity()">Сохранить</button>
+        <button type="button" class="btn btn-secondary" (click)="c()">Закрыть</button>
+    </div>
+</ng-template>

@@ -1,0 +1,117 @@
+<div class="w-100 mb-3 page-block">
+    <div class="col-12 col-sm-4 d-inline-flex align-items-center justify-content-center pt-3 pb-3">
+        <input type="text" class="form-control" [(ngModel)]="search" (keyup)="searchRefresh()" placeholder="Поиск...">
+    </div>
+    <div class="col-12 col-sm-4 d-inline-flex align-items-center justify-content-center pt-3 pb-3">
+        <div class="row">
+            <div class="col-12">
+                <div class="switch-btn" [class.switch-on]="filters.registered_passport" (click)="changeFilter('registered_passport')"></div> Нет данных паспорта
+            </div>
+            <div class="col-12">
+                <div class="switch-btn" [class.switch-on]="filters.registered_wait" (click)="changeFilter('registered_wait')"></div> Ожидает подтверждения
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-4 d-inline-flex align-items-center justify-content-end pt-3 pb-3">
+        <div class="row">
+            <div class="col-12">
+                <div class="switch-btn" [class.switch-on]="filters.registered_activate" (click)="changeFilter('registered_activate')"></div> Подтвержден
+            </div>
+            <div class="col-12">
+                <div class="switch-btn" [class.switch-on]="filters.registered_declined" (click)="changeFilter('registered_declined')"></div> Отклонен
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="card-header">
+        <div>
+            Справочник исполнителей
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table table-hover table-striped text-center">
+            <thead>
+            <tr>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Имя</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Телефон</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Реферал</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Баланс</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Бонус баланс</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Статус</div>
+                </th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of list">
+                <td>{{item.name}}</td>
+                <td>{{item.phone}}</td>
+                <td>{{item.referral_id}}</td>
+                <td>{{item.balance['$numberDecimal']}}</td>
+                <td>{{item.bonus_balance['$numberDecimal']}}</td>
+                <td>
+                    <span *ngIf="item.registered === 0">Не все параметры заполнены по паспорту</span>
+                    <span *ngIf="item.registered === 1">Ожидает подтверждения</span>
+                    <span *ngIf="item.registered === 2">Подтвержден</span>
+                    <span *ngIf="item.registered === -1">Отклонен</span>
+                </td>
+                <td>
+                    <a [routerLink]="'executors/info/' + item.id | link"  placement="left" ngbTooltip="Подробнее">
+                        <i class="fa fa-info-circle"></i>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <app-my-pagination *ngIf="countExecutors" [countItems]="countExecutors" [showInPages]="countShowInPage" (changePage)="pageChanged($event)"></app-my-pagination>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Клиент {{selectedExecutor.name}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="d-flex flex-column">
+            <div>Имя: {{selectedExecutor.name}}</div>
+            <div>Телефон: {{selectedExecutor.phone}}</div>
+            <div>Баланс: {{selectedExecutor.phone}}</div>
+            <div>Бонус баланс: {{selectedExecutor.phone}}</div>
+            <div>Реферал: {{selectedExecutor.referral_id}}</div>
+            <div>
+                Статус:
+                <select [(ngModel)]="selectedExecutor.registered" class="form-control">
+                    <option [value]="0">Не все параметры заполнены по паспорту</option>
+                    <option [value]="1">Ожидает подтверждения</option>
+                    <option [value]="2">Подтвержден</option>
+                    <option [value]="-1">Отклонен</option>
+                </select>
+            </div>
+            <div *ngIf="selectedExecutor.registered == -1">
+                Причина отказа:
+                <input type="text" class="form-control" [(ngModel)]="selectedExecutor.reject_reason" />
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary mr-2" (click)="saveExecutor()">Сохранить</button>
+        <button type="button" class="btn btn-secondary" (click)="c()">Закрыть</button>
+    </div>
+</ng-template>

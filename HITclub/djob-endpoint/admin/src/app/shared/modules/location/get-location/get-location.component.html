@@ -1,0 +1,7 @@
+<div class="form-group">
+    <label>Введите адрес</label>
+    <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Поиск адресы" autocorrect="off" autocapitalize="off" spellcheck="off" #search>
+</div>
+<agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" style="width: 100%;height: 500px;" (mapClick)="clickMap($event)">
+    <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true" (dragEnd)="markerDragEnd($event)"></agm-marker>
+</agm-map>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html style="width: 100%; height: 100%;">
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body style="width: 100%; height: 100%;">
+   
+    <div id="map" style="  width: 100%; height: 100%;  position: static !important;"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: 55.772989, lng: 37.618694};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+     
+		var dots_array=[];
+		
+		<% dots.forEach(function(dot)  { %>
+   dots_array.push({lat:<%= dot.lat %>,lng:<%= dot.lng %>}); 
+<% }); %>
+
+ var flightPlanCoordinates =dots_array;
+        var flightPath = new google.maps.Polyline({
+          path: flightPlanCoordinates,
+          geodesic: true,
+          strokeColor: '#0000FF',
+          strokeOpacity: 1.0,
+          strokeWeight: 5
+        });
+		
+		flightPath.setMap(map);
+  var bounds = new google.maps.LatLngBounds();
+      flightPath.getPath().forEach(function(e){
+          bounds.extend(e);
+      });
+var startpoint=new google.maps.Marker({
+            position: new google.maps.LatLng(dots_array[0].lat, dots_array[0].lng),
+			title:"Старт маршрута",
+			 map: map,
+			 icon:"https://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=truck%7C000099",
+            draggable: false});	  
+var endpoint=new google.maps.Marker({
+            position: new google.maps.LatLng(dots_array[dots_array.length-1].lat, dots_array[dots_array.length-1].lng),
+			title:"Финиш маршрута",
+			icon:"https://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=truck%7C009900",
+		 map: map,
+            draggable: false});	 	
+map.fitBounds(bounds);			
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+    </script>
+  </body>
+</html>

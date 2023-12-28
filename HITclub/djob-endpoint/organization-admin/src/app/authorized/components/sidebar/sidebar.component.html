@@ -1,0 +1,32 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
+    <div class="list-group">
+        <a [routerLink]="['dashboard' | link]" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+            <span>{{ 'Главная' | translate }}</span>
+        </a>
+        <a [routerLink]="['executors' | link]" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-id-badge"></i>&nbsp;
+            <span>{{ 'Исполнители' | translate }}</span>
+        </a>
+        <a [routerLink]="['orders' | link]" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-tasks"></i>&nbsp;
+            <span>{{ 'Заказы' | translate }}</span>
+        </a>
+        <a [routerLink]="['schedule' | link]" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-file-text"></i>&nbsp;
+            <span>{{ 'Расписание' | translate }}</span>
+        </a>
+        <a [routerLink]="['history' | link]" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-history"></i>&nbsp;
+            <span>{{ 'История' | translate }}</span>
+        </a>
+        <a [routerLink]="['settings' | link]" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-cogs"></i>&nbsp;
+            <span>{{ 'Настройки' | translate }}</span>
+        </a>
+    </div>
+    <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
+        <i class="fa fa-fw fa-angle-double-{{collapsed?'right':'left'}}"></i>&nbsp;
+        <span>{{ 'Убрать' | translate }}</span>
+    </div>
+</nav>

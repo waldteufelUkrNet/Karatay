@@ -1,0 +1,16 @@
+{
+     
+    "uid": "movamba",
+    "append": true,
+    "watch": true,
+    "script": "app.js",
+    "sourceDir": "/var/www/sites/movamba/"
+}
+// {
+//     // Comments are supported
+//     "uid": "general_api",
+//     "append": true,
+//     "watch": true,
+//     "script": "www",
+//     "sourceDir": "/home/kzu/h2o/bin"
+// }

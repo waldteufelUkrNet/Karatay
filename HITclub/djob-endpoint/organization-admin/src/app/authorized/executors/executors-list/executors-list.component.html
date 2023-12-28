@@ -1,0 +1,80 @@
+<div class="w-100 mb-3 page-block">
+    <div class="col-12 col-sm-4 d-inline-flex align-items-center justify-content-center pt-3 pb-3">
+        <input type="text" class="form-control" [(ngModel)]="search" (keyup)="searchRefresh()" placeholder="Поиск...">
+    </div>
+    <div class="col-12 col-sm-4 d-inline-flex align-items-center justify-content-center pt-3 pb-3"></div>
+    <div class="col-12 col-sm-4 d-inline-flex align-items-center justify-content-end pt-3 pb-3"></div>
+</div>
+
+
+<div class="card mb-3">
+    <div class="card-header d-flex justify-content-between">
+        <div>
+            Справочник исполнителей
+        </div>
+
+        <div class="action-buttons d-flex">
+            <button class="btn btn-default"  (click)="openExecutorForm(content)">Создать</button>
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table table-hover table-striped text-center">
+            <thead>
+            <tr>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Имя</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Телефон</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Статус</div>
+                </th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of list">
+                <td>{{item.name}}</td>
+                <td>{{item.phone}}</td>
+                <td>
+                    <span *ngIf="item.registered === 0">Не все параметры заполнены по паспорту</span>
+                    <span *ngIf="item.registered === 1">Ожидает подтверждения</span>
+                    <span *ngIf="item.registered === 2">Подтвержден</span>
+                    <span *ngIf="item.registered === -1">Отклонен</span>
+                </td>
+                <td>
+                    <a [routerLink]="'executors/info/' + item.id | link"  placement="left" ngbTooltip="Подробнее">
+                        <i class="fa fa-info-circle"></i>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Пригласить исполнителя</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="d-flex flex-column" *ngIf="!newExecutor.info">
+            <div class="w100 d-flex">
+                <label class="w50">Телефон</label>
+                <input type="text" class="form-control w50" [(ngModel)]="newExecutor.phone">
+            </div>
+        </div>
+        <div class="d-flex flex-column" *ngIf="newExecutor.info && newExecutor.info.id">
+            Исполнитель уже сусчествует в системе, прикласить его в штат?
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary mr-2" (click)="checkPhone()" *ngIf="!newExecutor.info">Пригласить</button>
+        <button type="button" class="btn btn-secondary mr-2" (click)="inviteExecutor()" *ngIf="newExecutor.info && newExecutor.info.id">Пригласить</button>
+        <!--<button type="button" class="btn btn-secondary" (click)="c()">Закрыть</button>-->
+    </div>
+</ng-template>

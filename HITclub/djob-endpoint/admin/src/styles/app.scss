@@ -1,0 +1,101 @@
+/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/bootstrap";
+@import "spinner";
+@import "utils";
+@import "rtl";
+@import "responsive";
+@import "richtexteditor";
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+
+@media print {
+    .breadcrumb {
+        display: none !important;
+    }
+}
+.page-block{
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0 0 8px rgba(0,0,0,.1);
+    border-radius: 5px;
+}
+.vh100{
+    min-height: calc(100vh - 110px)!important;
+}
+.switch-btn {
+    display: inline-block;
+    width: 36px; /* ширина */
+    height: 18px; /* высота */
+    border-radius: 19px; /* радиус скругления */
+    background: #bfbfbf; /* цвет фона */
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition-duration: 300ms; /* анимация */
+}
+.switch-btn::after {
+    content: "";
+    height: 14px; /* высота кнопки */
+    width: 14px; /* ширина кнопки */
+    border-radius: 17px;
+    background: #fff; /* цвет кнопки */
+    top: 2px; /* положение кнопки по вертикали относительно основы */
+    left: 2px; /* положение кнопки по горизонтали относительно основы */
+    transition-duration: 300ms; /* анимация */
+    position: absolute;
+    z-index: 1;
+}
+.switch-on {
+    background: #464646;
+}
+.switch-on::after {
+    left: 19px;
+}
+.action-icon{
+    cursor: pointer;
+    margin: 0 5px;
+}
+.w50{
+    width: 50%!important;
+}
+.c-pointer{
+    cursor: pointer;
+}
+@media (min-width: 900px){
+    .modal-dialog {
+        max-width: 850px;
+    }
+}
+.bolder{
+    font-weight: bold;
+}
+.pac-container{
+    z-index: 9999;
+}
+.modal-open .modal{
+    z-index: 9998;
+}
+.btn{
+    border: 1px solid #d2d2d2!important;
+}
+.italic{
+    font-style: italic;
+}
+.item_info{
+    margin-top: 5px;
+    padding-top: 5px;
+}
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
+.cdk-overlay-container{
+    z-index: 999999!important;
+}
+.thumbnail-image{
+    max-width: 50px;
+    max-height: 50px;
+}

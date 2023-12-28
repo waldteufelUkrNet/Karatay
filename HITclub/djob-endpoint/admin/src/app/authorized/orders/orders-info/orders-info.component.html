@@ -1,0 +1,91 @@
+<div class="w-100 pl-2 pr-2 mb-3 page-block" *ngIf="order">
+    <div class="row">
+        <div class="col-12 col-sm-6 pt-3 pb-3">
+            <div class="w-100 p-4">
+                <div class="row item_info">
+                    <div class="col-6 d-inline-flex align-items-center">ID</div>
+                    <div class="col-6">{{order.id}}</div>
+                </div>
+                <div class="row item_info">
+                    <div class="col-6 d-inline-flex align-items-center">Номер клиента:</div>
+                    <div class="col-6">
+                        <a *ngIf="order.executor" [routerLink]="'executors/info/' + order.executor.id | link">{{order.executor.phone}}</a>
+                    </div>
+                </div>
+                <div class="row item_info">
+                    <div class="col-6 d-inline-flex align-items-center">Номер исполнителя:</div>
+                    <div class="col-6">
+                        <a *ngIf="order.customer" [routerLink]="'customers/info/' + order.customer.id | link">{{order.customer.phone}}</a>
+                    </div>
+                </div>
+                <div class="row item_info">
+                    <div class="col-6 d-inline-flex align-items-center">Специальность</div>
+                    <div class="col-6">{{order.specialty?.name}}</div>
+                </div>
+                <div class="row item_info">
+                    <div class="col-6 d-inline-flex align-items-center">Статус</div>
+                    <div class="col-6">{{getOrderStatus(order)}}</div>
+                </div>
+                <div class="row item_info">
+                    <div class="col-6 d-inline-flex align-items-center">Тип заказа</div>
+                    <div class="col-6">
+                        <span *ngIf="order.for_now">Срочный</span>
+                        <span *ngIf="!order.for_now">Отложенный</span>
+                    </div>
+                </div>
+                <div class="row item_info" *ngIf="!order.for_now">
+                    <div class="col-6 d-inline-flex align-items-center">Запланированное время</div>
+                    <div class="col-6">{{order.scheduled_time}}</div>
+                </div>
+                <div class="row item_info">
+                    <div  class="col-6 d-inline-flex align-items-center">Место заказа</div>
+                    <div class="col-6">
+                        <span *ngIf="order.departure == 'ANY'">Не определено</span>
+                        <span *ngIf="order.departure == 'OFFICE'">Офис</span>
+                        <span *ngIf="order.departure == 'ADDRESS'">На выезд</span>
+                    </div>
+                </div>
+                <div class="row item_info">
+                    <div  class="col-6 d-inline-flex align-items-center">Адрес</div>
+                    <div class="col-6">{{order.address?.name}}</div>
+                </div>
+                <div class="row item_info">
+                    <div  class="col-6 d-inline-flex align-items-center">Создан</div>
+                    <div class="col-6">{{order.createdAt}}</div>
+                </div>
+                <div class="row item_info">
+                    <div  class="col-6 d-inline-flex align-items-center">Сумма</div>
+                    <div class="col-6">{{order.summ}}</div>
+                </div>
+                <div class="row item_info">
+                    <div  class="col-6 d-inline-flex align-items-center">Тип оплаты</div>
+                    <div class="col-6">
+                        <span *ngIf="order.summ_type == 'HOURLY'">Почасовая</span>
+                        <span *ngIf="order.summ_type == 'FIXED'">Одноразовая</span>
+                    </div>
+                </div>
+                <div class="row item_info">
+                    <div  class="col-6 d-inline-flex align-items-center">Способ оплаты</div>
+                    <div class="col-6">
+                        <span *ngIf="order.payment_type == 'CASH'">Наличка</span>
+                        <span *ngIf="order.payment_type == 'BONUS'">Бонусный щет</span>
+                        <span *ngIf="order.payment_type == 'CARD'">Карточка</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 pt-3 pb-3">
+            <div class="w-100 p-4">
+                <div class="row">
+                    <div class="col-12 d-inline-flex align-items-center">История заказа</div>
+                </div>
+                <div class="row" *ngFor="let item of orderHistory">
+                    <div class="col-12">
+                        <span class="date mr-2">{{item.date}}</span>
+                        <span>{{item.text}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

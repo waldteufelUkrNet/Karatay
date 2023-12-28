@@ -1,0 +1,32 @@
+адмінку робити потім, спочатку - бази даних і api (з документацією)
+mysql
+логінитися: pass 0000, log (000)
+
+Админка:
+http://admin.truck-taxi.ru/app_dev.php/login
+Логин: master, пароль: master, роль - владелец.
+
+0001-5432
+Пароль 5432
+
+Ссылки в маркет:
+https://play.google.com/store/apps/details?id=app.taxi.truck.agent
+https://play.google.com/store/apps/details?id=app.taxi.truck.client
+
+Требования
+- Сервер NodeJS Express
+- БД MySQL (Sequelize)
+- HTTP API (JSON based)
+- 2 роли доступа: водитель и заказчик
+- SocketJS уведомления ( о смене статуса заказа для обеих сторон)
+- JWT токен для авторизации
+- Вся система должна быть как можно более раздроблена ЛОГИЧЕСКИЕ на модули ( функции)
+Нет необходимости дробить небольшой модуль ( например модуль поиска по критериям)
+
+env/conf
+тупо в гілці майстер
+документування: jsdoc esdoc apidoc
+
+усі запити з jwtoken
+
+база config {key:value}

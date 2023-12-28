@@ -1,0 +1,29 @@
+https://my.sendinblue.com/
+zhabka.4ek@gmail.com
+SB0990009996!
+================================================================================
+https://www.figma.com/file/HkrSsDnjgRp4fNYcr8g8lW/%D0%96%D0%B0%D0%B1%D0%BA%D0%B0-(%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5)?node-id=1021%3A10979
+================================================================================
+sendinblue api key (test)
+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
+================================================================================
+jira:
+vadimka@xelentec.com
+G7V2X8e18o
+================================================================================
+bitbucket
+Wadym_Karpenko@bitbucket.org
+fUSqeExJ3vvHswBqngBM
+================================================================================
+https://api.hitclub.online/management/
+http://localhost:4200/management/
+admin@djob.com
+qwerty123qwerty
+================================================================================
+sudo service redis-server start
+sudo service redis-server stop
+================================================================================
+djob-microservice/microservices/organization/executors.js
+djob-endpoint/routes/admin/entities.js
+djob-endpoint/admin/src/app/authorized/entities/entities-list
+

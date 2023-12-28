@@ -1,0 +1,203 @@
+<div class="w-100 mb-3 page-block">
+    <div class="row pt-3 pb-3">
+        <div class="col-12 col-sm-6 d-inline-flex justify-content-around align-items-center">
+            <label class="m-0">
+                <div class="switch-btn" [class.switch-on]="filters.processed" (click)="changeFilter('processed')"></div>
+                Обработанные
+            </label>
+            <label class="m-0">
+                <div class="switch-btn" [class.switch-on]="filters.not_processed" (click)="changeFilter('not_processed')"></div>
+                Не обработанные
+            </label>
+        </div>
+        <div class="col-12 col-sm-6 d-inline-flex align-items-center justify-content-center"></div>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="card-header d-flex justify-content-between">
+        <div>
+            Споры
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table table-hover table-striped text-center">
+            <thead>
+            <tr>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Клиент</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Исполнитель</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Инициатор</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Текст</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Статус</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Дата</div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of list" (click)="openReport(openedReport, item)">
+                <td>{{item.customer ? item.customer.phone : ''}}</td>
+                <td>{{item.executor ? item.executor.phone : ''}}</td>
+                <td>{{item.initiator === 'CUSTOMER' ? 'Клиент' : 'Исполнитель'}}</td>
+                <td>{{getTextInList(item.text)}}</td>
+                <td>{{item.status === 1 ? 'Не обработан' : 'Обработан'}}</td>
+                <td>{{item.createdAt}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <app-my-pagination *ngIf="countReports" [countItems]="countReports" [showInPages]="countShowInPage" (changePage)="pageChanged($event)"></app-my-pagination>
+</div>
+
+<ng-template #openedReport let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Жалоба №{{selectedReport.id}}"</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <ngb-tabset>
+            <ngb-tab>
+                <ng-template ngbTabTitle>Жалоба</ng-template>
+                <ng-template ngbTabContent>
+                    <div class="d-flex flex-column">
+                        <div class="d-flex mb-2">
+                            <span class="w-50">Инициатор:</span>
+                            <span>{{selectedReport.initiator === 'CUSTOMER' ? 'Клиент' : 'Исполнитель'}}</span>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <span class="w-50">Текст:</span>
+                            <span>{{selectedReport.text}}</span>
+                        </div>
+                        <div class="d-flex mb-2" *ngIf="selectedReport.photo">
+                            <span class="w-50">Фото:</span>
+                            <a [href]="'/uploads/' + selectedReport.photo"><img class="thumbnail-image" [src]="'/uploads/' + selectedReport.photo" /></a>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <span class="w-50">Статус:</span>
+                            <select class="form-control" [(ngModel)]="selectedReport.status">
+                                <option [value]="1">Не обработан</option>
+                                <option [value]="2">Обработан</option>
+                            </select>
+                        </div>
+                        <div class="d-flex mb-2 justify-content-end">
+                            <button type="button" class="btn btn-secondary mr-2" (click)="saveReportStatus()">Сохранить статус</button>
+                        </div>
+                    </div>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab>
+                <ng-template ngbTabTitle>Исполнитель</ng-template>
+                <ng-template ngbTabContent>
+                    <div class="col-12 pt-3 pb-3">
+                        <div class="row">
+                            <div class="col-6 d-inline-flex align-items-center">Телефон</div>
+                            <div class="col-6">{{selectedReport.executor.phone}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 d-flex mt-4 justify-content-center">
+                                <a type="button" class="btn btn-secondary mr-2" [routerLink]="'executors/info/' + selectedReport.executor.id | link" target="_blank">Детали</a>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab>
+                <ng-template ngbTabTitle>Клиент</ng-template>
+                <ng-template ngbTabContent>
+                    <div class="col-12 pt-3 pb-3">
+                        <div class="row">
+                            <div class="col-6 d-inline-flex align-items-center">Телефон</div>
+                            <div class="col-6">{{selectedReport.customer.phone}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 d-flex mt-4 justify-content-center">
+                                <a type="button" class="btn btn-secondary mr-2" [routerLink]="'customers/info/' + selectedReport.customer.id | link" target="_blank">Детали</a>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab>
+                <ng-template ngbTabTitle>Заказ</ng-template>
+                <ng-template ngbTabContent>
+                    <div class="row">
+                        <div class="col-12 pt-3 pb-3">
+                            <div class="w-100 p-4">
+                                <div class="row item_info">
+                                    <div class="col-6 d-inline-flex align-items-center">ID</div>
+                                    <div class="col-6">{{selectedReport.order.id}}</div>
+                                </div>
+                                <div class="row item_info">
+                                    <div class="col-6 d-inline-flex align-items-center">Специальность</div>
+                                    <div class="col-6">{{selectedReport.order.specialty.name}}</div>
+                                </div>
+                                <div class="row item_info">
+                                    <div class="col-6 d-inline-flex align-items-center">Статус</div>
+                                    <div class="col-6">{{getOrderStatus(selectedReport.order)}}</div>
+                                </div>
+                                <div class="row item_info">
+                                    <div class="col-6 d-inline-flex align-items-center">Тип заказа</div>
+                                    <div class="col-6">
+                                        <span *ngIf="selectedReport.order.for_now">Срочный</span>
+                                        <span *ngIf="!selectedReport.order.for_now">Отложенный</span>
+                                    </div>
+                                </div>
+                                <div class="row item_info" *ngIf="!selectedReport.order.for_now">
+                                    <div class="col-6 d-inline-flex align-items-center">Запланированное время</div>
+                                    <div class="col-6">{{selectedReport.order.scheduled_time}}</div>
+                                </div>
+                                <div class="row item_info">
+                                    <div  class="col-6 d-inline-flex align-items-center">Место заказа</div>
+                                    <div class="col-6">
+                                        <span *ngIf="selectedReport.order.departure == 'ANY'">Не определено</span>
+                                        <span *ngIf="selectedReport.order.departure == 'OFFICE'">Офис</span>
+                                        <span *ngIf="selectedReport.order.departure == 'ADDRESS'">На выезд</span>
+                                    </div>
+                                </div>
+                                <div class="row item_info">
+                                    <div  class="col-6 d-inline-flex align-items-center">Адрес</div>
+                                    <div class="col-6">{{selectedReport.order.address.name}}</div>
+                                </div>
+                                <div class="row item_info">
+                                    <div  class="col-6 d-inline-flex align-items-center">Создан</div>
+                                    <div class="col-6">{{selectedReport.order.createdAt}}</div>
+                                </div>
+                                <div class="row item_info">
+                                    <div  class="col-6 d-inline-flex align-items-center">Сумма</div>
+                                    <div class="col-6">{{selectedReport.order.summ}}</div>
+                                </div>
+                                <div class="row item_info">
+                                    <div  class="col-6 d-inline-flex align-items-center">Тип оплаты</div>
+                                    <div class="col-6">
+                                        <span *ngIf="selectedReport.order.summ_type == 'HOURLY'">Почасовая</span>
+                                        <span *ngIf="selectedReport.order.summ_type == 'FIXED'">Одноразовая</span>
+                                    </div>
+                                </div>
+                                <div class="row item_info">
+                                    <div  class="col-6 d-inline-flex align-items-center">Способ оплаты</div>
+                                    <div class="col-6">
+                                        <span *ngIf="selectedReport.order.payment_type == 'CASH'">Наличка</span>
+                                        <span *ngIf="selectedReport.order.payment_type == 'BONUS'">Бонусный щет</span>
+                                        <span *ngIf="selectedReport.order.payment_type == 'CARD'">Карточка</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ngb-tab>
+        </ngb-tabset>
+    </div>
+</ng-template>

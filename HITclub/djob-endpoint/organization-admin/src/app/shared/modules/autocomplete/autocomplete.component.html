@@ -1,0 +1,8 @@
+<div class="autocomplete">
+    <input class="form-control w-100" type="text" [(ngModel)]="search" (keyup)="refreshtList()" (click)="openOptions()" [placeholder]="placeholder" />
+    <div class="select">
+        <div class="select-list" [class.active]="isOpened">
+            <div class="select-option" *ngFor="let item of list" [class.active]="item.id == selected" (click)="changeValue(item)">{{item.label_val}}</div>
+        </div>
+    </div>
+</div>

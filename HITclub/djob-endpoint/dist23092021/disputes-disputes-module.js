@@ -1,0 +1,418 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["disputes-disputes-module"],{
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/authorized/disputes/disputes-info/disputes-info.component.html":
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/authorized/disputes/disputes-info/disputes-info.component.html ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"w-100 pl-2 pr-2 mb-3 page-block\" *ngIf=\"order\">\n    <div class=\"row\">\n        <div class=\"col-12 col-sm-6 pt-3 pb-3\">\n            <div class=\"w-100 p-4\">\n                <div class=\"row item_info\">\n                    <div class=\"col-6 d-inline-flex align-items-center\">ID</div>\n                    <div class=\"col-6\">{{order.id}}</div>\n                </div>\n                <div class=\"row item_info\">\n                    <div class=\"col-6 d-inline-flex align-items-center\">Номер клиента:</div>\n                    <div class=\"col-6\">\n                        <a [routerLink]=\"'executors/info/' + order.executor.id | link\">{{order.executor.phone}}</a>\n                    </div>\n                </div>\n                <div class=\"row item_info\">\n                    <div class=\"col-6 d-inline-flex align-items-center\">Номер исполнителя:</div>\n                    <div class=\"col-6\">\n                        <a [routerLink]=\"'customers/info/' + order.customer.id | link\">{{order.customer.phone}}</a>\n                    </div>\n                </div>\n                <div class=\"row item_info\">\n                    <div class=\"col-6 d-inline-flex align-items-center\">Специальность</div>\n                    <div class=\"col-6\">{{order.specialty.name}}</div>\n                </div>\n                <div class=\"row item_info\">\n                    <div class=\"col-6 d-inline-flex align-items-center\">Статус</div>\n                    <div class=\"col-6\">{{getOrderStatus(order)}}</div>\n                </div>\n                <div class=\"row item_info\">\n                    <div class=\"col-6 d-inline-flex align-items-center\">Тип заказа</div>\n                    <div class=\"col-6\">\n                        <span *ngIf=\"order.for_now\">Срочный</span>\n                        <span *ngIf=\"!order.for_now\">Отложенный</span>\n                    </div>\n                </div>\n                <div class=\"row item_info\" *ngIf=\"!order.for_now\">\n                    <div class=\"col-6 d-inline-flex align-items-center\">Запланированное время</div>\n                    <div class=\"col-6\">{{order.scheduled_time}}</div>\n                </div>\n                <div class=\"row item_info\">\n                    <div  class=\"col-6 d-inline-flex align-items-center\">Место заказа</div>\n                    <div class=\"col-6\">\n                        <span *ngIf=\"order.departure == 'ANY'\">Не определено</span>\n                        <span *ngIf=\"order.departure == 'OFFICE'\">Офис</span>\n                        <span *ngIf=\"order.departure == 'ADDRESS'\">На выезд</span>\n                    </div>\n                </div>\n                <div class=\"row item_info\">\n                    <div  class=\"col-6 d-inline-flex align-items-center\">Адрес</div>\n                    <div class=\"col-6\">{{order.address.name}}</div>\n                </div>\n                <div class=\"row item_info\">\n                    <div  class=\"col-6 d-inline-flex align-items-center\">Создан</div>\n                    <div class=\"col-6\">{{order.createdAt}}</div>\n                </div>\n                <div class=\"row item_info\">\n                    <div  class=\"col-6 d-inline-flex align-items-center\">Сумма</div>\n                    <div class=\"col-6\">{{order.summ}}</div>\n                </div>\n                <div class=\"row item_info\">\n                    <div  class=\"col-6 d-inline-flex align-items-center\">Тип оплаты</div>\n                    <div class=\"col-6\">\n                        <span *ngIf=\"order.summ_type == 'HOURLY'\">Почасовая</span>\n                        <span *ngIf=\"order.summ_type == 'FIXED'\">Одноразовая</span>\n                    </div>\n                </div>\n                <div class=\"row item_info\">\n                    <div  class=\"col-6 d-inline-flex align-items-center\">Способ оплаты</div>\n                    <div class=\"col-6\">\n                        <span *ngIf=\"order.payment_type == 'CASH'\">Наличка</span>\n                        <span *ngIf=\"order.payment_type == 'BONUS'\">Бонусный щет</span>\n                        <span *ngIf=\"order.payment_type == 'CARD'\">Карточка</span>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-12 col-sm-6 pt-3 pb-3\">\n            <div class=\"w-100 p-4\">\n                <div class=\"row\">\n                    <div class=\"col-12 d-inline-flex align-items-center\">История заказа</div>\n                </div>\n                <div class=\"row\" *ngFor=\"let item of orderHistory\">\n                    <div class=\"col-12\">\n                        <span class=\"date mr-2\">{{item.date}}</span>\n                        <span>{{item.text}}</span>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n<div class=\"w-100 pl-2 pr-2 mb-3 page-block\" *ngIf=\"order\">\n    <div class=\"row\">\n        <div class=\"col-12 d-flex align-items-center justify-content-end p-3\">\n            <button class=\"btn btn-default\">Решить на пользу клиента</button>\n            <button class=\"btn btn-default ml-2\">Решить на пользу исполнителя</button>\n        </div>\n    </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/authorized/disputes/disputes-list/disputes-list.component.html":
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/authorized/disputes/disputes-list/disputes-list.component.html ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"w-100 mb-3 page-block\">\n    <div class=\"row pt-3 pb-3\">\n        <div class=\"col-12\">\n            <div class=\"col-12 col-sm-6 d-inline-flex align-items-center justify-content-center\">\n                <input type=\"text\" class=\"form-control\" [(ngModel)]=\"search_phone\" (keyup)=\"searchPhoneRefresh()\" placeholder=\"Поиск по номеру телефона...\">\n            </div>\n            <div class=\"col-12 col-sm-6 d-inline-flex align-items-center justify-content-center\">\n                <div class=\"row w-100\">\n                    <div class=\"col-6 d-flex align-items-center\">\n                        От: <app-date-time-picker [val]=\"filters.date_from\" (change)=\"changeDateFrom($event)\"></app-date-time-picker>\n                    </div>\n                    <div class=\"col-6 d-flex align-items-center\">\n                        До: <app-date-time-picker [val]=\"filters.date_to\" (change)=\"changeDateTo($event)\"></app-date-time-picker>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"row pb-3\">\n        <div class=\"col-12\">\n            <div class=\"col-12 col-sm-6 d-inline-flex justify-content-around\">\n                <label>\n                    <div class=\"switch-btn\" [class.switch-on]=\"filters.types.indexOf(1) !== -1\" (click)=\"changeType(1)\"></div>\n                    Срочные\n                </label>\n                <label>\n                    <div class=\"switch-btn\" [class.switch-on]=\"filters.types.indexOf(0) !== -1\" (click)=\"changeType(0)\"></div>\n                    Отложенные\n                </label>\n            </div>\n            <div class=\"col-12 col-sm-6 d-inline-flex align-items-center justify-content-center\">\n\n            </div>\n        </div>\n    </div>\n</div>\n\n<div class=\"card mb-3\">\n    <div class=\"card-header d-flex justify-content-between\">\n        <div>\n            Споры\n        </div>\n    </div>\n    <div class=\"card-body table-responsive\">\n        <table class=\"table table-hover table-striped text-center\">\n            <thead>\n            <tr>\n                <th>\n                    <div class=\"d-flex w-100 align-items-center justify-content-center\">ID</div>\n                </th>\n                <th>\n                    <div class=\"d-flex w-100 align-items-center justify-content-center\">Тип</div>\n                </th>\n                <th>\n                    <div class=\"d-flex w-100 align-items-center justify-content-center\">Номер клиента</div>\n                </th>\n                <th>\n                    <div class=\"d-flex w-100 align-items-center justify-content-center\">Номер исполнителя</div>\n                </th>\n                <th>\n                    <div class=\"d-flex w-100 align-items-center justify-content-center\">Специальность</div>\n                </th>\n                <th>\n                    <div class=\"d-flex w-100 align-items-center justify-content-center\">Способ оплаты</div>\n                </th>\n                <th>\n                    <div class=\"d-flex w-100 align-items-center justify-content-center\">Сумма</div>\n                </th>\n                <th>\n                    <div class=\"d-flex w-100 align-items-center justify-content-center\">Адрес</div>\n                </th>\n                <th>\n                    <div class=\"d-flex w-100 align-items-center justify-content-center\">Дата создания</div>\n                </th>\n                <th></th>\n            </tr>\n            </thead>\n            <tbody>\n            <tr *ngFor=\"let item of list\">\n                <td>{{item.id}}</td>\n                <td>\n                    <span *ngIf=\"item.for_now\">Срочный</span>\n                    <span *ngIf=\"!item.for_now\">Отложенный</span>\n                </td>\n                <td>{{item.customer ? item.customer.phone : ''}}</td>\n                <td>{{item.executor ? item.executor.phone : ''}}</td>\n                <td>{{item.specialty.name}}</td>\n                <td>\n                    <span *ngIf=\"item.payment_type == 'CASH'\">Наличка</span>\n                    <span *ngIf=\"item.payment_type == 'BONUS'\">Бонусный щет</span>\n                    <span *ngIf=\"item.payment_type == 'CARD'\">Карточка</span>\n                </td>\n                <td>{{item.summ}}</td>\n                <td>{{item.address.name}}</td>\n                <td>{{item.createdAt}}</td>\n                <td>\n                    <a [routerLink]=\"'disputes/info/' + item.id | link\"  placement=\"left\" ngbTooltip=\"Подробнее\">\n                        <i class=\"fa fa-info-circle\"></i>\n                    </a>\n                </td>\n            </tr>\n            </tbody>\n        </table>\n    </div>\n\n    <app-my-pagination *ngIf=\"countDisputes\" [countItems]=\"countDisputes\" [showInPages]=\"countShowInPage\" (changePage)=\"pageChanged($event)\"></app-my-pagination>\n</div>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/authorized/disputes/disputes.component.html":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/authorized/disputes/disputes.component.html ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<router-outlet></router-outlet>\n"
+
+/***/ }),
+
+/***/ "./src/app/authorized/disputes/disputes-info/disputes-info.component.scss":
+/*!********************************************************************************!*\
+  !*** ./src/app/authorized/disputes/disputes-info/disputes-info.component.scss ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".date {\n  color: #050594;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi92YXIvd3d3L2Rqb2IvZXAvYWRtaW4vc3JjL2FwcC9hdXRob3JpemVkL2Rpc3B1dGVzL2Rpc3B1dGVzLWluZm8vZGlzcHV0ZXMtaW5mby5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvYXV0aG9yaXplZC9kaXNwdXRlcy9kaXNwdXRlcy1pbmZvL2Rpc3B1dGVzLWluZm8uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxjQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9hdXRob3JpemVkL2Rpc3B1dGVzL2Rpc3B1dGVzLWluZm8vZGlzcHV0ZXMtaW5mby5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kYXRle1xuICAgIGNvbG9yOiAjMDUwNTk0O1xufVxuIiwiLmRhdGUge1xuICBjb2xvcjogIzA1MDU5NDtcbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/authorized/disputes/disputes-info/disputes-info.component.ts":
+/*!******************************************************************************!*\
+  !*** ./src/app/authorized/disputes/disputes-info/disputes-info.component.ts ***!
+  \******************************************************************************/
+/*! exports provided: DisputesInfoComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DisputesInfoComponent", function() { return DisputesInfoComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _shared__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../shared */ "./src/app/shared/index.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+let DisputesInfoComponent = class DisputesInfoComponent {
+    constructor(route, router, orderService, disputesService, notif) {
+        this.route = route;
+        this.router = router;
+        this.orderService = orderService;
+        this.disputesService = disputesService;
+        this.notif = notif;
+    }
+    ngOnInit() {
+        this.route.params.subscribe(params => {
+            this.orderService.getOne(params['id'])
+                .then(data => {
+                this.order = data;
+                console.log('------------------- order ---------------------: ', this.order);
+                this.orderService.getOrderHistory(this.order.id)
+                    .then((history) => {
+                    this.orderHistory = [];
+                    for (let i = 0; i < history.length; i++) {
+                        this.orderHistory.push({
+                            date: moment__WEBPACK_IMPORTED_MODULE_4__(history[i].createdAt).format('HH:mm:ss'),
+                            text: history[i].text
+                        });
+                    }
+                });
+            });
+        });
+    }
+    getOrderStatus(order) {
+        return this.orderService.getOrderStatus(order);
+    }
+};
+DisputesInfoComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _shared__WEBPACK_IMPORTED_MODULE_2__["OrderService"] },
+    { type: _shared__WEBPACK_IMPORTED_MODULE_2__["DisputesService"] },
+    { type: _shared__WEBPACK_IMPORTED_MODULE_2__["NotificationService"] }
+];
+DisputesInfoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-disputes-info',
+        template: __webpack_require__(/*! raw-loader!./disputes-info.component.html */ "./node_modules/raw-loader/index.js!./src/app/authorized/disputes/disputes-info/disputes-info.component.html"),
+        styles: [__webpack_require__(/*! ./disputes-info.component.scss */ "./src/app/authorized/disputes/disputes-info/disputes-info.component.scss")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+        _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+        _shared__WEBPACK_IMPORTED_MODULE_2__["OrderService"],
+        _shared__WEBPACK_IMPORTED_MODULE_2__["DisputesService"],
+        _shared__WEBPACK_IMPORTED_MODULE_2__["NotificationService"]])
+], DisputesInfoComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/authorized/disputes/disputes-list/disputes-list.component.scss":
+/*!********************************************************************************!*\
+  !*** ./src/app/authorized/disputes/disputes-list/disputes-list.component.scss ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".action-icon {\n  cursor: pointer;\n  margin: 10px;\n}\n\n.switch-btn {\n  margin-right: 10px;\n}\n\n.controls i {\n  margin: 0 5px;\n  cursor: pointer;\n}\n\n.controls i:before {\n  font-size: 12px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi92YXIvd3d3L2Rqb2IvZXAvYWRtaW4vc3JjL2FwcC9hdXRob3JpemVkL2Rpc3B1dGVzL2Rpc3B1dGVzLWxpc3QvZGlzcHV0ZXMtbGlzdC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvYXV0aG9yaXplZC9kaXNwdXRlcy9kaXNwdXRlcy1saXN0L2Rpc3B1dGVzLWxpc3QuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxlQUFBO0VBQ0EsWUFBQTtBQ0NKOztBRENBO0VBQ0ksa0JBQUE7QUNFSjs7QURDSTtFQUNJLGFBQUE7RUFDQSxlQUFBO0FDRVI7O0FERFE7RUFDSSxlQUFBO0FDR1oiLCJmaWxlIjoic3JjL2FwcC9hdXRob3JpemVkL2Rpc3B1dGVzL2Rpc3B1dGVzLWxpc3QvZGlzcHV0ZXMtbGlzdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hY3Rpb24taWNvbntcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgbWFyZ2luOiAxMHB4O1xufVxuLnN3aXRjaC1idG57XG4gICAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xufVxuLmNvbnRyb2xze1xuICAgIGl7XG4gICAgICAgIG1hcmdpbjogMCA1cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgJjpiZWZvcmV7XG4gICAgICAgICAgICBmb250LXNpemU6IDEycHg7XG4gICAgICAgIH1cbiAgICB9XG59XG4iLCIuYWN0aW9uLWljb24ge1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIG1hcmdpbjogMTBweDtcbn1cblxuLnN3aXRjaC1idG4ge1xuICBtYXJnaW4tcmlnaHQ6IDEwcHg7XG59XG5cbi5jb250cm9scyBpIHtcbiAgbWFyZ2luOiAwIDVweDtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuLmNvbnRyb2xzIGk6YmVmb3JlIHtcbiAgZm9udC1zaXplOiAxMnB4O1xufSJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/authorized/disputes/disputes-list/disputes-list.component.ts":
+/*!******************************************************************************!*\
+  !*** ./src/app/authorized/disputes/disputes-list/disputes-list.component.ts ***!
+  \******************************************************************************/
+/*! exports provided: DisputesListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DisputesListComponent", function() { return DisputesListComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _shared__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../shared */ "./src/app/shared/index.ts");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm2015/ng-bootstrap.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+let DisputesListComponent = class DisputesListComponent {
+    constructor(disputesService, modalService, orderService) {
+        this.disputesService = disputesService;
+        this.modalService = modalService;
+        this.orderService = orderService;
+        this.countShowInPage = 20;
+        this.sort = {};
+        this.search_phone = '';
+        this.filters = {
+            types: [0, 1],
+            date_from: moment__WEBPACK_IMPORTED_MODULE_4__().add(-14, 'days').format('YYYY-MM-DD HH:mm:ss'),
+            date_to: moment__WEBPACK_IMPORTED_MODULE_4__().format('YYYY-MM-DD HH:mm:ss')
+        };
+        this.range = {
+            start: 0,
+            limit: this.countShowInPage
+        };
+        this.list = [];
+        this.scrollEventActive = false;
+    }
+    ngOnInit() {
+        this.refreshDisputes();
+    }
+    refreshDisputes(reinit = true) {
+        if (reinit) {
+            this.range.start = 0;
+        }
+        let options = {
+            range: this.range
+        };
+        if (this.search_phone !== '') {
+            options['search_phone'] = this.search_phone;
+        }
+        if (!this.isEmpty(this.filters)) {
+            options['filters'] = this.filters;
+        }
+        if (!this.isEmpty(this.sort)) {
+            options['sort'] = this.sort;
+        }
+        this.disputesService.getlist(options)
+            .then((list) => {
+            if (reinit) {
+                this.countDisputes = 0;
+                this.disputesService.getCount(options)
+                    .then(countData => {
+                    this.countDisputes = countData;
+                });
+            }
+            this.list = list;
+        });
+    }
+    searchPhoneRefresh() {
+        clearTimeout(this.timeoutSearch);
+        this.timeoutSearch = setTimeout(() => {
+            this.refreshDisputes();
+        }, 1000);
+    }
+    changeDateFrom(val) {
+        this.filters.date_from = val;
+        this.refreshDisputes();
+    }
+    changeDateTo(val) {
+        this.filters.date_to = val;
+        this.refreshDisputes();
+    }
+    isEmpty(arg) {
+        for (let item in arg) {
+            return false;
+        }
+        return true;
+    }
+    changeType(val) {
+        if (this.filters.types.indexOf(val) !== -1) {
+            this.filters.types = this.filters.types.filter(_val => val !== _val);
+        }
+        else {
+            this.filters.types.push(val);
+        }
+        if (!this.filters.types.length) {
+            this.filters.types.push(val === 0 ? 1 : 0);
+        }
+        this.refreshDisputes();
+    }
+    pageChanged(event) {
+        this.range.start = (event - 1) * this.countShowInPage;
+        this.refreshDisputes(false);
+    }
+};
+DisputesListComponent.ctorParameters = () => [
+    { type: _shared__WEBPACK_IMPORTED_MODULE_2__["DisputesService"] },
+    { type: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbModal"] },
+    { type: _shared__WEBPACK_IMPORTED_MODULE_2__["OrderService"] }
+];
+DisputesListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-disputes-list',
+        template: __webpack_require__(/*! raw-loader!./disputes-list.component.html */ "./node_modules/raw-loader/index.js!./src/app/authorized/disputes/disputes-list/disputes-list.component.html"),
+        styles: [__webpack_require__(/*! ./disputes-list.component.scss */ "./src/app/authorized/disputes/disputes-list/disputes-list.component.scss")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared__WEBPACK_IMPORTED_MODULE_2__["DisputesService"],
+        _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbModal"],
+        _shared__WEBPACK_IMPORTED_MODULE_2__["OrderService"]])
+], DisputesListComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/authorized/disputes/disputes-routing.module.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/authorized/disputes/disputes-routing.module.ts ***!
+  \****************************************************************/
+/*! exports provided: DisputesRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DisputesRoutingModule", function() { return DisputesRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _disputes_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./disputes.component */ "./src/app/authorized/disputes/disputes.component.ts");
+/* harmony import */ var _disputes_list_disputes_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./disputes-list/disputes-list.component */ "./src/app/authorized/disputes/disputes-list/disputes-list.component.ts");
+/* harmony import */ var _disputes_info_disputes_info_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./disputes-info/disputes-info.component */ "./src/app/authorized/disputes/disputes-info/disputes-info.component.ts");
+
+
+
+
+
+
+const routes = [
+    {
+        path: '',
+        component: _disputes_component__WEBPACK_IMPORTED_MODULE_3__["DisputesComponent"],
+        children: [
+            { path: '', component: _disputes_list_disputes_list_component__WEBPACK_IMPORTED_MODULE_4__["DisputesListComponent"] },
+            { path: 'info/:id', component: _disputes_info_disputes_info_component__WEBPACK_IMPORTED_MODULE_5__["DisputesInfoComponent"] }
+        ]
+    }
+];
+let DisputesRoutingModule = class DisputesRoutingModule {
+};
+DisputesRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+    })
+], DisputesRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/authorized/disputes/disputes.component.scss":
+/*!*************************************************************!*\
+  !*** ./src/app/authorized/disputes/disputes.component.scss ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2F1dGhvcml6ZWQvZGlzcHV0ZXMvZGlzcHV0ZXMuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/authorized/disputes/disputes.component.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/authorized/disputes/disputes.component.ts ***!
+  \***********************************************************/
+/*! exports provided: DisputesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DisputesComponent", function() { return DisputesComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _router_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../router.animations */ "./src/app/router.animations.ts");
+
+
+
+let DisputesComponent = class DisputesComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+DisputesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-disputes',
+        template: __webpack_require__(/*! raw-loader!./disputes.component.html */ "./node_modules/raw-loader/index.js!./src/app/authorized/disputes/disputes.component.html"),
+        animations: [Object(_router_animations__WEBPACK_IMPORTED_MODULE_2__["routerTransition"])()],
+        styles: [__webpack_require__(/*! ./disputes.component.scss */ "./src/app/authorized/disputes/disputes.component.scss")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+], DisputesComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/authorized/disputes/disputes.module.ts":
+/*!********************************************************!*\
+  !*** ./src/app/authorized/disputes/disputes.module.ts ***!
+  \********************************************************/
+/*! exports provided: DisputesModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DisputesModule", function() { return DisputesModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _disputes_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./disputes-routing.module */ "./src/app/authorized/disputes/disputes-routing.module.ts");
+/* harmony import */ var _disputes_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./disputes.component */ "./src/app/authorized/disputes/disputes.component.ts");
+/* harmony import */ var _disputes_list_disputes_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./disputes-list/disputes-list.component */ "./src/app/authorized/disputes/disputes-list/disputes-list.component.ts");
+/* harmony import */ var _disputes_info_disputes_info_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./disputes-info/disputes-info.component */ "./src/app/authorized/disputes/disputes-info/disputes-info.component.ts");
+/* harmony import */ var _shared__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../shared */ "./src/app/shared/index.ts");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm2015/ng-bootstrap.js");
+/* harmony import */ var ngx_clipboard__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ngx-clipboard */ "./node_modules/ngx-clipboard/fesm2015/ngx-clipboard.js");
+
+
+
+
+
+
+
+
+
+
+
+let DisputesModule = class DisputesModule {
+};
+DisputesModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _disputes_routing_module__WEBPACK_IMPORTED_MODULE_4__["DisputesRoutingModule"],
+            _shared__WEBPACK_IMPORTED_MODULE_8__["PageHeaderModule"],
+            _shared__WEBPACK_IMPORTED_MODULE_8__["PipesModule"],
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__["NgbTooltipModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__["NgbModule"],
+            _shared__WEBPACK_IMPORTED_MODULE_8__["AutocompleteModule"],
+            _shared__WEBPACK_IMPORTED_MODULE_8__["LocationModule"],
+            ngx_clipboard__WEBPACK_IMPORTED_MODULE_10__["ClipboardModule"],
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__["NgbTooltipModule"],
+            _shared__WEBPACK_IMPORTED_MODULE_8__["DateTimePickerModule"],
+            _shared__WEBPACK_IMPORTED_MODULE_8__["PaginationModule"]
+        ],
+        declarations: [
+            _disputes_component__WEBPACK_IMPORTED_MODULE_5__["DisputesComponent"],
+            _disputes_list_disputes_list_component__WEBPACK_IMPORTED_MODULE_6__["DisputesListComponent"],
+            _disputes_info_disputes_info_component__WEBPACK_IMPORTED_MODULE_7__["DisputesInfoComponent"]
+        ]
+    })
+], DisputesModule);
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=disputes-disputes-module.js.map

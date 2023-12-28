@@ -1,0 +1,243 @@
+<div class="w-100 mb-3 page-block">
+    <div class="col-4 d-inline-flex align-items-center pt-3 pb-3">
+        <div class="row">
+            <div class="col-12 d-flex">
+                <div class="mr-2" *ngFor="let item of filters.speciality_ids">
+                    <span class="speciality">{{item.name}}</span>
+                    <i class="fa fa-remove c-pointer" (click)="deleteSpecialityFromFilter(item)"></i>
+                </div>
+            </div>
+            <div class="col-12">
+                <app-autocomplete [service]="specialitiesService" [placeholder]="'Выберите специальность'" (change)="changeSpeciality($event)"></app-autocomplete>
+            </div>
+        </div>
+    </div>
+    <div class="col-4 d-inline-flex align-items-center pt-3 pb-3">
+        <div class="row">
+            <div class="col-6">C</div>
+            <div class="col-6">По</div>
+            <div class="col-6">
+                <app-date-time-picker (change)="changeDateFrom($event)"></app-date-time-picker>
+            </div>
+            <div class="col-6">
+                <app-date-time-picker (change)="changeDateTo($event)"></app-date-time-picker>
+            </div>
+        </div>
+    </div>
+    <div class="col-4 d-inline-flex align-items-center pt-3 pb-3">
+        <div class="row">
+            <div class="col-12">Место выполнения</div>
+            <div class="col-12 d-flex">
+                <select class="form-control" [(ngModel)]="filters.departure" (ngModelChange)="refreshOrders()">
+                    <option [value]="'ANY'">Не определено</option>
+                    <option [value]="'OFFICE'">Офис</option>
+                    <option [value]="'ADDRESS'">На выезд</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="card-header d-flex justify-content-between">
+        <div>
+            Доступные заказы
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table table-hover table-striped text-center">
+            <thead>
+            <tr>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">ID</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Специальность</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Клиент</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Дата</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Адрес</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Место исполнени</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Способ оплаты</div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of list" (click)="openOrder(orderInfoPopup, item)">
+                <td>{{item.id}}</td>
+                <td>{{item.specialty.name}}</td>
+                <td>{{item.customer.name}}<br>{{item.customer.phone}}</td>
+                <td>{{item.scheduled_time | datetime}}</td>
+                <td>{{item.address.name}}</td>
+                <td>
+                    <span *ngIf="item.departure == 'ANY'">Не определено</span>
+                    <span *ngIf="item.departure == 'OFFICE'">Офис</span>
+                    <span *ngIf="item.departure == 'ADDRESS'">На выезд</span>
+                </td>
+                <td>
+                    <span *ngIf="item.summ_type === 'HOURLY'">Почасовая оплата</span>
+                    <span *ngIf="item.summ_type === 'FIXED'">Фиксированная оплата</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<ng-template #orderInfoPopup let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Детали заказа № {{selectedOrder.id}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-6 d-inline-flex align-items-center">Специальность</div>
+            <div class="col-6">{{selectedOrder.specialty.name}}</div>
+        </div>
+        <div class="row">
+            <div class="col-6 d-inline-flex align-items-center">Статус</div>
+            <div class="col-6">{{getOrderStatus(selectedOrder)}}</div>
+        </div>
+        <div class="row">
+            <div class="col-6 d-inline-flex align-items-center">Тип заказа</div>
+            <div class="col-6">
+                <span *ngIf="selectedOrder.for_now">Срочный</span>
+                <span *ngIf="!selectedOrder.for_now">Отложенный</span>
+            </div>
+        </div>
+        <div class="row" *ngIf="!selectedOrder.for_now">
+            <div class="col-6 d-inline-flex align-items-center">Запланированное время</div>
+            <div class="col-6">{{selectedOrder.scheduled_time | datetime}}</div>
+        </div>
+        <div class="row">
+            <div  class="col-6 d-inline-flex align-items-center">Место заказа</div>
+            <div class="col-6">
+                <span *ngIf="selectedOrder.departure == 'ANY'">Не определено</span>
+                <span *ngIf="selectedOrder.departure == 'OFFICE'">Офис</span>
+                <span *ngIf="selectedOrder.departure == 'ADDRESS'">На выезд</span>
+            </div>
+        </div>
+        <div class="row">
+            <div  class="col-6 d-inline-flex align-items-center">Адрес</div>
+            <div class="col-6">{{selectedOrder.address.name}}</div>
+        </div>
+        <div class="row">
+            <div  class="col-6 d-inline-flex align-items-center">Создан</div>
+            <div class="col-6">{{selectedOrder.createdAt | datetime}}</div>
+        </div>
+        <div class="row">
+            <div  class="col-6 d-inline-flex align-items-center">Сумма</div>
+            <div class="col-6">{{selectedOrder.summ}}</div>
+        </div>
+        <div class="row">
+            <div  class="col-6 d-inline-flex align-items-center">Тип оплаты</div>
+            <div class="col-6">
+                <span *ngIf="selectedOrder.summ_type == 'HOURLY'">Почасовая</span>
+                <span *ngIf="selectedOrder.summ_type == 'FIXED'">Одноразовая</span>
+            </div>
+        </div>
+        <div class="row">
+            <div  class="col-6 d-inline-flex align-items-center">Способ оплаты</div>
+            <div class="col-6">
+                <span *ngIf="selectedOrder.payment_type == 'CASH'">Наличка</span>
+                <span *ngIf="selectedOrder.payment_type == 'BONUS'">Бонусный щет</span>
+                <span *ngIf="selectedOrder.payment_type == 'CARD'">Карточка</span>
+            </div>
+        </div>
+        <div class="row">
+            <div  class="col-6 d-inline-flex align-items-center">Комментарий клиента</div>
+            <div class="col-6">{{selectedOrder.comment}}</div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary mr-2" (click)="openOffer(orderOffer)">Предложить цену</button>
+    </div>
+</ng-template>
+
+<ng-template #orderOffer let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Предложить цену</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-6 d-inline-flex align-items-center">Специальность</div>
+            <div class="col-6">{{selectedOrder.specialty.name}}</div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-6 d-inline-flex align-items-center">Дата</div>
+            <div class="col-6">{{selectedOrder.scheduled_time | datetime}}</div>
+        </div>
+        <div class="row mt-2" *ngIf="executors">
+            <div class="col-6 d-inline-flex align-items-center">Исполнитель</div>
+            <div class="col-6">
+                <select class="form-control" [(ngModel)]="offerData.executor_id">
+                    <option *ngFor="let item of executors" [value]="item.id">{{item.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-2" *ngIf="executors">
+            <div class="col-6 d-inline-flex align-items-center">Тариф</div>
+            <div class="col-6">
+                <input class="mr-2" type="radio" name="sum_type" id="sum_type_radio_hourly" [value]="'HOURLY'" [(ngModel)]="offerData.summ_type">
+                <label for="sum_type_radio_hourly">Почасовая</label>
+
+                <input class="mr-2 ml-5" type="radio" name="sum_type" id="sum_type_radio_fixed" [value]="'FIXED'" [(ngModel)]="offerData.summ_type">
+                <label for="sum_type_radio_fixed">Фиксированная</label>
+            </div>
+        </div>
+        <div class="row mt-2" *ngIf="executors">
+            <div class="col-6 d-inline-flex align-items-center">
+                Цена
+                <span *ngIf="offerData.summ_type === 'HOURLY'">(₽/час)</span>
+                <span *ngIf="offerData.summ_type === 'FIXED'">(₽)</span>
+            </div>
+            <div class="col-6">
+                <input class="form-control" type="text" [(ngModel)]="offerData.summ">
+            </div>
+        </div>
+        <div class="row mt-2" *ngIf="offerData.executor_id">
+            <div class="col-6 d-inline-flex align-items-center">
+                Место выполнения
+            </div>
+            <div class="col-6">
+                <div *ngIf="selectedOrder.departure === 'OFFICE' || selectedOrder.departure === 'ADDRESS'">
+                    <span *ngIf="selectedOrder.departure === 'OFFICE'">Офис</span>
+                    <span *ngIf="selectedOrder.departure === 'ADDRESS'">На выезд</span>
+                </div>
+                <select class="form-control" *ngIf="selectedOrder.departure === 'ANY'" [(ngModel)]="offerData.departure">
+                    <option [value]="'OFFICE'">Офис</option>
+                    <option [value]="'ADDRESS'">На выезд</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-2" *ngIf="offerData.executor_id">
+            <div class="col-6 d-inline-flex align-items-center">
+                Адрес
+            </div>
+            <div class="col-6">
+                <div *ngIf="offerData.departure !== 'ANY'">
+                    <span *ngIf="offerData.departure === 'OFFICE'">{{getExecutorOffice(offerData.executor_id)}}</span>
+                    <span *ngIf="offerData.departure === 'ADDRESS'">{{selectedOrder.address?.name}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary mr-2" (click)="closeModal()">Отмена</button>
+        <button type="button" class="btn btn-secondary mr-2" (click)="createOrderOffer()">Предложить цену</button>
+    </div>
+</ng-template>

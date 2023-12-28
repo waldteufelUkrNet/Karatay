@@ -1,0 +1,76 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
+    <div class="list-group">
+        <a [routerLink]="['customers' | link]" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-id-card-o"></i>&nbsp;
+            <span>{{ 'Клиенты' | translate }}</span>
+        </a>
+        <a [routerLink]="['executors' | link]" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-id-badge"></i>&nbsp;
+            <span>{{ 'Исполнители' | translate }}</span>
+            <span class="counter" *ngIf="counters && counters.executor_to_confirm">{{counters.executor_to_confirm}}</span>
+        </a>
+        <a [routerLink]="['entities' | link]" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-address-card"></i>&nbsp;
+            <span>{{ 'Юр. лица' | translate }}</span>
+        </a>
+        <a [routerLink]="['specialties' | link]" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-building-o"></i>&nbsp;
+            <span>{{ 'Профессии' | translate }}</span>
+        </a>
+        <!--<a class="list-group-item">
+            <i class="fa fa-fw fa-tags"></i>&nbsp;
+            <span>{{ 'Промо коды' | translate }}</span>
+        </a>
+        <a class="list-group-item">
+            <i class="fa fa-fw fa-file-text-o"></i>&nbsp;
+            <span>{{ 'Заказы' | translate }}</span>
+        </a>
+        <a class="list-group-item">
+            <i class="fa fa-fw fa-exclamation-triangle"></i>&nbsp;
+            <span>{{ 'Споры' | translate }}</span>
+        </a>
+        <a class="list-group-item">
+            <i class="fa fa-fw fa-cogs"></i>&nbsp;
+            <span>{{ 'Конфигурации' | translate }}</span>
+        </a>
+        <a class="list-group-item">
+            <i class="fa fa-fw fa-bell"></i>&nbsp;
+            <span>{{ 'Пуш уведомления' | translate }}</span>
+        </a>-->
+        <a [routerLink]="['promo' | link]" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-tags"></i>&nbsp;
+            <span>{{ 'Промо коды' | translate }}</span>
+        </a>
+        <a [routerLink]="['orders' | link]" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-file-text-o"></i>&nbsp;
+            <span>{{ 'Заказы' | translate }}</span>
+        </a>
+        <a [routerLink]="['disputes' | link]" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-exclamation-triangle"></i>&nbsp;
+            <span>{{ 'Споры' | translate }}</span>
+            <span class="counter" *ngIf="counters && counters.count_disputes">{{counters.count_disputes}}</span>
+        </a>
+        <a [routerLink]="['reports' | link]" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-balance-scale"></i>&nbsp;
+            <span>{{ 'Жалобы' | translate }}</span>
+            <span class="counter" *ngIf="counters && counters.count_reports">{{counters.count_reports}}</span>
+        </a>
+        <a [routerLink]="['configs' | link]" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-cogs"></i>&nbsp;
+            <span>{{ 'Конфигурации' | translate }}</span>
+        </a>
+        <a [routerLink]="['push' | link]" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-bell"></i>&nbsp;
+            <span>{{ 'Пуш уведомления' | translate }}</span>
+        </a>
+        <a [routerLink]="['support' | link]" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-question"></i>&nbsp;
+            <span>{{ 'Поддержка' | translate }}</span>
+            <span class="counter" *ngIf="counters && counters.support">{{counters.support}}</span>
+        </a>
+    </div>
+    <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
+        <i class="fa fa-fw fa-angle-double-{{collapsed?'right':'left'}}"></i>&nbsp;
+        <span>{{ 'Убрать' | translate }}</span>
+    </div>
+</nav>

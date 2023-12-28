@@ -1,0 +1,166 @@
+<div class="w-100 mb-3 page-block">
+    <div class="col-12 col-sm-4 d-inline-flex align-items-center justify-content-center pt-3 pb-3">
+        <input type="text" class="form-control" [(ngModel)]="search" (keyup)="searchRefresh()" placeholder="Поиск...">
+    </div>
+    <div class="col-12 col-sm-4 d-inline-flex align-items-center justify-content-center pt-3 pb-3"></div>
+    <div class="col-12 col-sm-4 d-inline-flex align-items-center justify-content-end pt-3 pb-3"></div>
+</div>
+
+
+<div class="card mb-3">
+    <div class="card-header d-flex justify-content-between">
+        <div>
+            Промо коды
+        </div>
+
+        <div class="action-buttons d-flex">
+            <button class="btn btn-default" (click)="openPromoDetails(content)">Создать</button>
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <ngb-tabset  (tabChange)="typeChanged($event)">
+            <ngb-tab id="CUSTOMER">
+                <ng-template ngbTabTitle>Клиенты</ng-template>
+                <ng-template ngbTabContent>
+                    <table class="table table-hover table-striped text-center">
+                        <thead>
+                        <tr>
+                            <th>
+                                <div class="d-flex w-100 align-items-center justify-content-center">Код</div>
+                            </th>
+                            <th>
+                                <div class="d-flex w-100 align-items-center justify-content-center">Тип</div>
+                            </th>
+                            <th>
+                                <div class="d-flex w-100 align-items-center justify-content-center">Сумма</div>
+                            </th>
+                            <th>
+                                <div class="d-flex w-100 align-items-center justify-content-center">Статус</div>
+                            </th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let item of list">
+                            <td (click)="openPromoDetails(content, item)">{{item.code}}</td>
+                            <td (click)="openPromoDetails(content, item)">{{item.type}}</td>
+                            <td (click)="openPromoDetails(content, item)">{{item.amount}}</td>
+                            <td (click)="openPromoDetails(content, item)">
+                                <span *ngIf="item.active">Активный</span>
+                                <span *ngIf="!item.active">Использован</span>
+                            </td>
+                            <td>
+                                <i class="fa fa-remove c-pointer mr-2" *ngIf="item.active" (click)="deleteConfirm(deleteConfirmModal, item)" placement="left" ngbTooltip="Удалить"></i>
+                                <i class="fa fa-clone c-pointer"  ngxClipboard [cbContent]="item.code" placement="left" ngbTooltip="Скопировать"></i>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab id="EXECUTOR">
+                <ng-template ngbTabTitle>Исполнители</ng-template>
+                <ng-template ngbTabContent>
+                    <table class="table table-hover table-striped text-center">
+                        <thead>
+                        <tr>
+                            <th>
+                                <div class="d-flex w-100 align-items-center justify-content-center">Код</div>
+                            </th>
+                            <th>
+                                <div class="d-flex w-100 align-items-center justify-content-center">Тип</div>
+                            </th>
+                            <th>
+                                <div class="d-flex w-100 align-items-center justify-content-center">Сумма</div>
+                            </th>
+                            <th>
+                                <div class="d-flex w-100 align-items-center justify-content-center">Статус</div>
+                            </th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let item of list">
+                            <td (click)="openPromoDetails(content, item)">{{item.code}}</td>
+                            <td (click)="openPromoDetails(content, item)">{{item.type}}</td>
+                            <td (click)="openPromoDetails(content, item)">{{item.amount}}</td>
+                            <td (click)="openPromoDetails(content, item)">
+                                <span *ngIf="item.active">Активный</span>
+                                <span *ngIf="!item.active">Использован</span>
+                            </td>
+                            <td>
+                                <i class="fa fa-remove c-pointer mr-2" *ngIf="item.active" (click)="deleteConfirm(deleteConfirmModal, item)" placement="left" ngbTooltip="Удалить"></i>
+                                <i class="fa fa-clone c-pointer"  ngxClipboard [cbContent]="item.code" placement="left" ngbTooltip="Скопировать"></i>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </ng-template>
+            </ngb-tab>
+        </ngb-tabset>
+
+
+
+    </div>
+
+    <app-my-pagination *ngIf="countPromo" [countItems]="countPromo" [showInPages]="countShowInPage" (changePage)="pageChanged($event)"></app-my-pagination>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Промо "{{selectedPromo.code}}"</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="d-flex flex-column">
+            <div>Код: {{selectedPromo.code}}</div>
+            <div>
+                Тип пользователя:
+                <select class="form-control" [(ngModel)]="promoType">
+                    <option [value]="'CUSTOMER'">Клиент</option>
+                    <option [value]="'EXECUTOR'">Исполнитель</option>
+                </select>
+            </div>
+            <div>
+                Тип:
+                <select class="form-control" [(ngModel)]="selectedPromo.type">
+                    <option [value]="'SUM'">Сумма</option>
+                    <option [value]="'EXPERT'">Експерт</option>
+                    <option [value]="'SUM_EXPERT'">Експерт + сумма</option>
+                </select>
+            </div>
+            <div>Сумма: <input class="form-control" [(ngModel)]="selectedPromo.amount" [disabled]="selectedPromo.type == 'EXPERT'"></div>
+            <div>
+                Статус:
+                <select class="form-control" [(ngModel)]="selectedPromo.active">
+                    <option [value]="true">Активный</option>
+                    <option [value]="false">Использован</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary mr-2" (click)="savePromo()">Сохранить</button>
+        <button type="button" class="btn btn-secondary" (click)="c()">Закрыть</button>
+    </div>
+</ng-template>
+
+<ng-template #deleteConfirmModal let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Промо код "{{deletePromo.code}}"</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="d-flex flex-column">
+            Вы уверены что хотите удалить специальность?
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger mr-2" (click)="deletePromoConfirm()">Удалить</button>
+        <button type="button" class="btn btn-secondary" (click)="c()">Закрыть</button>
+    </div>
+</ng-template>

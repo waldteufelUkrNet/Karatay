@@ -1,0 +1,127 @@
+<div class="card mb-3">
+    <div class="card-header d-flex justify-content-between">
+        <div>
+            Расписание
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table table-hover table-striped text-center">
+            <thead>
+            <tr>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">ID</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Специальность</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Клиент</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Исполнитель</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Место исполнени</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Дата</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Адрес</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Статус</div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of list" (click)="openOrder(orderInfoPopup, item)">
+                <td>{{item.id}}</td>
+                <td>{{item.specialty.name}}</td>
+                <td>{{item.customer?.name}}<br>{{item.customer?.phone}}</td>
+                <td>{{item.executor?.name}}<br>{{item.executor?.phone}}</td>
+                <td>
+                    <span *ngIf="item.departure == 'ANY'">Не определено</span>
+                    <span *ngIf="item.departure == 'OFFICE'">Офис</span>
+                    <span *ngIf="item.departure == 'ADDRESS'">На выезд</span>
+                </td>
+                <td>{{item.scheduled_time | datetime}}</td>
+                <td>{{item.address.name}}</td>
+                <td>{{getOrderStatus(item)}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<ng-template #orderInfoPopup let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Детали заказа № {{selectedOrder.id}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-6 d-inline-flex align-items-center">Специальность</div>
+            <div class="col-6">{{selectedOrder.specialty.name}}</div>
+        </div>
+        <div class="row">
+            <div class="col-6 d-inline-flex align-items-center">Статус</div>
+            <div class="col-6">{{getOrderStatus(selectedOrder)}}</div>
+        </div>
+        <div class="row">
+            <div class="col-6 d-inline-flex align-items-center">Тип заказа</div>
+            <div class="col-6">
+                <span *ngIf="selectedOrder.for_now">Срочный</span>
+                <span *ngIf="!selectedOrder.for_now">Отложенный</span>
+            </div>
+        </div>
+        <div class="row" *ngIf="!selectedOrder.for_now">
+            <div class="col-6 d-inline-flex align-items-center">Запланированное время</div>
+            <div class="col-6">{{selectedOrder.scheduled_time | datetime}}</div>
+        </div>
+        <div class="row">
+            <div  class="col-6 d-inline-flex align-items-center">Место заказа</div>
+            <div class="col-6">
+                <span *ngIf="selectedOrder.departure == 'ANY'">Не определено</span>
+                <span *ngIf="selectedOrder.departure == 'OFFICE'">Офис</span>
+                <span *ngIf="selectedOrder.departure == 'ADDRESS'">На выезд</span>
+            </div>
+        </div>
+        <div class="row">
+            <div  class="col-6 d-inline-flex align-items-center">Адрес</div>
+            <div class="col-6">{{selectedOrder.address.name}}</div>
+        </div>
+        <div class="row">
+            <div  class="col-6 d-inline-flex align-items-center">Создан</div>
+            <div class="col-6">{{selectedOrder.createdAt | datetime}}</div>
+        </div>
+        <div class="row">
+            <div  class="col-6 d-inline-flex align-items-center">Сумма</div>
+            <div class="col-6">{{selectedOrder.summ}}</div>
+        </div>
+        <div class="row">
+            <div  class="col-6 d-inline-flex align-items-center">Тип оплаты</div>
+            <div class="col-6">
+                <span *ngIf="selectedOrder.summ_type == 'HOURLY'">Почасовая</span>
+                <span *ngIf="selectedOrder.summ_type == 'FIXED'">Одноразовая</span>
+            </div>
+        </div>
+        <div class="row">
+            <div  class="col-6 d-inline-flex align-items-center">Способ оплаты</div>
+            <div class="col-6">
+                <span *ngIf="selectedOrder.payment_type == 'CASH'">Наличка</span>
+                <span *ngIf="selectedOrder.payment_type == 'BONUS'">Бонусный щет</span>
+                <span *ngIf="selectedOrder.payment_type == 'CARD'">Карточка</span>
+            </div>
+        </div>
+        <div class="row">
+            <div  class="col-6 d-inline-flex align-items-center">Комментарий клиента</div>
+            <div class="col-6">{{selectedOrder.comment}}</div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary mr-2" (click)="declineOrder()">Отменить заказ</button>
+    </div>
+</ng-template>

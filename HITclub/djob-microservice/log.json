@@ -1,0 +1,108 @@
+{
+  "order": {
+    "id": "607984226f3e963a16eb420c",
+    "specialty": {
+      "id": "5eb7f6d00d84d97445361d59",
+      "name": "Вольный стрелок",
+      "info": "Описание",
+      "group_id": "5de8ba7ed8533e18410ed35c",
+      "group": {
+        "id": "5de8ba7ed8533e18410ed35c",
+        "name": "123"
+      }
+    },
+    "status": 90,
+    "comment": "test",
+    "address": {
+      "id": "607984226f3e963a16eb420f",
+      "name": "Ulitsa Verkhniye Polya 16",
+      "lon": 37.746925,
+      "lat": 55.663265,
+      "front": null,
+      "code": "",
+      "floor": "",
+      "flat": null
+    },
+    "executor_id": "5e9863c2beb9f25f91461caa",
+    "customer_id": "5ef33a358aec9b31f4ad0f73",
+    "payment_type": "CARD",
+    "for_now": true,
+    "scheduled_time": "2021-04-16T12:33:38.632Z",
+    "scheduled_time_minutes": 0,
+    "departure": "ADDRESS",
+    "summ_type": "FIXED",
+    "summ": "1",
+    "price": 1,
+    "departure_address": null,
+    "map": {
+      "expected_time": 600000,
+      "path": null
+    },
+    "start_walk_time": "2021-04-16T12:33:42.731Z",
+    "start_work_time": "2021-04-16T12:33:45.189Z",
+    "end_work_time": "2021-04-16T12:33:50.394Z",
+    "finishedAt": null,
+    "duration": null,
+    "check": {
+      "order_check": {
+        "full_price": 1,
+        "app_commission": 0.02,
+        "customer_referral_comission": 0.01,
+        "executor_referral_comission": 0.01,
+        "payfor_full_price": 1,
+        "full_executor_payment": 0.98,
+        "customer_discount": 0,
+        "executor_extra_payment": 0,
+        "customer_final_payment_amount": 1,
+        "qiwi_comission_amount": 0.05
+      },
+      "order_configs": {
+        "system_commission": 2,
+        "referral_program_commissions": 1,
+        "qiwi_commission": 5,
+        "customer_discount_percent": 0,
+        "executor_extra_payment_percent": 0
+      },
+      "customer_check": {
+        "full_price": 1,
+        "customer_discount": 0,
+        "customer_final_payment_amount": 1
+      },
+      "executor_check": {
+        "full_price": 1,
+        "customer_discount": 0,
+        "customer_final_payment_amount": 1,
+        "executor_extra_payment": 0
+      }
+    },
+    "cancel_reason": null,
+    "createdAt": "2021-04-16T12:33:38.632Z",
+    "executor": {
+      "id": "5e9863c2beb9f25f91461caa",
+      "name": "first",
+      "second_name": "test middle rm",
+      "surname": "test",
+      "phone": "+79859565616",
+      "photo": "V326P2WTFYLDMJVTJRBWTIUIMVGQTAZVQYMDZ3UXE5QERXJNRS4D.jpg",
+      "about": "test about tm",
+      "sex": 1,
+      "lat": 55.6629817,
+      "lon": 37.7463883,
+      "rate": "3.03",
+      "status": true
+    },
+    "customer": {
+      "id": "5ef33a358aec9b31f4ad0f73",
+      "name": "test getto",
+      "phone": "+79859565608",
+      "rate": "4.00"
+    },
+    "offers_count": 0,
+    "requested_executor": null,
+    "customer_mark": null,
+    "executor_mark": null,
+    "requested_summ_type": null,
+    "requested_price": null,
+    "requested_departure": null
+  }
+}

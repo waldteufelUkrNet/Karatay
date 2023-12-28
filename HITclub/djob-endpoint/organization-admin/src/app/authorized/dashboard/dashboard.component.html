@@ -1,0 +1,83 @@
+<agm-map
+    style="height: calc(100vh - 90px)"
+    *ngIf="showMap"
+    [latitude]="lat"
+    [longitude]="lng"
+    [zoom]="11"
+    [disableDefaultUI]="false"
+    [zoomControl]="false">
+
+    <agm-marker
+        *ngFor="let m of markers"
+        [latitude]="m.lat"
+        [longitude]="m.lon"
+        [label]="{text: m.label}"
+        [iconUrl]="m.iconUrl"
+        [markerDraggable]="m.draggable"
+    >
+
+        <agm-info-window>
+            <div class="w100 marker-info-content" *ngIf="m.info">
+                <div class="row">
+                    <div class="col-4 d-flex">
+                        <img [src]="m.info.photo" />
+                    </div>
+                    <div class="col-8 d-flex flex-column">
+                        <a class="w100" [routerLink]="['executors/info/' + m.info.id | link]">{{m.info.name}}</a>
+                        <a class="w100" href="tel: {{m.info.phone}}">{{m.info.phone}}</a>
+                        <span class="w100 bolder">{{m.info.specialites}}</span>
+                    </div>
+                </div>
+                <div class="row" *ngIf="m.info.order">
+                    <div class="col-12 d-flex justify-content-center">Активный заказ</div>
+                    <div class="col-12 d-flex">
+                        <div class="w50">Профессия</div>
+                        <div class="w50">{{m.info.order.specialty.name}}</div>
+                    </div>
+                    <div class="col-12 d-flex">
+                        <div class="w50">Статус</div>
+                        <div class="w50">{{getOrderStatus(m.info.order)}}</div>
+                    </div>
+                    <div class="col-12 d-flex">
+                        <div class="w50">Сумма</div>
+                        <div class="w50">{{m.info.order.summ}}</div>
+                    </div>
+                    <div class="col-12 d-flex">
+                        <div class="w50">Тип оплаты</div>
+                        <div class="w50">
+                            <span *ngIf="m.info.order.summ_type == 'HOURLY'">Почасовая</span>
+                            <span *ngIf="m.info.order.summ_type == 'FIXED'">Одноразовая</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w100 marker-info-content" *ngIf="m.order">
+                <div class="row">
+                    <div class="col-12 d-flex">
+                        <div class="w50">Профессия</div>
+                        <div class="w50">{{m.order.specialty}}</div>
+                    </div>
+                    <div class="col-12 d-flex">
+                        <div class="w50">Сумма</div>
+                        <div class="w50">{{m.order.summ}}</div>
+                    </div>
+                    <div class="col-12 d-flex">
+                        <div class="w50">Тип оплаты</div>
+                        <div class="w50">
+                            <span *ngIf="m.order.summ_type == 'HOURLY'">Почасовая</span>
+                            <span *ngIf="m.order.summ_type == 'FIXED'">Одноразовая</span>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex">
+                        <div class="w50">Комментарий</div>
+                        <div class="w50">{{m.order.comment}}</div>
+                    </div>
+                    <div class="col-12 d-flex pb-5">
+                        <app-autocomplete [service]="executorService" [filter]="m.order.filter" [placeholder]="'Выберите исполнителя'" (change)="changeExecutor($event, m.order)"></app-autocomplete>
+                    </div>
+                </div>
+            </div>
+        </agm-info-window>
+
+    </agm-marker>
+</agm-map>

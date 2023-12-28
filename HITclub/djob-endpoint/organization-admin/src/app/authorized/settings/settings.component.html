@@ -1,0 +1,75 @@
+<div class="w-100 mb-3 page-block">
+    <div class="row mt-2">
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">Имя организации</span>
+                <input type="text" [(ngModel)]="user.name" class="form-control w50" />
+            </div>
+        </div>
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">Баланс</span>
+                <span class="w50">{{user.balance['$numberDecimal']}}</span>
+            </div>
+        </div>
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">Бонус баланс</span>
+                <span class="w50">{{user.bonus_balance['$numberDecimal']}}</span>
+            </div>
+        </div>
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">E-mail</span>
+                <input type="text" [(ngModel)]="user.email" disabled class="form-control w50" />
+            </div>
+        </div>
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">О себе</span>
+                <input type="text" [(ngModel)]="user.about" class="form-control w50" />
+            </div>
+        </div>
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">Разрешить исполнителям принимать срочные заказы</span>
+                <div class="w50">
+                    <div class="switch-btn" [class.switch-on]="user.take_urgent == 1" (click)="changeUrgent(item)"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">Разрешить исполнителям принимать не срочные заказы</span>
+                <div class="w50">
+                    <div class="switch-btn" [class.switch-on]="user.take_not_urgent == 1" (click)="changeNotUrgent(item)"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">Новый пароль</span>
+                <input type="password" [(ngModel)]="user.password" class="form-control w50" />
+            </div>
+        </div>
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">Изображения</span>
+                <div class="w-50">
+                    <img class="form-img" [src]="user.photo" *ngIf="user.photo" />
+                    <input type="file" name="image" id="avatarInput" [multiple]="false" (change)="uploadFile($event)" #avatarInput>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-12">
+
+            </div>
+        </div>
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3 justify-content-end">
+                <button class="btn btn-default" (click)="saveAccount()">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>

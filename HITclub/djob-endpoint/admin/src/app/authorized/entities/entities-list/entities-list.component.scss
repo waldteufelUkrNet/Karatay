@@ -1,0 +1,16 @@
+.action-icon{
+    cursor: pointer;
+    margin: 10px;
+}
+.switch-btn{
+    margin-right: 10px;
+}
+.controls{
+    i{
+        margin: 0 5px;
+        cursor: pointer;
+        &:before{
+            font-size: 12px;
+        }
+    }
+}

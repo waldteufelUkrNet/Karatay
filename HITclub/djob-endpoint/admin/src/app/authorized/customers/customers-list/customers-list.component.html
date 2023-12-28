@@ -1,0 +1,84 @@
+<div class="w-100 mb-3 page-block">
+    <div class="col-12 col-sm-4 d-inline-flex align-items-center justify-content-center pt-3 pb-3">
+        <input type="text" class="form-control" [(ngModel)]="search" (keyup)="searchRefresh()" placeholder="Поиск...">
+    </div>
+    <div class="col-12 col-sm-4 d-inline-flex align-items-center justify-content-center pt-3 pb-3"></div>
+    <div class="col-12 col-sm-4 d-inline-flex align-items-center justify-content-end pt-3 pb-3"></div>
+</div>
+
+
+<div class="card mb-3">
+    <div class="card-header">
+        <div>
+            Справочник клиентов
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table table-hover table-striped text-center">
+            <thead>
+            <tr>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Имя</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Телефон</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Реферал</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Баланс</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Бонус баланс</div>
+                </th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of list">
+                <td>{{item.name}}</td>
+                <td>{{item.phone}}</td>
+                <td>{{item.referral_id}}</td>
+                <td>{{item.balance['$numberDecimal']}}</td>
+                <td>{{item.bonus_balance['$numberDecimal']}}</td>
+                <td>
+                    <a [routerLink]="'customers/info/' + item.id | link"  placement="left" ngbTooltip="Подробнее">
+                        <i class="fa fa-info-circle"></i>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <app-my-pagination *ngIf="countCustomers" [countItems]="countCustomers" [showInPages]="countShowInPage" (changePage)="pageChanged($event)"></app-my-pagination>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Клиент {{selectedCustomer.name}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="d-flex flex-column">
+            <div>Имя: {{selectedCustomer.name}}</div>
+            <div>Телефон: {{selectedCustomer.phone}}</div>
+            <div>Баланс: {{selectedCustomer.phone}}</div>
+            <div>Бонус баланс: {{selectedCustomer.phone}}</div>
+            <div>Реферал: {{selectedCustomer.referral_id}}</div>
+            <div class="d-flex">
+                Статус:
+                <select [(ngModel)]="selectedCustomer.banned">
+                    <option [value]="false">Активен</option>
+                    <option [value]="true">Заблокирован</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary mr-2" (click)="saveCustomer()">Сохранить</button>
+        <button type="button" class="btn btn-secondary" (click)="c()">Закрыть</button>
+    </div>
+</ng-template>

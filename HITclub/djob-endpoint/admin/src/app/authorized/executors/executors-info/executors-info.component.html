@@ -1,0 +1,276 @@
+<div class="w-100 pl-2 pr-2 mb-3 page-block" *ngIf="executor">
+    <div class="row">
+        <div class="col-12 col-sm-6 pt-3 pb-3">
+            <div class="row">
+                <div class="col-6 d-inline-flex align-items-center">Имя</div>
+                <div class="col-6">{{executor.name}}</div>
+            </div>
+            <div class="row">
+                <div class="col-6 d-inline-flex align-items-center">Телефон</div>
+                <div class="col-6">{{executor.phone}}</div>
+            </div>
+            <div class="row">
+                <div class="col-6 d-inline-flex align-items-center">Баланс</div>
+                <div class="col-6">{{executor.balance}}</div>
+            </div>
+            <div class="row">
+                <div class="col-6 d-inline-flex align-items-center">Бонус баланс</div>
+                <div class="col-6">{{executor.bonus_balance}}</div>
+            </div>
+            <div class="row">
+                <div class="col-6 d-inline-flex align-items-center">Статус аккаунта</div>
+                <div class="col-6">
+                    <span *ngIf="executor.banned">Заблокирован</span>
+                    <span *ngIf="!executor.banned">Активный</span>
+                </div>
+            </div>
+            <div class="row">
+                <div  class="col-6 d-inline-flex align-items-center">
+                    Статус паспотра
+                </div>
+                <div class="col-6">
+                    <select [(ngModel)]="executor.registered" class="form-control">
+                        <option [value]="0">Новый</option>
+                        <option [value]="1">Ожидает подтверждения</option>
+                        <option [value]="2">Подтвержден</option>
+                        <option [value]="-1">Не все параметры заполнены по паспорту</option>
+                        <option [value]="-2">Отклонен (Заблокирован)</option>
+                    </select>
+                </div>
+            </div>
+            <div *ngIf="executor.registered == -1" class="row mt-2">
+                <div  class="col-6 d-inline-flex align-items-center">Причина отказа</div>
+                <div class="col-6">
+                    <input type="text" class="form-control" [(ngModel)]="executor.reject_reason" />
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-12 d-flex align-items-center">
+                    <button type="button" class="btn btn-secondary mr-2" (click)="saveExecutor()">Сохранить</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 pt-3 pb-3">
+            <div class="row">
+                <div class="col-12 d-inline-flex align-items-center">Паспорт</div>
+            </div>
+            <div class="row">
+                <div class="col-6 d-inline-flex align-items-center">Серия</div>
+                <div class="col-6">{{executor.passport.series}}</div>
+            </div>
+            <div class="row">
+                <div class="col-6 d-inline-flex align-items-center">Номер</div>
+                <div class="col-6">{{executor.passport.number}}</div>
+            </div>
+            <div class="row">
+                <div class="col-6 d-inline-flex align-items-center">Код</div>
+                <div class="col-6">{{executor.passport.code}}</div>
+            </div>
+            <div class="row">
+                <div class="col-6 d-inline-flex align-items-center">Кем выдан</div>
+                <div class="col-6">{{executor.passport.issued_by}}</div>
+            </div>
+            <div class="row">
+                <div class="col-6 d-inline-flex align-items-center">Фото</div>
+                <div class="col-6">
+                    <a *ngIf="executor.passport.main_photo" [href]="'/uploads/'+executor.passport.main_photo" target="popup">Фото</a>
+                    <span *ngIf="!executor.passport.main_photo">-</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 d-inline-flex align-items-center">Фото регистрации</div>
+                <div class="col-6">
+                    <a *ngIf="executor.passport.registration_photo" [href]="'/uploads/'+executor.passport.registration_photo" target="popup">Фото</a>
+                    <span *ngIf="!executor.passport.registration_photo">-</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 d-inline-flex align-items-center">Селфи с паспортом</div>
+                <div class="col-6">
+                    <a *ngIf="executor.passport.selfy_photo" [href]="'/uploads/'+executor.passport.selfy_photo" target="popup">Фото</a>
+                    <span *ngIf="!executor.passport.selfy_photo">-</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="w-100 pl-2 pr-2 pt-2 pb-2 mb-3 page-block">
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">Отправить пуш</div>
+    </div>
+    <div class="row mt-3 mb-2">
+        <div class="col-10">
+            <input class="form-control" [(ngModel)]="pushMessage">
+        </div>
+        <div class="col-2">
+            <button type="button" class="btn btn-secondary ml-2" (click)="sendPersonalPush()" [disabled]="!pushMessage || pushMessage === ''">Отправить</button>
+        </div>
+    </div>
+</div>
+
+<div class="w-100 pl-2 pr-2 pt-2 pb-2 mb-3 page-block">
+    <div class="row">
+        <div class="col-12">
+            <ngb-tabset>
+                <ngb-tab>
+                    <ng-template ngbTabTitle>Финансовые операции админа</ng-template>
+                    <ng-template ngbTabContent>
+                        <div class="row mt-1 mb-3">
+                            <div class="col-3 pl-4 pr-4">Дата</div>
+                            <div class="col-2 pl-4 pr-4">Сумма</div>
+                            <div class="col-2 pl-4 pr-4">Оператор</div>
+                            <div class="col-2 pl-4 pr-4">Баланс после</div>
+                            <div class="col-3 pl-4 pr-4">Назначение</div>
+                        </div>
+                        <div class="row" *ngFor="let item of financialAdminHistory">
+                            <div class="col-3 pl-4 pr-4">{{item.date}}</div>
+                            <div class="col-2 pl-4 pr-4" [ngClass]="{'red': item.summ < 0, 'green': item.summ > 0}">{{item.summ}}</div>
+                            <div class="col-2 pl-4 pr-4">{{item.performer}}</div>
+                            <div class="col-2 pl-4 pr-4">{{item.after_balance}}</div>
+                            <div class="col-3 pl-4 pr-4">{{item.info}}</div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12 d-flex justify-content-center">
+                                <button type="button" *ngIf="fhadminloadMore" class="btn btn-secondary ml-2" (click)="loadMoreFinancialAdminHistory()">Загрузить еще</button>
+                                <button type="button" class="btn btn-secondary ml-2" (click)="openFinancialForm(financialForm)">Добавить</button>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab>
+                    <ng-template ngbTabTitle>Заказы</ng-template>
+                    <ng-template ngbTabContent>
+                        <div class="row mt-1 mb-3">
+                            <div class="col-4 pl-4 pr-4">ID</div>
+                            <div class="col-4 pl-4 pr-4">Дата</div>
+                            <div class="col-4 pl-4 pr-4">Статус</div>
+                        </div>
+                        <div class="row" *ngFor="let item of orderHistory">
+                            <div class="col-4 pl-4 pr-4">{{item.id}}</div>
+                            <div class="col-4 pl-4 pr-4">{{item.createdAt}}</div>
+                            <div class="col-4 pl-4 pr-4">{{getOrderStatus(item.status)}}</div>
+                        </div>
+                        <div class="row" *ngIf="ohloadMore">
+                            <div class="col-12 d-flex justify-content-center">
+                                <button type="button" class="btn btn-secondary ml-2" (click)="loadMoreOrderHistory()">Загрузить еще</button>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab>
+                    <ng-template ngbTabTitle>Реферальные начислении</ng-template>
+                    <ng-template ngbTabContent>
+                        <div class="row mt-1 mb-3">
+                            <div class="col-4 pl-4 pr-4">ID заказа</div>
+                            <div class="col-4 pl-4 pr-4">Дата</div>
+                            <div class="col-4 pl-4 pr-4">Сумма</div>
+                        </div>
+                        <div class="row" *ngFor="let item of referralHistory">
+                            <div class="col-4 pl-4 pr-4">{{item.order_id}}</div>
+                            <div class="col-4 pl-4 pr-4">{{item.date}}</div>
+                            <div class="col-4 pl-4 pr-4">{{item.summ}}</div>
+                        </div>
+                        <div class="row" *ngIf="rhloadMore">
+                            <div class="col-12 d-flex justify-content-center">
+                                <span class="c-pointer" (click)="loadMoreReferralHistory()">Загрузить еще</span>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab>
+                    <ng-template ngbTabTitle>Основной баланс</ng-template>
+                    <ng-template ngbTabContent>
+                        <div class="row mt-1 mb-3">
+                            <div class="col-4 pl-4 pr-4">Дата</div>
+                            <div class="col-4 pl-4 pr-4">Сумма</div>
+                            <div class="col-4 pl-4 pr-4">Информация</div>
+                        </div>
+                        <div class="row" *ngFor="let item of financialBalanceHistory">
+                            <div class="col-4 pl-4 pr-4">{{item.date}}</div>
+                            <div class="col-4 pl-4 pr-4" [ngClass]="{'red': item.summ < 0, 'green': item.summ > 0}">{{item.summ}}</div>
+                            <div class="col-4 pl-4 pr-4">{{getFinancialInfo(item)}}</div>
+                        </div>
+                        <div class="row" *ngIf="ohloadMore">
+                            <div class="col-12 d-flex justify-content-center">
+                                <span class="c-pointer" (click)="loadMoreFinancialBalanceHistory()">Загрузить еще</span>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab>
+                    <ng-template ngbTabTitle>Бонус баланс</ng-template>
+                    <ng-template ngbTabContent>
+                        <div class="row mt-1 mb-3">
+                            <div class="col-4 pl-4 pr-4">Дата</div>
+                            <div class="col-4 pl-4 pr-4">Сумма</div>
+                            <div class="col-4 pl-4 pr-4">Информация</div>
+                        </div>
+                        <div class="row" *ngFor="let item of financialBonusHistory">
+                            <div class="col-4 pl-4 pr-4">{{item.date}}</div>
+                            <div class="col-4 pl-4 pr-4" [ngClass]="{'red': item.summ < 0, 'green': item.summ > 0}">{{item.summ}}</div>
+                            <div class="col-4 pl-4 pr-4">{{getFinancialInfo(item)}}</div>
+                        </div>
+                        <div class="row" *ngIf="ohloadMore">
+                            <div class="col-12 d-flex justify-content-center">
+                                <span class="c-pointer" (click)="loadMoreFinancialBonusHistory()">Загрузить еще</span>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab>
+                    <ng-template ngbTabTitle>Начислении по безналу</ng-template>
+                    <ng-template ngbTabContent>
+                        <div class="row mt-1 mb-3">
+                            <div class="col-4 pl-4 pr-4">Дата</div>
+                            <div class="col-4 pl-4 pr-4">Сумма</div>
+                            <div class="col-4 pl-4 pr-4">Информация</div>
+                        </div>
+                        <div class="row" *ngFor="let item of financialCardHistory">
+                            <div class="col-4 pl-4 pr-4">{{item.date}}</div>
+                            <div class="col-4 pl-4 pr-4" [ngClass]="{'red': item.summ < 0, 'green': item.summ > 0}">{{item.summ}}</div>
+                            <div class="col-4 pl-4 pr-4">{{getFinancialInfo(item)}}</div>
+                        </div>
+                        <div class="row" *ngIf="ohloadMore">
+                            <div class="col-12 d-flex justify-content-center">
+                                <span class="c-pointer" (click)="loadMoreFinancialCardHistory()">Загрузить еще</span>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+            </ngb-tabset>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #financialForm let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Новая финансовая операция</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="d-flex mb-2">
+            <span class="w-50">Баланс:</span>
+            <select [(ngModel)]="financialOperation.balance_type" class="form-control w50">
+                <option [value]="'BALANCE'">Основной баланс</option>
+                <option [value]="'BONUS'">Бонус баланс</option>
+            </select>
+        </div>
+        <div class="d-flex mb-2">
+            <span class="w-50">Сумма:</span>
+            <input type="number" [(ngModel)]="financialOperation.summ" class="form-control w50">
+        </div>
+        <div class="d-flex mb-2">
+            <span class="w-50">Коментарий:</span>
+            <input type="text" [(ngModel)]="financialOperation.info" class="form-control w50">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="form-error" *ngIf="financialOperationError">{{financialOperationError}}</div>
+        <button type="button" class="btn btn-secondary mr-2" (click)="saveFinancialOperation()">Сохранить</button>
+        <button type="button" class="btn btn-secondary" (click)="c()">Закрыть</button>
+    </div>
+</ng-template>

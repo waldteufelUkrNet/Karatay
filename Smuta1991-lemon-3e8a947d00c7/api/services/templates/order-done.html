@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <table width="100%" border="0" cellspacing="0" cellpadding="10">
+        <tbody>
+            <tr>
+                <td colspan="2">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>
+                                <img src="http://admin.movamba.com/public_img/logo.png" alt="Movamba" style="vertical-align: middle">
+                            </td>
+                            <td style="  font-size: 14px">
+                                <b>{{name}}, спасибо, что воспользовались Movamba! Подробности заказа № {{order_id}} в этом письме, или на сайте в
+                                <a href="https://b2b.movamba.com/">личном кабинете.</a></b>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+
+            </tr>
+            <tr>
+                <td style="border-right: 2px solid #00AE5C; width: 55%">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>
+                                <table border="0" cellspacing="0" cellpadding="10">
+                                    <tr>
+                                        <td width="32" style="text-align: center">
+                                            <img src="https://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=truck%7C000099" alt="" style="vertical-align: middle">
+                                        </td>
+                                        <td style="  font-size: 14px">
+                                            <b>{{order_startpoint}}<br> <span style="color: #888">{{track_starttime}}</span></b>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table border="0" cellspacing="0" cellpadding="10">
+                                    <tr>
+                                        <td width="32" style="text-align: center">
+                                            <img src="http://admin.movamba.com/public_img/down-arrow.png" alt="" style="vertical-align: middle">
+                                        </td>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table border="0" cellspacing="0" cellpadding="10">
+                                    <tr>
+                                        <td width="32" style="text-align: center">
+                                            <img src="https://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=truck%7C009900 " alt="" style="vertical-align: middle">
+                                        </td>
+                                        <td style="  font-size: 14px">
+                                            <b>{{order_endpoint}}<br> <span style="color: #888">{{track_endtime}}</span></b>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table border="0" cellspacing="0" cellpadding="10">
+                                    <tr>
+                                        <td width="32" style="text-align: center">
+                                            <img src="http://admin.movamba.com/public_img/down-arrow.png" alt="" style="vertical-align: middle">
+                                        </td>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table border="0" cellspacing="0" cellpadding="10">
+                                    <tr>
+                                        <td width="32" style="text-align: center">
+                                            <img src="http://admin.movamba.com/public_img/done_sm.png" alt="" style="vertical-align: middle">
+                                        </td>
+                                        <td style="  font-size: 16px;">
+                                            <b>{{order_summ}} руб.</b>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  >
+                                <h2 style="margin: 0; ">Детализация услуг:</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding: 2px 0">
+                                    <tr>
+                                        <td width="50%" style="padding: 5px 0;   font-size: 14px"><b>Стоимость в пределах города:</b></td>
+                                        <td width="50%" style="text-align: right; padding: 5px 0;   font-size: 14px"><span style="color: #888; font-size: 12px">({{inside_hours}}ч {{inside_minutes}}мин)</span> <b>{{inside_price}} руб.</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-bottom: 2px solid #00AE5C;">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="50%" style="padding: 5px 0;   font-size: 14px"><b>Стоимость за пределами города:</b></td>
+                                        <td width="50%" style="text-align: right; padding: 5px 0;   font-size: 14px"><span style="color: #888; font-size: 12px">({{outside_hours}}ч {{outside_minutes}}мин)</span> <b>{{outside_price}} руб.</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-bottom: 2px solid #00AE5C;">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td style="padding: 5px 0 20px 0;   font-size: 14px"><b>К оплате (безналично, со счета Личного кабинета):</b></td>
+                                        <td style="text-align: right; padding: 5px 0 25px 0;   font-size: 14px">
+                                            <b>{{summ}} руб.</b>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style= " border-spacing: 0; padding: 2px 0">
+                                <table width="100%" style="    border-spacing: 0;">
+                                    <tr>
+                                        <td style="  font-size: 14px; padding: 2px 0">
+                                            <h2 style="margin: 0; ">
+                                                Ваш тариф:
+                                            </h2>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="  font-size: 16px; padding: 2px 0">
+                                            <b>Подача авто - <span style="color: #00AE5C">{{tariff_givingCar}}</span></b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="  font-size: 16px; padding: 2px 0">
+                                            <b>Минимальный заказ - <span style="color: #00AE5C">{{tariff_minimal}} часа</span></b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="  font-size: 16px; padding: 2px 0">
+                                            <b>МКАД - <span style="color: #00AE5C">{{tariff_inside_price}} руб/час</span></b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="  font-size: 16px; padding: 2px 0">
+                                            <b>за МКАД - <span style="color: #00AE5C">{{tariff_outside_price}} руб/час</span></b>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="vertical-align: top;">
+                    <table style="border-spacing: 0 !important;">
+                        <tr>
+                            <td>
+							<a target="_blank" href="{{full_map_url}}">
+                                <img src="{{map}}" width="400" height="400">
+								</a>
+								<br/>
+								 Нажмите на карту, чтобы просмотреть полный маршрут
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="  font-size: 14px; padding: 2px 0">
+                                <h2 style="margin: 0; ">Ваш водитель:</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="  font-size: 14px; padding: 2px 0">
+                                <b>Имя: {{driver_name}}</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="  font-size: 14px; padding: 2px 0">
+                                <b>Авто: {{driver_car_type}}</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 2px 0;">
+                                <table style="border-spacing: 0">
+                                    <tr>
+                                        <td style="  font-size: 14px; padding: 2px 0 ">
+                                            <b>Номер:</b>
+                                        </td>
+                                        <td>
+                                            <table style="border: 1px solid black; padding: 0; border-radius: 5px;     width: 70px;">
+                                                <tr>
+                                                    <td rowspan="2" style="  font-size: 14px;text-align: center; padding: 0;">
+                                                        <b>{{driver_reg_number}}</b>
+                                                    </td>
+                                                    <td style="  font-size: 10px; text-align: center; padding: 0;">
+                                                        <b>{{driver_region_number}}</b>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center; padding: 0;">
+                                                        <img src="http://admin.movamba.com/public_img/rus_flag.png" style="    width: 12px;"alt="">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="  font-size: 14px">
+                    <b>Нужна помощь? Просто отправьте нам e-mail <a href="mailto:info@movamba.com">info@movamba.com</a><br>
+                    Номер Вашего заказа - {{order_id}}</b>
+                </td>
+            </tr>
+       
+        </tbody>
+    </table>
+</body>
+
+</html>

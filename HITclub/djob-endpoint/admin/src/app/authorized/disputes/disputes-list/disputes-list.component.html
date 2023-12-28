@@ -1,0 +1,105 @@
+<div class="w-100 mb-3 page-block">
+    <div class="row pt-3 pb-3">
+        <div class="col-12">
+            <div class="col-12 col-sm-6 d-inline-flex align-items-center justify-content-center">
+                <input type="text" class="form-control" [(ngModel)]="search_phone" (keyup)="searchPhoneRefresh()" placeholder="Поиск по номеру телефона...">
+            </div>
+            <div class="col-12 col-sm-6 d-inline-flex align-items-center justify-content-center">
+                <div class="row w-100">
+                    <div class="col-6 d-flex align-items-center">
+                        От: <app-date-time-picker [val]="filters.date_from" (change)="changeDateFrom($event)"></app-date-time-picker>
+                    </div>
+                    <div class="col-6 d-flex align-items-center">
+                        До: <app-date-time-picker [val]="filters.date_to" (change)="changeDateTo($event)"></app-date-time-picker>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pb-3">
+        <div class="col-12">
+            <div class="col-12 col-sm-6 d-inline-flex justify-content-around">
+                <label>
+                    <div class="switch-btn" [class.switch-on]="filters.types.indexOf(1) !== -1" (click)="changeType(1)"></div>
+                    Срочные
+                </label>
+                <label>
+                    <div class="switch-btn" [class.switch-on]="filters.types.indexOf(0) !== -1" (click)="changeType(0)"></div>
+                    Отложенные
+                </label>
+            </div>
+            <div class="col-12 col-sm-6 d-inline-flex align-items-center justify-content-center">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="card-header d-flex justify-content-between">
+        <div>
+            Споры
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table table-hover table-striped text-center">
+            <thead>
+            <tr>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">ID</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Тип</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Номер клиента</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Номер исполнителя</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Специальность</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Способ оплаты</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Сумма</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Адрес</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Дата создания</div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of list">
+                <td>
+                    <a [routerLink]="'disputes/info/' + item.id | link"  placement="right" ngbTooltip="Подробнее">
+                        <i class="fa fa-info-circle" style="font-size: 24px"></i>
+                    </a>
+                </td>
+                <td>
+                    <span *ngIf="item.for_now">Срочный</span>
+                    <span *ngIf="!item.for_now">Отложенный</span>
+                </td>
+                <td>{{item.customer ? item.customer.phone : ''}}</td>
+                <td>{{item.executor ? item.executor.phone : ''}}</td>
+                <td>{{item.specialty.name}}</td>
+                <td>
+                    <span *ngIf="item.payment_type == 'CASH'">Наличка</span>
+                    <span *ngIf="item.payment_type == 'BONUS'">Бонусный щет</span>
+                    <span *ngIf="item.payment_type == 'CARD'">Карточка</span>
+                </td>
+                <td>{{item.summ}}</td>
+                <td>{{item.address.name}}</td>
+                <td>{{item.createdAt}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <app-my-pagination *ngIf="countDisputes" [countItems]="countDisputes" [showInPages]="countShowInPage" (changePage)="pageChanged($event)"></app-my-pagination>
+</div>

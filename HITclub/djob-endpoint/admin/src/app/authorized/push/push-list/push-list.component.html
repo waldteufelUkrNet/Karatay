@@ -1,0 +1,84 @@
+<div class="w-100 mb-3 page-block">
+    <div class="col-12 col-sm-4 d-inline-flex align-items-center justify-content-center pt-3 pb-3">
+        <input type="text" class="form-control" [(ngModel)]="search" (keyup)="searchRefresh()" placeholder="Поиск...">
+    </div>
+    <div class="col-12 col-sm-4 d-inline-flex align-items-center justify-content-center pt-3 pb-3"></div>
+    <div class="col-12 col-sm-4 d-inline-flex align-items-center justify-content-end pt-3 pb-3"></div>
+</div>
+
+
+<div class="card mb-3">
+    <div class="card-header d-flex justify-content-between">
+        <div>
+            Список уведомлений
+        </div>
+
+        <div class="action-buttons d-flex">
+            <button class="btn btn-default" (click)="openPushModal(content)">Отправить уведомления</button>
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table table-hover table-striped text-center">
+            <thead>
+            <tr>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Тип</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Детали пользователя</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Текст</div>
+                </th>
+                <th>
+                    <div class="d-flex w-100 align-items-center justify-content-center">Дата</div>
+                </th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of list">
+                <td>{{item.sub_type}}</td>
+                <td>
+                    <a *ngIf="item.user_type === 'EXECUTOR'" [routerLink]="'executors/info/' + item.user_id | link">Исполнитель</a>
+                    <a *ngIf="item.user_type === 'CUSTOMER'" [routerLink]="'customers/info/' + item.user_id | link">Клиент</a>
+                </td>
+                <td>{{item.text}}</td>
+                <td>{{item.date | date}}</td>
+                <td>
+                    <button *ngIf="item.user_type !== 'EXECUTOR' && item.user_type !== 'CUSTOMER'" class="btn btn-default" (click)="openPushModal(content, item)">Повторить</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <app-my-pagination *ngIf="countPush" [countItems]="countPush" [showInPages]="countShowInPage" (changePage)="pageChanged($event)"></app-my-pagination>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span>Отправить уведомления</span>
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="d()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="d-flex flex-column">
+            <div>Тип:
+                <select class="form-control" [(ngModel)]="newPush.type">
+                    <option [value]="'ALL'" [selected]="newPush.type === 'ALL'">Всем</option>
+                    <option [value]="'CUSTOMER'" [selected]="newPush.type === 'CUSTOMER'">Клиентам</option>
+                    <option [value]="'EXECUTOR'" [selected]="newPush.type === 'EXECUTOR'">Исполнителям</option>
+                </select>
+            </div>
+            <div>Текст: <input class="form-control" [(ngModel)]="newPush.text"></div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary mr-2" (click)="sendPush()">Отправить</button>
+        <button type="button" class="btn btn-secondary" (click)="c()">Закрыть</button>
+    </div>
+</ng-template>

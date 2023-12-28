@@ -1,0 +1,452 @@
+
+<map  id="map" center="55.05870903771494, 35.81481338262557" zoom="8"   scrollwheel="false" disable-default-u-i="true"  scroll-wheel="false" scale-control="false">
+<!-- <map  id="map" center="55.05870903771494, 35.81481338262557" zoom="8"     > -->
+<custom-control id="go-home" position="TOP_RIGHT" index="1" on-click="goHome()">
+  </custom-control>
+  </custom-control>
+<marker ng-show="loaded" ng-repeat="car in carsonmap" icon="{{car.image}}"  position="{{car.lat}}, {{car.lon}}"  shape="{
+    coords: [1, 1, 1, 20, 18, 20, 18, 1],
+    type: 'poly'
+  }" ></marker>
+<marker ng-show="loaded" ng-repeat="car in to_pins" icon="{{car.image}}"  position="{{car.lat}}, {{car.lon}}" ></marker>
+<marker ng-show="loaded" ng-repeat="car in driver_pins" icon="{{car.image}}"  position="{{car.lat}}, {{car.lon}}" ></marker>
+
+</map>
+
+ <div class="zoom_plus" ng-click="plus()"><img src="./style/img/zoom+.png" class="img-responsive" alt="Cinque Terre"></div>
+
+<div class="zoom_minus" ng-click="minus()"><img src="./style/img/zoom-.png" class="img-responsive" alt="Cinque Terre"></div>
+
+<div class="orderModal" ng-show="!order.id">
+
+
+	<div class="modal fade in" ng-class="{'modal_resp':step==2}" id="exampleModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+
+					<h3 ng-show="step==1" class="order_heading"><i class="fa fa-taxi"></i> онлайн заказ</h3>
+					<h3 ng-show="step==2" class="order_heading"><i class="fa fa-taxi"></i> выбор авто</h3>
+					<h3 ng-show="step==3" class="order_heading"><i class="fa fa-taxi"></i> контактные данные</h3>
+				</div>
+				<div ng-show="step==1" class="modal-body">
+					<form name="stepforms.first" class="form-horizontal" novalidate>
+						<div class="form-group" hidden>
+							<label  for="clients_city" class="col-sm-3 control-label orderLabel">Город:<span style="color:red;">&nbsp; *</span></label>
+							<div class="col-sm-9">
+								<ui-select class="order_selector city" id="clients_city" ng-model="order.city" theme="selectize" ng-disabled="disabled" >
+								<ui-select-match placeholder="Выберите город">{{$select.selected.name}}</ui-select-match>
+								<ui-select-choices repeat="city.id as city in data.cities">
+								<span ng-bind-html="city.name"></span>
+								</ui-select-choices>
+								</ui-select>
+							</div>
+						</div>
+						<div class="form-group order_from">
+
+							<label for="order_from"  class="col-sm-3 control-label orderLabel">Откуда:<span style="color:red;">&nbsp; *</span></label>
+							<div class="col-sm-9">
+								<div class="textfield">
+
+									<input geocomplete  required placeholder="Начните вводить адрес и выберите подсказку" type="text" ng-model="order.from" name="from"  ng-class="{'steperr': stepforms.err}" ng-blur="auto()"/>
+									<span class="error-note" ng-show="stepforms.err && !stepforms.first.from.$valid">Поле обязательно к заполнению</span>
+								</div>
+							    
+							</div>
+						</div>
+						<!-- <span ng-click="replace()" class="points_replace"><i class="fa fa-refresh"></i></span> -->
+						<div class="form-group order_to">
+							<label for="order_to" class="col-sm-3 control-label orderLabel">Куда:<span style="color:red;">&nbsp; *</span></label>
+							<div class="col-sm-9" style="padding-right:15px;">
+								<div id="clear_to" class="textfield">
+
+									<input type="text"  name="to" placeholder="Начните вводить адрес"  geocomplete ng-model="order.to" required ng-blur="watchTo()" ng-class="{'steperr': stepforms.err}"/>
+									<span class="error-note" ng-show="stepforms.err && !stepforms.first.to.$valid">Поле обязательно к заполнению</span>
+								</div>
+							</div>
+							
+						</div>
+						<div class="form-group when">
+							<label for="time_when" class="col-xs-2 control-label orderLabel">Когда:<span style="color:red;">&nbsp; *</span></label>
+							<div class="btn-group col-xs-10" data-toggle="buttons">
+								<label ng-click="changeOrderProperty(true, 'for_now')" class="btn mvb-btn now" ng-class="{'active':order.for_now}">
+									<input  name="time_when" type="radio" autocomplete="off">Сейчас
+								</label>
+								<label class="btn mvb-btn time hidden-xs" ng-class="{'active':!order.for_now}" ng-click="changeOrderProperty(false, 'for_now')" >
+									<input name="time_when" type="radio" autocomplete="off"> Предварительный заказ
+								</label>
+								<label class="btn mvb-btn time visible-xs" ng-class="{'active':!order.for_now}" ng-click="changeOrderProperty(false, 'for_now')" >
+									<input name="time_when" type="radio" autocomplete="off"> Предзаказ
+								</label>
+								
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="time_when_contols" ng-if="!order.for_now">
+								<div class="col-sm-offset-2	col-sm-4">
+									<div class='input-group date' ng-model="order.arrive_date" datepicker>
+										<input type='text' class="form-control" />
+										<span class="input-group-addon">
+<span class="fa fa-calendar"></span>											<span style="color:red;">&nbsp; *</span>
+										</span>
+									</div>
+								</div>
+								<div class="col-sm-6" >
+									<div class='input-group date' class="custom-time" ng-class="{'custom-time-error':!stepforms.first.datetime.$valid,'custom-time':stepforms.first.datetime.$valid}"  style=""  >
+										<input type="text" custom-time ng-model="order.arrive_time" ng-required="true"   class="form-control" id="time" data-format="HH:mm" data-template="HH : mm" name="datetime">
+										&nbsp;<span class="fa fa-clock-o" style="color: #4ca02c"></span> <span style="color:red;">&nbsp; *</span>
+
+										<!--<input type='text' class="form-control" />-->
+										<!--<span class="input-group-addon">-->
+											<!--<span class="fa fa-clock-o"></span> <span style="color:red;">&nbsp; *</span>-->
+										<!--</span>-->
+									</div>
+
+
+
+								</div>
+								<div class="col-sm-6" >
+								<p style="float: right" ng-show="!stepforms.first.datetime.$valid"class="error-note" >Поле обязательно к заполнению       </p>
+							</div>
+								</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-12">
+								<button ng-click="showOptions(!show_options)" class="btn mvb-btn order_options">Дополнительно</button>
+							</div>
+						</div>
+						 <span ng-if="show_options"> 
+						<!-- <span ng-if="true"> -->
+							
+							<div class="form-group">
+								<label  for="orders_service" class="col-sm-3 control-label orderLabel">Услуга:</label>
+								<div class="col-sm-9">
+									<ui-select class="order_selector service" id="orders_service" ng-model="order.moving_apartments" theme="selectize" ng-disabled="disabled" >
+									<ui-select-match placeholder="Выберите услугу">{{$select.selected.name}}</ui-select-match>
+									<ui-select-choices repeat="service in data.services">
+									<span ng-bind-html="service.name"></span>
+									</ui-select-choices>
+									</ui-select>
+								</div>
+							</div>
+							<div class="form-group">
+								
+								<label  for="orders_service" class="col-sm-3 control-label orderLabel">Дополнительно:</label>
+								<div class="col-sm-4">
+									<div class="mvb-checker">
+										<input type="checkbox" ng-checked="order.need_loader"
+										id="need_loader" ng-click="changeOrderProperty(!order.need_loader,'need_loader')"/>
+										<label for="need_loader">
+											<span>
+												<i class="fa fa-circle-thin"></i>
+												<i class="fa fa-check-circle"></i>
+											</span>
+											<span>Нужен грузчик</span>
+										</label>
+									</div>
+								</div>
+								<div class="col-sm-5">
+									
+									<div class="mvb-checker">
+										<input type="checkbox" ng-checked="order.need_boxes" ng-click="changeOrderProperty(!order.need_boxes,'need_boxes')"
+										id="need_boxes"/>
+										<label for="need_boxes">
+											<span>
+												<i class="fa fa-circle-thin"></i>
+												<i class="fa fa-check-circle"></i>
+											</span>
+											<span>Нужны коробки</span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label  for="orders_comment" class="col-sm-3 control-label orderLabel">Комментарий:</label>
+								<div class="col-sm-9">
+									<span class="textarea">
+										<textarea rows="1" msd-elastic ng-model="order.description" placeholder="Начните ввод"></textarea>
+									</span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label  for="orders_photo" class="col-sm-3 control-label orderLabel">Фото груза:</label>
+								<div class="col-sm-9">
+									<div ngf-select ngf-pattern="image/*" ngf-max-size="2MB" ng-model="order.files" ngf-multiple="true" ngf-reset-on-click="false" ngf-reset-model-on-click="false" ngf-keep="true"  ngf-change="validateFiles($files)"  class="orders_photo">
+										<p class="instructions">Прикрепить файлы</p>
+										<p class="description">Вы можете прикрепить до 5 фото вашего груза</p>
+									</div>
+									<div class="attached_photos">
+										<div ngf-background="file" ng-repeat="file in order.files" class="frt_preview">
+										<div class="rmbox" ng-click="rmFile($index)">
+									    <span class="remove"><i class="fa fa-remove"></i></span>
+									  </div>
+									  </div>
+									</div>
+								</div>
+							</div>
+						</span>
+					</form>
+				</div>
+				<div ng-if="step==2" class="modal-body" ng-init="myStyle={}">
+					<form  name="stepforms.second" class="form-horizontal" novalidate>
+						<div class="form-group">
+							<div class="col-sm-12">
+								<div class="car_settings_label">
+									<label>Выберите тоннаж нужного авто</label>
+								</div>
+							</div>
+							<div class="btn-group col-xs-offset-1 col-xs-10 groups " data-toggle="buttons">
+								<label show-notifications temp={{group}} ng-class="{'active': group.id==order.car_group.id, 'spec': transport.length==2}" ng-click="changeOrderProperty(group, 'car_group')" ng-repeat="group in transport" class="btn car_group"  >
+									<input name="car_group" type="radio" autocomplete="off">
+									{{group.name}}
+								</label>
+							</div>
+							<div class="col-sm-1"></div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-12">
+								<div class="car_settings_label">
+									<label >Выберите глубину кузова нужного авто</label>
+								</div>
+							</div>
+							<div class="btn-group col-xs-offset-1 col-xs-10 lens " data-toggle="buttons">
+								<label setlength temp={{len}} ng-class="{'active': len.id==order.car_length.id, 'col-sm-4':   order.car_group.lens.length==2, 'col-sm-3': order.car_group.lens.length==3,'col-sm-6': order.car_group.lens.length==1}" style="width:33%" ng-click="changeOrderProperty(len, 'car_length')" ng-repeat="len in order.car_group.lens" class="btn car_length">
+									<input name="car_group" type="radio" autocomplete="off">
+									{{len.name}}
+								</label>
+								
+							</div>
+							<div class="col-sm-1"></div>
+						</div>
+						<div class="form-group" id="select_car">
+							<div class="col-sm-12">
+								<div class="car_settings_label">
+									<label>Выберите подходящий автомобиль</label>
+								</div>
+							</div>
+							<div class="col-sm-12" ng-if="show_slider">
+								
+								<slick tempdirective id="temp" settings="slickConfig" data="slides"  >
+
+									<div ng-repeat="slide in slides" data-id="{{slide.id}}"class="truck_slide">
+
+										
+									<div class="image" style="background-image: url('{{slide.path}}')">
+										
+										<div ng-class="{'slick-selected': slide.show && order.cartype.id==slide.id}">
+											<div class="slide-title">
+												<h3>{{slide.name}}</h3>
+											</div>
+										</div>
+									</div>
+									<div class="details">
+										<p class="price_detais" >
+											<span class="tariff">мкад<span class="price">{{slide.tariff.inside}}<span class="tax">р/час</span></span></span>
+											<span class="tariff">За мкад<span class="price">{{slide.tariff.outside}}<span class="tax">р/час</span></span></span>
+										</p>
+										<p class="minimal">Минимальный заказ <span class="tax">{{slide.tariff.minimal}} час</span></p>
+										<button ng-click="order.cartype.id!=slide.id; slide.show=!slide.show ||order.cartype.id!=slide.id;
+										 slide.show ? changeOrderProperty(order.cartype && (order.cartype.id==slide.id)? undefined : slide,'cartype') : changeOrderProperty(0,'cartype'); " ng-class="{'active': slide.show && order.cartype.id==slide.id}" class="elect btn mvb-btn " disableall></button>
+										<!-- <button ng-click="   slide.show=!slide.show; slide.show ? changeOrderProperty(order.cartype ? undefined : slide,'cartype') : changeOrderProperty(0,'cartype'); "  class="elect btn mvb-btn" disableall></button> -->
+										<span class="error-note" ng-show="stepforms.err && !stepforms.second.cartype.$valid">Чтобы продолжить оформление заказа, выберите один из предложенных типов автомобилей</span>
+									</div>
+									</div>
+								
+								</slick>
+
+							</div>
+							<div class="col-sm-12" >
+								<input name="cartype" name="cartype" type="hidden" ng-model="order.cartype.id" required>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div ng-if="step==3" class="modal-body">
+					<form name="stepforms.third" class="form-horizontal contact_form" novalidate autocomplete="off">
+						<div class="form-group">
+							<label for="client_type" class="col-sm-3 control-label orderLabel">Кто:</label>
+							<div class="btn-group col-sm-9" data-toggle="buttons">
+								<label ng-click="changeUserProperty(false, 'is_company')" class="btn mvb-btn" ng-class="{'active': !user.is_company}">
+									<input  name="client_type" id="client_type"   type="radio" autocomplete="off">Физ. лицо
+								</label>
+								<label  class="btn mvb-btn disabled" disabled ng-class="{'disabled': user.is_company}">
+									 Юр. лицо
+								</label>
+								<span class="description" style="width:45%; float:right; margin-top:3px;">(доступно при заказе через <a href="#">мобильное приложение )</a></span>					</div>
+						</div>
+						<div class="form-group">
+							<label  for="contact_phone" class="col-sm-3 control-label orderLabel">Номер телефона:<span style="color:red;">&nbsp; *</span></label>
+							<div class="col-sm-9">
+								<div class="textfield">
+									<input type="text" ng-model="user.phone" value="+7()" name="phone"  id="contact_phone"  placeholder="+7(XXX) xxx-xx-xx" ui-mask="+7(999) 999-99-99" ui-mask-placeholder required ng-class="{'steperr': stepforms.err}" autocomplete="off" autocorrect="off" autocapitalize="off" >
+									<span class="error-note" ng-show="stepforms.err && !stepforms.third.phone.$valid">Поле обязательно к заполнению</span>
+								</div>
+								<p class="prompt
+">на этот номер вы получите SMS с кодом для подтверждения</p>
+							</div>
+						</div>
+						<div class="form-group">
+							<label  for="addition_phone" class="col-sm-3 control-label orderLabel">Дополнительный номер:</label>
+							<div class="col-sm-9">
+								<div class="textfield">
+									<input type="text" ng-model="order.additional_phone" id="addition_phone" placeholder="+7(XXX) xxx-xx-xx" ui-mask="+7(999) 999-99-99" ui-mask-placeholder>
+								</div>
+							</div>
+						</div>
+						<div ng-if="user.is_company" class="form-group">
+							<label  for="company_name" class="col-sm-3 control-label orderLabel">Компания:</label>
+							<div class="col-sm-9">
+								<div class="textfield">
+									<input type="text" ng-model="user.company_name" id="company_name" placeholder="Название компании" required ng-class="{'steperr': stepforms.err}">
+								</div>
+							</div>
+						</div>
+						<div ng-if="user.is_company" class="form-group">
+							<label  for="company_fax" class="col-sm-3 control-label orderLabel">Номер факса:</label>
+							<div class="col-sm-9">
+								<div class="textfield">
+									<input type="text" ng-model="user.fax" mask="+7(999)999-99-99" id="company_fax" placeholder="+7/XXX/ xxx-xx-xx" ui-mask="+7(999) 999-99-99" ui-mask-placeholder>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label  for="orders_comment" class="col-sm-3 control-label orderLabel">Способ оплаты:<span style="color:red;">&nbsp; *</span></label>
+							<div class="col-sm-9">
+								<div class="mvb-radio">
+									<label class="radio-inline">
+									  <input id="by_cach" name="paytype" type="radio" ng-checked="order.paytype==1" ng-click="changeOrderProperty(1, 'paytype')">
+										  <label for="by_cach">
+											<span class="grey">
+												<i class="fa fa-circle-thin"></i>
+												<i class="fa fa fa-dot-circle-o"></i>
+											</span>
+											<span>Наличными</span>
+										</label>
+									</label>	
+								</div>
+								<div class="mvb-radio">
+									<label class="radio-inline disabled">
+										<input id="by_card" name="paytype" type="radio" ng-checked="order.paytype==2" disabled>
+										  <label for="by_card">
+											<span class="grey">
+												<i class="fa fa-circle-thin"></i>
+												<i class="fa fa fa-dot-circle-o"></i>
+											</span>
+											<span>Платежной картой</span><br>
+											<span class="description">(доступно при заказе через <a href="#">мобильное приложение )</a></span>
+										</label>
+									</label>
+								</div>
+								<div class="mvb-radio disabled">
+									<label class="radio-inline">
+									  <input id="through_acc" name="paytype" type="radio" ng-checked="order.paytype==3" disabled>
+									  <label for="through_acc">
+										<span class="grey">
+												<i class="fa fa-circle-thin"></i>
+												<i class="fa fa fa-dot-circle-o"></i>
+											</span>
+											<span>Оплата по счету</span><br>
+											<span class="description">(доступно при заказе через <a href="#">мобильное приложение )</a></span>
+										</label>
+									</label>
+								</div>
+								
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<form class="form-horizontal">
+						<div ng-show="step==1" class="form-group">
+							<div  class="col-sm-12">
+								<button ng-click="nextStep()" class="general next_step btn mvb-btn">Продолжить</button>
+							</div>
+						</div>
+						<div ng-show="step>1 && step<=3" class="form-group">
+							<div  class="col-xs-4">
+								<button ng-click="backStep()" class="back_step btn mvb-btn">Назад</button>
+							</div>
+							<div  class="col-xs-8">
+								<button ng-click="nextStep()" class="next_step btn mvb-btn">{{step<3?'Продолжить':'Найти авто'}}</button>
+							</div>
+						</div>
+							
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="orderbar" ng-show="order.id">
+	<div class="panel">
+		<div class="controls">
+			<div>
+				<div class="orderinform">
+					<a href="#/" tooltip-trigger="click"  popover-append-to-body="true" tooltip-placement="top" tooltip-class="custom_tooltip" uib-tooltip-html="orderTooltipHtml">Моя заявка</a>
+				</div>
+			</div>
+			<div>
+				<div class="reject">
+					<a href="#/" ng-hide="order.status>60" ng-click="rejectOrder()">Отменить заявку</a>
+					<a href="#/"  ng-show="order.status==110 || order.status==130" ng-click="rejectOrder()">Cоздать заявку</a>
+					<br>	
+
+					
+				</div>
+			</div>
+			
+		</div>
+		<div class="status" ng-class="{'active': order.status>40 && order.status<110}" >
+			
+			<div class="statusname">
+				<span ng-show="order.status==20">Поиск ближайших авто:</span>
+				<span ng-show="order.status==30">Раширенный поиск авто:</span>
+				<span ng-show="order.status==40 || order.status==140">Диспетчер ищет Вам авто:</span>
+				<span ng-show="order.status==50">Машина найдена</span>
+				<span ng-show="order.status==60">Машина едет к Вам</span>
+				<span ng-show="order.status==70">Выполнение заявки</span>
+				<span ng-show="order.status==90">Поездка окончена</span>
+				
+				<span ng-show="order.status==110">Машина не найдена</span>
+				<span ng-show="order.status==120">Заказ отменен</span>
+				<span ng-show="order.status==130" >Водитель отменил выполнение</span>
+			</div>
+			<div ng-show="order.status>40 && order.status<110" class="driver">
+				<div class="drivername" ng-bind-html="order.driver.callsign"></div>
+				<div class="driverphone" ng-bind-html="order.driver.phone_num"></div>
+			</div>
+			<div ng-show="order.status>40 && order.status<110" class="regnumber">
+				<div class="number" ng-bind-html="order.driver.reg_number"></div>
+				<div class="region">
+					<div class="number" ng-bind-html="order.driver.region_number">78</div>
+					<div class="country">
+						<div class="ru"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<timer ng-if="order.status<50" end-time="settings.endtime" class="timer">
+
+			<div class="watch">
+
+				<div class="counter">
+					<div class="number">{{minutes}}</div>
+					<div class="text">мин</div>
+					<div class="text2">м.</div>
+				</div>
+				<div class="divider">
+					:
+				</div>
+				<div class="counter">
+					<div class="number">{{seconds}}</div>
+					<div class="text">сек</div>
+					<div class="text2">c.</div>
+				</div>
+			</div>
+			
+		</timer>
+	</div>
+</div>
+
+

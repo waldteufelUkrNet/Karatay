@@ -1,0 +1,212 @@
+<div class="w-100 mb-3 page-block p-3" *ngIf="executor">
+    <div class="row">
+        <div class="col-6">
+            <div class="w100 d-flex">
+                <label class="w-100 d-flex justify-content-center bolder">Основное</label>
+            </div>
+            <div class="w100 d-flex">
+                <label class="w40">Телефон</label>
+                <input type="text" class="form-control w60" [(ngModel)]="executor.phone">
+            </div>
+            <div class="w100 d-flex mt-1">
+                <label class="w40">Фамилия</label>
+                <input type="text" class="form-control w60" [(ngModel)]="executor.surname">
+            </div>
+            <div class="w100 d-flex mt-1">
+                <label class="w40">Имя</label>
+                <input type="text" class="form-control w60" [(ngModel)]="executor.name">
+            </div>
+            <div class="w100 d-flex mt-1">
+                <label class="w40">Отчество</label>
+                <input type="text" class="form-control w60" [(ngModel)]="executor.second_name">
+            </div>
+            <div class="w100 d-flex mt-1">
+                <label class="w40">Фото</label>
+                <div class="w60">
+                    <img class="form-img" [src]="executor.photo" *ngIf="executor.photo" />
+                    <input class="hidden" type="file" name="image" id="avatarInput" [multiple]="false" (change)="uploadFile($event)" #avatarInput>
+                    <label for="avatarInput" class="c-pointer"><i class="fa fa-upload"></i> Загрузить</label>
+                </div>
+            </div>
+            <div class="w100 d-flex mt-1">
+                <label class="w40">О себе</label>
+                <input type="text" class="form-control w60" [(ngModel)]="executor.about">
+            </div>
+            <div class="w100 d-flex mt-1">
+                <label class="w40">Пол</label>
+                <select class="form-control w60" [(ngModel)]="executor.sex">
+                    <option [value]="0">Мужчина</option>
+                    <option [value]="1">Женщина</option>
+                </select>
+            </div>
+            <div class="w100 d-flex mt-1">
+                <label class="w40">Город</label>
+                <input type="text" class="form-control w60" [(ngModel)]="executor.city">
+            </div>
+            <div class="w100 d-flex mt-1">
+                <label class="w40">ИНН</label>
+                <input type="text" class="form-control w60" [(ngModel)]="executor.inn">
+            </div>
+            <div class="w100 d-flex mt-3">
+                <label class="w-100 d-flex justify-content-center bolder">Паспортные данные</label>
+            </div>
+            <div class="w100 d-flex mt-1">
+                <label class="w40">Серия</label>
+                <input type="text" class="form-control w60" [(ngModel)]="executor.passport.series">
+            </div>
+            <div class="w100 d-flex mt-1">
+                <label class="w40">Номер</label>
+                <input type="text" class="form-control w60" [(ngModel)]="executor.passport.number">
+            </div>
+            <div class="w100 d-flex mt-1">
+                <label class="w40">Код</label>
+                <input type="text" class="form-control w60" [(ngModel)]="executor.passport.code">
+            </div>
+            <div class="w100 d-flex mt-1">
+                <label class="w40">Кем выдан</label>
+                <input type="text" class="form-control w60" [(ngModel)]="executor.passport.issued_by">
+            </div>
+            <div class="w100 d-flex mt-1">
+                <label class="w40">Фото</label>
+                <div class="w60">
+                    <img class="form-img" [src]="executor.passport.main_photo" *ngIf="executor.passport.main_photo" />
+                    <input class="hidden" type="file" name="image" id="passportInputMainPhoto" [multiple]="false" (change)="uploadPassportMainPhoto($event)" #passportInputMainPhoto>
+                    <label for="passportInputMainPhoto" class="c-pointer"><i class="fa fa-upload"></i> Загрузить</label>
+                </div>
+            </div>
+            <div class="w100 d-flex mt-1">
+                <label class="w40">Фото регистрации</label>
+                <div class="w60">
+                    <img class="form-img" [src]="executor.passport.registration_photo" *ngIf="executor.passport.registration_photo" />
+                    <input class="hidden" type="file" name="image" id="passportInputRegistrationPhoto" [multiple]="false" (change)="uploadPassportRegistrationPhoto($event)" #passportInputRegistrationPhoto>
+                    <label for="passportInputRegistrationPhoto" class="c-pointer"><i class="fa fa-upload"></i> Загрузить</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="w100 d-flex">
+                <label class="w-100 d-flex justify-content-center bolder">Офис</label>
+            </div>
+            <div class="w100 d-flex mt-3" *ngIf="!executor.office">
+                <label class="w-100 d-flex justify-content-center align-items-center c-pointer" (click)="addOffice()"><i class="fa fa-plus mr-2"></i>Добавить</label>
+            </div>
+            <div class="w100 d-flex mt-1" *ngIf="executor.office">
+                <label class="w40">Latitude</label>
+                <input type="text" class="form-control w60" [(ngModel)]="executor.office.lat">
+            </div>
+            <div class="w100 d-flex mt-1" *ngIf="executor.office">
+                <label class="w40">Longitude</label>
+                <input type="text" class="form-control w60" [(ngModel)]="executor.office.lon">
+            </div>
+            <div class="w100 d-flex mt-1" *ngIf="executor.office">
+                <label class="w40">Имя</label>
+                <input type="text" class="form-control w60" [(ngModel)]="executor.office.name">
+            </div>
+            <div class="w100 d-flex mt-1" *ngIf="executor.office">
+                <label class="w40">Вывеска</label>
+                <input type="text" class="form-control w60" [(ngModel)]="executor.office.front">
+            </div>
+            <div class="w100 d-flex mt-1" *ngIf="executor.office">
+                <label class="w40">Код</label>
+                <input type="text" class="form-control w60" [(ngModel)]="executor.office.code">
+            </div>
+            <div class="w100 d-flex mt-1" *ngIf="executor.office">
+                <label class="w40">Етаж</label>
+                <input type="text" class="form-control w60" [(ngModel)]="executor.office.floor">
+            </div>
+            <div class="w100 d-flex mt-2" *ngIf="executor.office">
+                <label class="w-100 d-flex justify-content-center align-items-center c-pointer" (click)="removeOffice()"><i class="fa fa-remove mr-2"></i>Удалить</label>
+            </div>
+
+            <div class="w100 d-flex mt-3 mb-2">
+                <label class="w-100 d-flex justify-content-center bolder">Специальности</label>
+            </div>
+            <div class="w100 mt-1" *ngIf="executor.specialities.length">
+                <div class="row bb1" *ngFor="let item of executor.specialities">
+                    <div class="col-12">
+                        <div class="w100 d-flex mt-1">
+                            <label class="w40">Специальность</label>
+                            <div class="w60" *ngIf="!item.specialty">
+                                <app-autocomplete [service]="specialitiesService" [placeholder]="'Выберите специальность'" (change)="changeSpeciality($event, item)"></app-autocomplete>
+                            </div>
+                            <div class="w60" *ngIf="item.specialty">
+                                {{item.specialty.name}}
+                            </div>
+                        </div>
+                        <div class="w100 d-flex mt-1">
+                            <label class="w40">Принимать в офис</label>
+                            <div class="w60">
+                                <div class="switch-btn" [class.switch-on]="item.workplace == 1" (click)="changeWorkplace(item)"></div>
+                            </div>
+                        </div>
+                        <div class="w100 d-flex mt-1">
+                            <label class="w40">Принимать на выезд</label>
+                            <div class="w60">
+                                <div class="switch-btn" [class.switch-on]="item.on_departure == 1" (click)="changeDeparture(item)"></div>
+                            </div>
+                        </div>
+                        <div class="w100 d-flex mt-1">
+                            <label class="w40">Почасовая оплата</label>
+                            <div class="w60">
+                                <div class="switch-btn" [class.switch-on]="item.hourly_rate_enabled == 1" (click)="changeHourlyRate(item)"></div>
+                            </div>
+                        </div>
+                        <div class="w100 d-flex mt-1">
+                            <label class="w40">Почасовая ставка</label>
+                            <input type="text" class="form-control w60" [(ngModel)]="item.hourly_rate_price" [disabled]="item.hourly_rate_enabled != 1">
+                        </div>
+                        <div class="w100 d-flex mt-1">
+                            <label class="w40">Фиксированная оплата</label>
+                            <div class="w60">
+                                <div class="switch-btn" [class.switch-on]="item.fixed_rate_enabled == 1" (click)="changeFixedRate(item)"></div>
+                            </div>
+                        </div>
+                        <div class="w100 d-flex mt-1">
+                            <label class="w40">Фиксированная ставка</label>
+                            <input type="text" class="form-control w60" [(ngModel)]="item.fixed_rate_price" [disabled]="item.fixed_rate_enabled != 1">
+                        </div>
+                        <div class="w100 d-flex mt-1">
+                            <label class="w-100 d-flex justify-content-center">Сертификаты</label>
+                        </div>
+                        <div class="w100 d-flex mt-1">
+                            <label class="w40">
+                                <input class="hidden" type="file" name="image" id="certUpload" [multiple]="false" (change)="uploadCertificate($event, item)" #certUpload>
+                                <label for="certUpload" class="c-pointer"><i class="fa fa-upload"></i> Загрузить</label>
+                            </label>
+                            <div class="w60">
+                                <div class="certificate" *ngFor="let cert of item.certificates">
+                                    <img [src]="cert" />
+                                    <i class="fa fa-remove c-pointer" (click)="deleteCertificate(item, cert)"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w100 d-flex mt-1">
+                            <label class="w40">Статус</label>
+                            <div class="w60">
+                                <div class="switch-btn" [class.switch-on]="item.enabled == 1" (click)="changeStatus(item)"></div>
+                            </div>
+                        </div>
+                        <div class="w100 d-flex mt-1 justify-content-center">
+                            <div class="w100 d-flex justify-content-center c-pointer" (click)="deleteSpeciality(item)">
+                                <i class="fa fa-remove c-pointer mr-2"></i> Удалить
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w100 d-flex mt-2">
+                <label class="w-100 d-flex justify-content-center align-items-center c-pointer" (click)="addSpeciality()"><i class="fa fa-plus mr-2"></i>Добавить</label>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 d-flex justify-content-end">
+            <button class="btn btn-primary" (click)="saveExecutor()">
+                <span *ngIf="executor.id">Обновить</span>
+                <span *ngIf="!executor.id">Пригласить</span>
+            </button>
+        </div>
+    </div>
+</div>
+

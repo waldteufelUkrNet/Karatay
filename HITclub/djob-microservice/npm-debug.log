@@ -1,0 +1,457 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', 'npm', '-g' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData npm
+8 silly fetchNamedPackageData npm
+9 silly mapToRegistry name npm
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry uri https://registry.npmjs.org/npm
+13 verbose request uri https://registry.npmjs.org/npm
+14 verbose request no auth needed
+15 info attempt registry request try #1 at 15:09:20
+16 verbose request id 643bf56b7d756281
+17 http request GET https://registry.npmjs.org/npm
+18 http 429 https://registry.npmjs.org/npm
+19 verbose bad json <!DOCTYPE html>
+19 verbose bad json <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+19 verbose bad json <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+19 verbose bad json <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+19 verbose bad json <!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+19 verbose bad json <head>
+19 verbose bad json <title>Access denied | registry.npmjs.org used Cloudflare to restrict access</title>
+19 verbose bad json <meta charset="UTF-8" />
+19 verbose bad json <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+19 verbose bad json <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+19 verbose bad json <meta name="robots" content="noindex, nofollow" />
+19 verbose bad json <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+19 verbose bad json <link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" type="text/css" media="screen,projection" />
+19 verbose bad json <!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" type="text/css" media="screen,projection" /><![endif]-->
+19 verbose bad json <style type="text/css">body{margin:0;padding:0}</style>
+19 verbose bad json
+19 verbose bad json
+19 verbose bad json <!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/zepto.min.js"></script><!--<![endif]-->
+19 verbose bad json <!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/cf.common.js"></script><!--<![endif]-->
+19 verbose bad json
+19 verbose bad json
+19 verbose bad json
+19 verbose bad json </head>
+19 verbose bad json <body>
+19 verbose bad json   <div id="cf-wrapper">
+19 verbose bad json     <div class="cf-alert cf-alert-error cf-cookie-error" id="cookie-alert" data-translate="enable_cookies">Please enable cookies.</div>
+19 verbose bad json     <div id="cf-error-details" class="cf-error-details-wrapper">
+19 verbose bad json       <div class="cf-wrapper cf-header cf-error-overview">
+19 verbose bad json         <h1>
+19 verbose bad json           <span class="cf-error-type" data-translate="error">Error</span>
+19 verbose bad json           <span class="cf-error-code">1015</span>
+19 verbose bad json           <small class="heading-ray-id">Ray ID: 5667a6de7aed636b &bull; 2020-02-17 12:09:20 UTC</small>
+19 verbose bad json         </h1>
+19 verbose bad json         <h2 class="cf-subheadline">You are being rate limited</h2>
+19 verbose bad json       </div><!-- /.header -->
+19 verbose bad json
+19 verbose bad json       <section></section><!-- spacer -->
+19 verbose bad json
+19 verbose bad json       <div class="cf-section cf-wrapper">
+19 verbose bad json         <div class="cf-columns two">
+19 verbose bad json           <div class="cf-column">
+19 verbose bad json             <h2 data-translate="what_happened">What happened?</h2>
+19 verbose bad json             <p>The owner of this website (registry.npmjs.org) has banned you temporarily from accessing this website.</p>
+19 verbose bad json           </div>
+19 verbose bad json
+19 verbose bad json
+19 verbose bad json         </div>
+19 verbose bad json       </div><!-- /.section -->
+19 verbose bad json
+19 verbose bad json       <div class="cf-error-footer cf-wrapper">
+19 verbose bad json   <p>
+19 verbose bad json     <span class="cf-footer-item">Cloudflare Ray ID: <strong>5667a6de7aed636b</strong></span>
+19 verbose bad json     <span class="cf-footer-separator">&bull;</span>
+19 verbose bad json     <span class="cf-footer-item"><span>Your IP</span>: 89.111.132.126</span>
+19 verbose bad json     <span class="cf-footer-separator">&bull;</span>
+19 verbose bad json     <span class="cf-footer-item"><span>Performance &amp; security by</span> <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=error_footer" id="brand_link" target="_blank">Cloudflare</a></span>
+19 verbose bad json
+19 verbose bad json   </p>
+19 verbose bad json </div><!-- /.error-footer -->
+19 verbose bad json
+19 verbose bad json
+19 verbose bad json     </div><!-- /#cf-error-details -->
+19 verbose bad json   </div><!-- /#cf-wrapper -->
+19 verbose bad json
+19 verbose bad json   <script type="text/javascript">
+19 verbose bad json   window._cf_translation = {};
+19 verbose bad json
+19 verbose bad json
+19 verbose bad json </script>
+19 verbose bad json
+19 verbose bad json </body>
+19 verbose bad json </html>
+20 error registry error parsing json
+21 verbose headers { date: 'Mon, 17 Feb 2020 12:09:20 GMT',
+21 verbose headers   'content-type': 'text/html; charset=UTF-8',
+21 verbose headers   'transfer-encoding': 'chunked',
+21 verbose headers   connection: 'close',
+21 verbose headers   'retry-after': '45',
+21 verbose headers   'set-cookie':
+21 verbose headers    [ '__cfduid=de582915329dc06b1dfb5ad5cd22e16611581941360; expires=Wed, 18-Mar-20 12:09:20 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+21 verbose headers   'cache-control': 'no-cache',
+21 verbose headers   'x-frame-options': 'SAMEORIGIN',
+21 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+21 verbose headers   vary: 'Accept-Encoding',
+21 verbose headers   server: 'cloudflare',
+21 verbose headers   'cf-ray': '5667a6de7aed636b-FRA' }
+22 silly get cb [ 429,
+22 silly get   { date: 'Mon, 17 Feb 2020 12:09:20 GMT',
+22 silly get     'content-type': 'text/html; charset=UTF-8',
+22 silly get     'transfer-encoding': 'chunked',
+22 silly get     connection: 'close',
+22 silly get     'retry-after': '45',
+22 silly get     'set-cookie':
+22 silly get      [ '__cfduid=de582915329dc06b1dfb5ad5cd22e16611581941360; expires=Wed, 18-Mar-20 12:09:20 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+22 silly get     'cache-control': 'no-cache',
+22 silly get     'x-frame-options': 'SAMEORIGIN',
+22 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+22 silly get     vary: 'Accept-Encoding',
+22 silly get     server: 'cloudflare',
+22 silly get     'cf-ray': '5667a6de7aed636b-FRA' } ]
+23 silly fetchPackageMetaData SyntaxError: Unexpected token < in JSON at position 0
+23 silly fetchPackageMetaData <!DOCTYPE html>
+23 silly fetchPackageMetaData <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+23 silly fetchPackageMetaData <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+23 silly fetchPackageMetaData <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+23 silly fetchPackageMetaData <!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+23 silly fetchPackageMetaData <head>
+23 silly fetchPackageMetaData <title>Access denied | registry.npmjs.org used Cloudflare to restrict access</title>
+23 silly fetchPackageMetaData <meta charset="UTF-8" />
+23 silly fetchPackageMetaData <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+23 silly fetchPackageMetaData <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+23 silly fetchPackageMetaData <meta name="robots" content="noindex, nofollow" />
+23 silly fetchPackageMetaData <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+23 silly fetchPackageMetaData <link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" type="text/css" media="screen,projection" />
+23 silly fetchPackageMetaData <!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" type="text/css" media="screen,projection" /><![endif]-->
+23 silly fetchPackageMetaData <style type="text/css">body{margin:0;padding:0}</style>
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData <!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/zepto.min.js"></script><!--<![endif]-->
+23 silly fetchPackageMetaData <!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/cf.common.js"></script><!--<![endif]-->
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData </head>
+23 silly fetchPackageMetaData <body>
+23 silly fetchPackageMetaData   <div id="cf-wrapper">
+23 silly fetchPackageMetaData     <div class="cf-alert cf-alert-error cf-cookie-error" id="cookie-alert" data-translate="enable_cookies">Please enable cookies.</div>
+23 silly fetchPackageMetaData     <div id="cf-error-details" class="cf-error-details-wrapper">
+23 silly fetchPackageMetaData       <div class="cf-wrapper cf-header cf-error-overview">
+23 silly fetchPackageMetaData         <h1>
+23 silly fetchPackageMetaData           <span class="cf-error-type" data-translate="error">Error</span>
+23 silly fetchPackageMetaData           <span class="cf-error-code">1015</span>
+23 silly fetchPackageMetaData           <small class="heading-ray-id">Ray ID: 5667a6de7aed636b &bull; 2020-02-17 12:09:20 UTC</small>
+23 silly fetchPackageMetaData         </h1>
+23 silly fetchPackageMetaData         <h2 class="cf-subheadline">You are being rate limited</h2>
+23 silly fetchPackageMetaData       </div><!-- /.header -->
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData       <section></section><!-- spacer -->
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData       <div class="cf-section cf-wrapper">
+23 silly fetchPackageMetaData         <div class="cf-columns two">
+23 silly fetchPackageMetaData           <div class="cf-column">
+23 silly fetchPackageMetaData             <h2 data-translate="what_happened">What happened?</h2>
+23 silly fetchPackageMetaData             <p>The owner of this website (registry.npmjs.org) has banned you temporarily from accessing this website.</p>
+23 silly fetchPackageMetaData           </div>
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData         </div>
+23 silly fetchPackageMetaData       </div><!-- /.section -->
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData       <div class="cf-error-footer cf-wrapper">
+23 silly fetchPackageMetaData   <p>
+23 silly fetchPackageMetaData     <span class="cf-footer-item">Cloudflare Ray ID: <strong>5667a6de7aed636b</strong></span>
+23 silly fetchPackageMetaData     <span class="cf-footer-separator">&bull;</span>
+23 silly fetchPackageMetaData     <span class="cf-footer-item"><span>Your IP</span>: 89.111.132.126</span>
+23 silly fetchPackageMetaData     <span class="cf-footer-separator">&bull;</span>
+23 silly fetchPackageMetaData     <span class="cf-footer-item"><span>Performance &amp; security by</span> <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=error_footer" id="brand_link" target="_blank">Cloudflare</a></span>
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData   </p>
+23 silly fetchPackageMetaData </div><!-- /.error-footer -->
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData     </div><!-- /#cf-error-details -->
+23 silly fetchPackageMetaData   </div><!-- /#cf-wrapper -->
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData   <script type="text/javascript">
+23 silly fetchPackageMetaData   window._cf_translation = {};
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData </script>
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData </body>
+23 silly fetchPackageMetaData </html>
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData     at JSON.parse (<anonymous>)
+23 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:199:23)
+23 silly fetchPackageMetaData     at Request._callback (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+23 silly fetchPackageMetaData     at Request.self.callback (/usr/share/npm/node_modules/request/request.js:198:22)
+23 silly fetchPackageMetaData     at emitTwo (events.js:126:13)
+23 silly fetchPackageMetaData     at Request.emit (events.js:214:7)
+23 silly fetchPackageMetaData     at Request.<anonymous> (/usr/share/npm/node_modules/request/request.js:1082:10)
+23 silly fetchPackageMetaData     at emitOne (events.js:121:20)
+23 silly fetchPackageMetaData     at Request.emit (events.js:211:7)
+23 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (/usr/share/npm/node_modules/request/request.js:1009:12)
+23 silly fetchPackageMetaData  error for npm SyntaxError: Unexpected token < in JSON at position 0
+23 silly fetchPackageMetaData <!DOCTYPE html>
+23 silly fetchPackageMetaData <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+23 silly fetchPackageMetaData <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+23 silly fetchPackageMetaData <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+23 silly fetchPackageMetaData <!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+23 silly fetchPackageMetaData <head>
+23 silly fetchPackageMetaData <title>Access denied | registry.npmjs.org used Cloudflare to restrict access</title>
+23 silly fetchPackageMetaData <meta charset="UTF-8" />
+23 silly fetchPackageMetaData <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+23 silly fetchPackageMetaData <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+23 silly fetchPackageMetaData <meta name="robots" content="noindex, nofollow" />
+23 silly fetchPackageMetaData <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+23 silly fetchPackageMetaData <link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" type="text/css" media="screen,projection" />
+23 silly fetchPackageMetaData <!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" type="text/css" media="screen,projection" /><![endif]-->
+23 silly fetchPackageMetaData <style type="text/css">body{margin:0;padding:0}</style>
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData <!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/zepto.min.js"></script><!--<![endif]-->
+23 silly fetchPackageMetaData <!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/cf.common.js"></script><!--<![endif]-->
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData </head>
+23 silly fetchPackageMetaData <body>
+23 silly fetchPackageMetaData   <div id="cf-wrapper">
+23 silly fetchPackageMetaData     <div class="cf-alert cf-alert-error cf-cookie-error" id="cookie-alert" data-translate="enable_cookies">Please enable cookies.</div>
+23 silly fetchPackageMetaData     <div id="cf-error-details" class="cf-error-details-wrapper">
+23 silly fetchPackageMetaData       <div class="cf-wrapper cf-header cf-error-overview">
+23 silly fetchPackageMetaData         <h1>
+23 silly fetchPackageMetaData           <span class="cf-error-type" data-translate="error">Error</span>
+23 silly fetchPackageMetaData           <span class="cf-error-code">1015</span>
+23 silly fetchPackageMetaData           <small class="heading-ray-id">Ray ID: 5667a6de7aed636b &bull; 2020-02-17 12:09:20 UTC</small>
+23 silly fetchPackageMetaData         </h1>
+23 silly fetchPackageMetaData         <h2 class="cf-subheadline">You are being rate limited</h2>
+23 silly fetchPackageMetaData       </div><!-- /.header -->
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData       <section></section><!-- spacer -->
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData       <div class="cf-section cf-wrapper">
+23 silly fetchPackageMetaData         <div class="cf-columns two">
+23 silly fetchPackageMetaData           <div class="cf-column">
+23 silly fetchPackageMetaData             <h2 data-translate="what_happened">What happened?</h2>
+23 silly fetchPackageMetaData             <p>The owner of this website (registry.npmjs.org) has banned you temporarily from accessing this website.</p>
+23 silly fetchPackageMetaData           </div>
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData         </div>
+23 silly fetchPackageMetaData       </div><!-- /.section -->
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData       <div class="cf-error-footer cf-wrapper">
+23 silly fetchPackageMetaData   <p>
+23 silly fetchPackageMetaData     <span class="cf-footer-item">Cloudflare Ray ID: <strong>5667a6de7aed636b</strong></span>
+23 silly fetchPackageMetaData     <span class="cf-footer-separator">&bull;</span>
+23 silly fetchPackageMetaData     <span class="cf-footer-item"><span>Your IP</span>: 89.111.132.126</span>
+23 silly fetchPackageMetaData     <span class="cf-footer-separator">&bull;</span>
+23 silly fetchPackageMetaData     <span class="cf-footer-item"><span>Performance &amp; security by</span> <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=error_footer" id="brand_link" target="_blank">Cloudflare</a></span>
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData   </p>
+23 silly fetchPackageMetaData </div><!-- /.error-footer -->
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData     </div><!-- /#cf-error-details -->
+23 silly fetchPackageMetaData   </div><!-- /#cf-wrapper -->
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData   <script type="text/javascript">
+23 silly fetchPackageMetaData   window._cf_translation = {};
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData </script>
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData </body>
+23 silly fetchPackageMetaData </html>
+23 silly fetchPackageMetaData
+23 silly fetchPackageMetaData     at JSON.parse (<anonymous>)
+23 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:199:23)
+23 silly fetchPackageMetaData     at Request._callback (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+23 silly fetchPackageMetaData     at Request.self.callback (/usr/share/npm/node_modules/request/request.js:198:22)
+23 silly fetchPackageMetaData     at emitTwo (events.js:126:13)
+23 silly fetchPackageMetaData     at Request.emit (events.js:214:7)
+23 silly fetchPackageMetaData     at Request.<anonymous> (/usr/share/npm/node_modules/request/request.js:1082:10)
+23 silly fetchPackageMetaData     at emitOne (events.js:121:20)
+23 silly fetchPackageMetaData     at Request.emit (events.js:211:7)
+23 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (/usr/share/npm/node_modules/request/request.js:1009:12)
+24 silly rollbackFailedOptional Starting
+25 silly rollbackFailedOptional Finishing
+26 silly runTopLevelLifecycles Starting
+27 silly runTopLevelLifecycles Finishing
+28 silly install printInstalled
+29 verbose stack SyntaxError: Unexpected token < in JSON at position 0
+29 verbose stack <!DOCTYPE html>
+29 verbose stack <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+29 verbose stack <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+29 verbose stack <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+29 verbose stack <!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+29 verbose stack <head>
+29 verbose stack <title>Access denied | registry.npmjs.org used Cloudflare to restrict access</title>
+29 verbose stack <meta charset="UTF-8" />
+29 verbose stack <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+29 verbose stack <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+29 verbose stack <meta name="robots" content="noindex, nofollow" />
+29 verbose stack <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+29 verbose stack <link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" type="text/css" media="screen,projection" />
+29 verbose stack <!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" type="text/css" media="screen,projection" /><![endif]-->
+29 verbose stack <style type="text/css">body{margin:0;padding:0}</style>
+29 verbose stack
+29 verbose stack
+29 verbose stack <!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/zepto.min.js"></script><!--<![endif]-->
+29 verbose stack <!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/cf.common.js"></script><!--<![endif]-->
+29 verbose stack
+29 verbose stack
+29 verbose stack
+29 verbose stack </head>
+29 verbose stack <body>
+29 verbose stack   <div id="cf-wrapper">
+29 verbose stack     <div class="cf-alert cf-alert-error cf-cookie-error" id="cookie-alert" data-translate="enable_cookies">Please enable cookies.</div>
+29 verbose stack     <div id="cf-error-details" class="cf-error-details-wrapper">
+29 verbose stack       <div class="cf-wrapper cf-header cf-error-overview">
+29 verbose stack         <h1>
+29 verbose stack           <span class="cf-error-type" data-translate="error">Error</span>
+29 verbose stack           <span class="cf-error-code">1015</span>
+29 verbose stack           <small class="heading-ray-id">Ray ID: 5667a6de7aed636b &bull; 2020-02-17 12:09:20 UTC</small>
+29 verbose stack         </h1>
+29 verbose stack         <h2 class="cf-subheadline">You are being rate limited</h2>
+29 verbose stack       </div><!-- /.header -->
+29 verbose stack
+29 verbose stack       <section></section><!-- spacer -->
+29 verbose stack
+29 verbose stack       <div class="cf-section cf-wrapper">
+29 verbose stack         <div class="cf-columns two">
+29 verbose stack           <div class="cf-column">
+29 verbose stack             <h2 data-translate="what_happened">What happened?</h2>
+29 verbose stack             <p>The owner of this website (registry.npmjs.org) has banned you temporarily from accessing this website.</p>
+29 verbose stack           </div>
+29 verbose stack
+29 verbose stack
+29 verbose stack         </div>
+29 verbose stack       </div><!-- /.section -->
+29 verbose stack
+29 verbose stack       <div class="cf-error-footer cf-wrapper">
+29 verbose stack   <p>
+29 verbose stack     <span class="cf-footer-item">Cloudflare Ray ID: <strong>5667a6de7aed636b</strong></span>
+29 verbose stack     <span class="cf-footer-separator">&bull;</span>
+29 verbose stack     <span class="cf-footer-item"><span>Your IP</span>: 89.111.132.126</span>
+29 verbose stack     <span class="cf-footer-separator">&bull;</span>
+29 verbose stack     <span class="cf-footer-item"><span>Performance &amp; security by</span> <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=error_footer" id="brand_link" target="_blank">Cloudflare</a></span>
+29 verbose stack
+29 verbose stack   </p>
+29 verbose stack </div><!-- /.error-footer -->
+29 verbose stack
+29 verbose stack
+29 verbose stack     </div><!-- /#cf-error-details -->
+29 verbose stack   </div><!-- /#cf-wrapper -->
+29 verbose stack
+29 verbose stack   <script type="text/javascript">
+29 verbose stack   window._cf_translation = {};
+29 verbose stack
+29 verbose stack
+29 verbose stack </script>
+29 verbose stack
+29 verbose stack </body>
+29 verbose stack </html>
+29 verbose stack
+29 verbose stack     at JSON.parse (<anonymous>)
+29 verbose stack     at CachingRegistryClient.<anonymous> (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:199:23)
+29 verbose stack     at Request._callback (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+29 verbose stack     at Request.self.callback (/usr/share/npm/node_modules/request/request.js:198:22)
+29 verbose stack     at emitTwo (events.js:126:13)
+29 verbose stack     at Request.emit (events.js:214:7)
+29 verbose stack     at Request.<anonymous> (/usr/share/npm/node_modules/request/request.js:1082:10)
+29 verbose stack     at emitOne (events.js:121:20)
+29 verbose stack     at Request.emit (events.js:211:7)
+29 verbose stack     at IncomingMessage.<anonymous> (/usr/share/npm/node_modules/request/request.js:1009:12)
+30 verbose cwd /var/www/ms
+31 error Linux 4.15.0-22-generic
+32 error argv "/usr/bin/node" "/usr/bin/npm" "install" "npm" "-g"
+33 error node v8.10.0
+34 error npm  v3.5.2
+35 error Unexpected token < in JSON at position 0
+35 error <!DOCTYPE html>
+35 error <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+35 error <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+35 error <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+35 error <!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+35 error <head>
+35 error <title>Access denied | registry.npmjs.org used Cloudflare to restrict access</title>
+35 error <meta charset="UTF-8" />
+35 error <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+35 error <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+35 error <meta name="robots" content="noindex, nofollow" />
+35 error <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+35 error <link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" type="text/css" media="screen,projection" />
+35 error <!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" type="text/css" media="screen,projection" /><![endif]-->
+35 error <style type="text/css">body{margin:0;padding:0}</style>
+35 error
+35 error
+35 error <!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/zepto.min.js"></script><!--<![endif]-->
+35 error <!--[if gte IE 10]><!--><script type="text/javascript" src="/cdn-cgi/scripts/cf.common.js"></script><!--<![endif]-->
+35 error
+35 error
+35 error
+35 error </head>
+35 error <body>
+35 error   <div id="cf-wrapper">
+35 error     <div class="cf-alert cf-alert-error cf-cookie-error" id="cookie-alert" data-translate="enable_cookies">Please enable cookies.</div>
+35 error     <div id="cf-error-details" class="cf-error-details-wrapper">
+35 error       <div class="cf-wrapper cf-header cf-error-overview">
+35 error         <h1>
+35 error           <span class="cf-error-type" data-translate="error">Error</span>
+35 error           <span class="cf-error-code">1015</span>
+35 error           <small class="heading-ray-id">Ray ID: 5667a6de7aed636b &bull; 2020-02-17 12:09:20 UTC</small>
+35 error         </h1>
+35 error         <h2 class="cf-subheadline">You are being rate limited</h2>
+35 error       </div><!-- /.header -->
+35 error
+35 error       <section></section><!-- spacer -->
+35 error
+35 error       <div class="cf-section cf-wrapper">
+35 error         <div class="cf-columns two">
+35 error           <div class="cf-column">
+35 error             <h2 data-translate="what_happened">What happened?</h2>
+35 error             <p>The owner of this website (registry.npmjs.org) has banned you temporarily from accessing this website.</p>
+35 error           </div>
+35 error
+35 error
+35 error         </div>
+35 error       </div><!-- /.section -->
+35 error
+35 error       <div class="cf-error-footer cf-wrapper">
+35 error   <p>
+35 error     <span class="cf-footer-item">Cloudflare Ray ID: <strong>5667a6de7aed636b</strong></span>
+35 error     <span class="cf-footer-separator">&bull;</span>
+35 error     <span class="cf-footer-item"><span>Your IP</span>: 89.111.132.126</span>
+35 error     <span class="cf-footer-separator">&bull;</span>
+35 error     <span class="cf-footer-item"><span>Performance &amp; security by</span> <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=error_footer" id="brand_link" target="_blank">Cloudflare</a></span>
+35 error
+35 error   </p>
+35 error </div><!-- /.error-footer -->
+35 error
+35 error
+35 error     </div><!-- /#cf-error-details -->
+35 error   </div><!-- /#cf-wrapper -->
+35 error
+35 error   <script type="text/javascript">
+35 error   window._cf_translation = {};
+35 error
+35 error
+35 error </script>
+35 error
+35 error </body>
+35 error </html>
+36 error If you need help, you may report this error at:
+36 error     <https://github.com/npm/npm/issues>
+37 verbose exit [ 1, true ]

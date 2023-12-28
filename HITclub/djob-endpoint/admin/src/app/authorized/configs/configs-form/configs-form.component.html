@@ -1,0 +1,99 @@
+<div class="w-100 mb-3 page-block">
+    <div class="row mt-2">
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">Комиссия по реферальной программе</span>
+                <input type="number" [(ngModel)]="configs.referral_program_commissions" class="form-control w50">
+            </div>
+        </div>
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">Комиссия системы</span>
+                <input type="number" [(ngModel)]="configs.system_commission" class="form-control w50">
+            </div>
+        </div>
+      <!--  <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">Количество доступныйх поисков исполнителя</span>
+                <input type="number" [(ngModel)]="configs.executor_find_counter" class="form-control w50">
+            </div>
+        </div>
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">Время ожидания принятия заказа (секунды)</span>
+                <input type="number" [(ngModel)]="configs.accept_wait_time" class="form-control w50">
+            </div>
+        </div>
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">Минимальный баланс для основного счета.</span>
+                <input type="number" [(ngModel)]="configs.min_cash_balance" class="form-control w50">
+            </div>
+        </div>
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">Минимальный баланс для бонусного счета.</span>
+                <input type="number" [(ngModel)]="configs.min_cash_bonus_balance" class="form-control w50">
+            </div>
+        </div>
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">Успешных заказов до уровны "мастер"</span>
+                <input type="number" [(ngModel)]="configs.master_order_count_needed" class="form-control w50">
+            </div>
+        </div>
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">Успешных заказов до уровны "бывалый"</span>
+                <input type="number" [(ngModel)]="configs.middle_order_count_needed" class="form-control w50">
+            </div>
+        </div>
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">Количество дней до отправки уведомлении клиентов</span>
+                <input type="number" [(ngModel)]="configs.return_to_the_application_customer_days" class="form-control w50">
+            </div>
+        </div>
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">Количество дней до отправки уведомлении исполнителей</span>
+                <input type="number" [(ngModel)]="configs.return_to_the_application_executor_days" class="form-control w50">
+            </div>
+        </div>
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">Список рандомных уведомлений клиентам</span>
+                <div class="w-50">
+                    <div class="row">
+                        <div class="col-12 d-flex mb-1" *ngFor="let item of customer_push_texts">
+                            <input class="text form-control" type="text" [(ngModel)]="item.val" />
+                            <i class="fa fa-remove c-pointer" (click)="deleteCustomerPushMessage(item)"></i>
+                        </div>
+                        <div class="col-12 d-flex justify-content-end">
+                            <i class="fa fa-plus c-pointer" (click)="addCustomerPushMessage()"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 d-inline-flex">
+            <div class="w-100 d-flex p-3">
+                <span class="mr-3 w50">Список рандомных уведомлений исполнителям</span>
+                <div class="w-50">
+                    <div class="row">
+                        <div class="col-12 d-flex mb-1" *ngFor="let item of executor_push_texts">
+                            <input class="text form-control" type="text" [(ngModel)]="item.val" />
+                            <i class="fa fa-remove c-pointer" (click)="deleteExecutorPushMessage(item)"></i>
+                        </div>
+                        <div class="col-12 d-flex justify-content-end">
+                            <i class="fa fa-plus c-pointer" (click)="addExecutorPushMessage()"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <div class="col-12 d-inline-flex justify-content-end">
+            <button class="btn btn-primary mr-3 mb-3" (click)="saveConfigs()">Сохранить</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,144 @@
+<div class="w-100 mb-3 page-block" *ngIf="order">
+    <div class="row">
+        <div class="col-12">
+            <div class="w-100 p-3">
+                <div class="row">
+                    <div class="col-6 d-inline-flex align-items-center">Специальность</div>
+                    <div class="col-6">{{order.specialty.name}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-6 d-inline-flex align-items-center">Статус</div>
+                    <div class="col-6">{{getOrderStatus(order)}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-6 d-inline-flex align-items-center">Тип заказа</div>
+                    <div class="col-6">
+                        <span *ngIf="order.for_now">Срочный</span>
+                        <span *ngIf="!order.for_now">Отложенный</span>
+                    </div>
+                </div>
+                <div class="row" *ngIf="!order.for_now">
+                    <div class="col-6 d-inline-flex align-items-center">Запланированное время</div>
+                    <div class="col-6">{{order.scheduled_time}}</div>
+                </div>
+                <div class="row">
+                    <div  class="col-6 d-inline-flex align-items-center">Место заказа</div>
+                    <div class="col-6">
+                        <span *ngIf="order.departure == 'ANY'">Не определено</span>
+                        <span *ngIf="order.departure == 'OFFICE'">Офис</span>
+                        <span *ngIf="order.departure == 'ADDRESS'">На выезд</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div  class="col-6 d-inline-flex align-items-center">Адрес</div>
+                    <div class="col-6">{{order.address.name}}</div>
+                </div>
+                <div class="row">
+                    <div  class="col-6 d-inline-flex align-items-center">Создан</div>
+                    <div class="col-6">{{order.createdAt}}</div>
+                </div>
+                <div class="row">
+                    <div  class="col-6 d-inline-flex align-items-center">Сумма</div>
+                    <div class="col-6">{{order.summ}}</div>
+                </div>
+                <div class="row">
+                    <div  class="col-6 d-inline-flex align-items-center">Тип оплаты</div>
+                    <div class="col-6">
+                        <span *ngIf="order.summ_type == 'HOURLY'">Почасовая</span>
+                        <span *ngIf="order.summ_type == 'FIXED'">Одноразовая</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div  class="col-6 d-inline-flex align-items-center">Способ оплаты</div>
+                    <div class="col-6">
+                        <span *ngIf="order.payment_type == 'CASH'">Наличка</span>
+                        <span *ngIf="order.payment_type == 'BONUS'">Бонусный щет</span>
+                        <span *ngIf="order.payment_type == 'CARD'">Карточка</span>
+                    </div>
+                </div>
+                <div class="row mt-3 bb1"></div>
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center bolder"><span>Создать предложения</span></div>
+                </div>
+                <div class="row mt-1">
+                    <div  class="col-6 d-inline-flex align-items-center">Исполнитель</div>
+                    <div class="col-6">
+                        <select class="form-control" [(ngModel)]="offerData.executor_id">
+                            <option [value]="null"></option>
+                            <option [value]="item.id" *ngFor="let item of executors">{{item.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div  class="col-6 d-inline-flex align-items-center">Тип оплаты</div>
+                    <div class="col-6">
+                        <select class="form-control" [(ngModel)]="offerData.summ_type">
+                            <option [value]="'HOURLY'">Почасовая</option>
+                            <option [value]="'FIXED'">Фиксированная</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div  class="col-6 d-inline-flex align-items-center">Cумма</div>
+                    <div class="col-6">
+                        <input class="form-control" [(ngModel)]="offerData.summ" />
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div  class="col-6 d-inline-flex align-items-center">Место выполнения</div>
+                    <div class="col-6">
+                        <select class="form-control" [(ngModel)]="offerData.departure">
+                            <option [value]="'ADDRESS'">На выезд</option>
+                            <option [value]="'OFFICE'">Офис</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mt-3" *ngIf="offerData.departure == 'OFFICE'">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center">
+                                Адрес офиса
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div  class="col-6 d-inline-flex align-items-center">Адрес</div>
+                            <div class="col-6">
+                                <input class="form-control" [(ngModel)]="offerData.address.name" />
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div  class="col-6 d-inline-flex align-items-center">Широта</div>
+                            <div class="col-6">
+                                <input class="form-control" [(ngModel)]="offerData.address.lat" />
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div  class="col-6 d-inline-flex align-items-center">Долгота</div>
+                            <div class="col-6">
+                                <input class="form-control" [(ngModel)]="offerData.address.lon" />
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div  class="col-6 d-inline-flex align-items-center">Код домофона</div>
+                            <div class="col-6">
+                                <input class="form-control" [(ngModel)]="offerData.address.code" />
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div  class="col-6 d-inline-flex align-items-center">Этаж</div>
+                            <div class="col-6">
+                                <input class="form-control" [(ngModel)]="offerData.address.floor" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12 d-flex justify-content-end">
+                        <button type="button" class="btn btn-secondary" (click)="createOrderOffer()">Назначить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

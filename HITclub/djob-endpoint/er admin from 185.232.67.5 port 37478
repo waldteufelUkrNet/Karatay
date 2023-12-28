@@ -1,0 +1,1292 @@
+-- Logs begin at Fri 2020-02-14 12:08:28 MSK, end at Mon 2020-02-17 11:12:54 MSK. --
+фев 17 06:34:57 vm2002143548 sshd[8402]: Failed password for invalid user plcmspip from 45.141.84.25 port 32950 ssh2
+фев 17 06:34:57 vm2002143548 sshd[8402]: Disconnecting invalid user plcmspip 45.141.84.25 port 32950: Change of username or service not allowed: (plcmspip,ssh-connection) -> (123321,ssh-connection) [preauth]
+фев 17 06:35:00 vm2002143548 sshd[8404]: Invalid user 123321 from 45.141.84.25 port 56360
+фев 17 06:35:00 vm2002143548 sshd[8404]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:35:00 vm2002143548 sshd[8404]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:35:02 vm2002143548 sshd[8404]: Failed password for invalid user 123321 from 45.141.84.25 port 56360 ssh2
+фев 17 06:35:03 vm2002143548 sshd[8404]: Disconnecting invalid user 123321 45.141.84.25 port 56360: Change of username or service not allowed: (123321,ssh-connection) -> (111111,ssh-connection) [preauth]
+фев 17 06:35:05 vm2002143548 sshd[8406]: Invalid user 111111 from 45.141.84.25 port 22488
+фев 17 06:35:05 vm2002143548 sshd[8406]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:35:05 vm2002143548 sshd[8406]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:35:06 vm2002143548 sshd[8406]: Failed password for invalid user 111111 from 45.141.84.25 port 22488 ssh2
+фев 17 06:35:06 vm2002143548 sshd[8406]: Disconnecting invalid user 111111 45.141.84.25 port 22488: Change of username or service not allowed: (111111,ssh-connection) -> (plcmspip,ssh-connection) [preauth]
+фев 17 06:35:08 vm2002143548 sshd[8408]: Invalid user plcmspip from 45.141.84.25 port 42048
+фев 17 06:35:08 vm2002143548 sshd[8408]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:35:08 vm2002143548 sshd[8408]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:35:10 vm2002143548 sshd[8408]: Failed password for invalid user plcmspip from 45.141.84.25 port 42048 ssh2
+фев 17 06:35:10 vm2002143548 sshd[8408]: Disconnecting invalid user plcmspip 45.141.84.25 port 42048: Change of username or service not allowed: (plcmspip,ssh-connection) -> (test,ssh-connection) [preauth]
+фев 17 06:35:12 vm2002143548 sshd[8410]: Invalid user test from 45.141.84.25 port 2092
+фев 17 06:35:12 vm2002143548 sshd[8410]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:35:12 vm2002143548 sshd[8410]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:35:14 vm2002143548 sshd[8410]: Failed password for invalid user test from 45.141.84.25 port 2092 ssh2
+фев 17 06:35:14 vm2002143548 sshd[8410]: Disconnecting invalid user test 45.141.84.25 port 2092: Change of username or service not allowed: (test,ssh-connection) -> (123321,ssh-connection) [preauth]
+фев 17 06:35:17 vm2002143548 sshd[8412]: Invalid user 123321 from 45.141.84.25 port 27057
+фев 17 06:35:17 vm2002143548 sshd[8412]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:35:17 vm2002143548 sshd[8412]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:35:18 vm2002143548 sshd[8412]: Failed password for invalid user 123321 from 45.141.84.25 port 27057 ssh2
+фев 17 06:35:19 vm2002143548 sshd[8412]: Disconnecting invalid user 123321 45.141.84.25 port 27057: Change of username or service not allowed: (123321,ssh-connection) -> (admin,ssh-connection) [preauth]
+фев 17 06:35:21 vm2002143548 sshd[8414]: Invalid user admin from 45.141.84.25 port 53589
+фев 17 06:35:22 vm2002143548 sshd[8414]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:35:22 vm2002143548 sshd[8414]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:35:24 vm2002143548 sshd[8414]: Failed password for invalid user admin from 45.141.84.25 port 53589 ssh2
+фев 17 06:35:24 vm2002143548 sshd[8414]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:35:26 vm2002143548 sshd[8414]: Failed password for invalid user admin from 45.141.84.25 port 53589 ssh2
+фев 17 06:35:26 vm2002143548 sshd[8414]: Disconnecting invalid user admin 45.141.84.25 port 53589: Change of username or service not allowed: (admin,ssh-connection) -> (111111,ssh-connection) [preauth]
+фев 17 06:35:26 vm2002143548 sshd[8414]: [0;1;39m[0;1;31m[0;1;39mPAM 1 more authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:35:26 vm2002143548 sshd[8416]: Invalid user 111111 from 45.141.84.25 port 28002
+фев 17 06:35:26 vm2002143548 sshd[8416]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:35:26 vm2002143548 sshd[8416]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:35:28 vm2002143548 sshd[8416]: Failed password for invalid user 111111 from 45.141.84.25 port 28002 ssh2
+фев 17 06:35:28 vm2002143548 sshd[8416]: Disconnecting invalid user 111111 45.141.84.25 port 28002: Change of username or service not allowed: (111111,ssh-connection) -> (admin,ssh-connection) [preauth]
+фев 17 06:35:30 vm2002143548 sshd[8418]: Invalid user admin from 45.141.84.25 port 45086
+фев 17 06:35:31 vm2002143548 sshd[8418]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:35:31 vm2002143548 sshd[8418]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:35:32 vm2002143548 sshd[8418]: Failed password for invalid user admin from 45.141.84.25 port 45086 ssh2
+фев 17 06:35:33 vm2002143548 sshd[8418]: Disconnecting invalid user admin 45.141.84.25 port 45086: Change of username or service not allowed: (admin,ssh-connection) -> (111111,ssh-connection) [preauth]
+фев 17 06:35:34 vm2002143548 sshd[8420]: Invalid user 111111 from 45.141.84.25 port 4426
+фев 17 06:35:34 vm2002143548 sshd[8420]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:35:34 vm2002143548 sshd[8420]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:35:36 vm2002143548 sshd[8420]: Failed password for invalid user 111111 from 45.141.84.25 port 4426 ssh2
+фев 17 06:35:36 vm2002143548 sshd[8420]: Disconnecting invalid user 111111 45.141.84.25 port 4426: Change of username or service not allowed: (111111,ssh-connection) -> (123321,ssh-connection) [preauth]
+фев 17 06:35:36 vm2002143548 sshd[8422]: Bad protocol version identification 'SSH-2.0_CoreLab-1.0' from 45.141.84.25 port 21358
+фев 17 06:35:38 vm2002143548 sshd[8423]: Invalid user 123321 from 45.141.84.25 port 24567
+фев 17 06:35:38 vm2002143548 sshd[8423]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:35:38 vm2002143548 sshd[8423]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:35:40 vm2002143548 sshd[8423]: Failed password for invalid user 123321 from 45.141.84.25 port 24567 ssh2
+фев 17 06:35:41 vm2002143548 sshd[8423]: Disconnecting invalid user 123321 45.141.84.25 port 24567: Change of username or service not allowed: (123321,ssh-connection) -> (admin,ssh-connection) [preauth]
+фев 17 06:35:42 vm2002143548 sshd[8425]: Invalid user admin from 45.141.84.25 port 57147
+фев 17 06:35:42 vm2002143548 sshd[8425]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:35:42 vm2002143548 sshd[8425]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:35:44 vm2002143548 sshd[8425]: Failed password for invalid user admin from 45.141.84.25 port 57147 ssh2
+фев 17 06:35:44 vm2002143548 sshd[8425]: Disconnecting invalid user admin 45.141.84.25 port 57147: Change of username or service not allowed: (admin,ssh-connection) -> (postgres,ssh-connection) [preauth]
+фев 17 06:35:47 vm2002143548 sshd[8427]: Invalid user postgres from 45.141.84.25 port 13354
+фев 17 06:35:47 vm2002143548 sshd[8427]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:35:47 vm2002143548 sshd[8427]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:35:48 vm2002143548 sshd[8427]: Failed password for invalid user postgres from 45.141.84.25 port 13354 ssh2
+фев 17 06:35:48 vm2002143548 sshd[8427]: Disconnecting invalid user postgres 45.141.84.25 port 13354: Change of username or service not allowed: (postgres,ssh-connection) -> (admin,ssh-connection) [preauth]
+фев 17 06:35:49 vm2002143548 sshd[8429]: Invalid user admin from 45.141.84.25 port 30358
+фев 17 06:35:49 vm2002143548 sshd[8429]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:35:49 vm2002143548 sshd[8429]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:35:52 vm2002143548 sshd[8429]: Failed password for invalid user admin from 45.141.84.25 port 30358 ssh2
+фев 17 06:35:52 vm2002143548 sshd[8429]: Disconnecting invalid user admin 45.141.84.25 port 30358: Change of username or service not allowed: (admin,ssh-connection) -> (111111,ssh-connection) [preauth]
+фев 17 06:35:54 vm2002143548 sshd[8431]: Invalid user 111111 from 45.141.84.25 port 50992
+фев 17 06:35:54 vm2002143548 sshd[8431]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:35:54 vm2002143548 sshd[8431]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:35:55 vm2002143548 sshd[8431]: Failed password for invalid user 111111 from 45.141.84.25 port 50992 ssh2
+фев 17 06:35:56 vm2002143548 sshd[8431]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:35:58 vm2002143548 sshd[8431]: Failed password for invalid user 111111 from 45.141.84.25 port 50992 ssh2
+фев 17 06:35:58 vm2002143548 sshd[8431]: Disconnecting invalid user 111111 45.141.84.25 port 50992: Change of username or service not allowed: (111111,ssh-connection) -> (123321,ssh-connection) [preauth]
+фев 17 06:35:58 vm2002143548 sshd[8431]: [0;1;39m[0;1;31m[0;1;39mPAM 1 more authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:36:00 vm2002143548 sshd[8433]: Invalid user 123321 from 45.141.84.25 port 27505
+фев 17 06:36:00 vm2002143548 sshd[8433]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:36:00 vm2002143548 sshd[8433]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:36:02 vm2002143548 sshd[8433]: Failed password for invalid user 123321 from 45.141.84.25 port 27505 ssh2
+фев 17 06:36:02 vm2002143548 sshd[8433]: Disconnecting invalid user 123321 45.141.84.25 port 27505: Change of username or service not allowed: (123321,ssh-connection) -> (operator,ssh-connection) [preauth]
+фев 17 06:36:05 vm2002143548 sshd[8435]: Invalid user operator from 45.141.84.25 port 51114
+фев 17 06:36:06 vm2002143548 sshd[8435]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:36:06 vm2002143548 sshd[8435]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:36:07 vm2002143548 sshd[8435]: Failed password for invalid user operator from 45.141.84.25 port 51114 ssh2
+фев 17 06:36:08 vm2002143548 sshd[8435]: Disconnecting invalid user operator 45.141.84.25 port 51114: Change of username or service not allowed: (operator,ssh-connection) -> (test,ssh-connection) [preauth]
+фев 17 06:36:10 vm2002143548 sshd[8437]: Invalid user test from 45.141.84.25 port 17075
+фев 17 06:36:10 vm2002143548 sshd[8437]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:36:10 vm2002143548 sshd[8437]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:36:11 vm2002143548 sshd[8437]: Failed password for invalid user test from 45.141.84.25 port 17075 ssh2
+фев 17 06:36:12 vm2002143548 sshd[8437]: Disconnecting invalid user test 45.141.84.25 port 17075: Change of username or service not allowed: (test,ssh-connection) -> (111111,ssh-connection) [preauth]
+фев 17 06:36:16 vm2002143548 sshd[8439]: Invalid user 111111 from 45.141.84.25 port 37392
+фев 17 06:36:17 vm2002143548 sshd[8439]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:36:17 vm2002143548 sshd[8439]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:36:18 vm2002143548 sshd[8439]: Failed password for invalid user 111111 from 45.141.84.25 port 37392 ssh2
+фев 17 06:36:18 vm2002143548 sshd[8439]: Disconnecting invalid user 111111 45.141.84.25 port 37392: Change of username or service not allowed: (111111,ssh-connection) -> (123321,ssh-connection) [preauth]
+фев 17 06:36:19 vm2002143548 sshd[8441]: Invalid user 123321 from 45.141.84.25 port 4056
+фев 17 06:36:19 vm2002143548 sshd[8441]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:36:19 vm2002143548 sshd[8441]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:36:21 vm2002143548 sshd[8441]: Failed password for invalid user 123321 from 45.141.84.25 port 4056 ssh2
+фев 17 06:36:22 vm2002143548 sshd[8441]: Disconnecting invalid user 123321 45.141.84.25 port 4056: Change of username or service not allowed: (123321,ssh-connection) -> (test,ssh-connection) [preauth]
+фев 17 06:36:23 vm2002143548 sshd[8443]: Invalid user test from 45.141.84.25 port 20590
+фев 17 06:36:24 vm2002143548 sshd[8443]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:36:24 vm2002143548 sshd[8443]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:36:25 vm2002143548 sshd[8443]: Failed password for invalid user test from 45.141.84.25 port 20590 ssh2
+фев 17 06:36:25 vm2002143548 sshd[8443]: Disconnecting invalid user test 45.141.84.25 port 20590: Change of username or service not allowed: (test,ssh-connection) -> (raspberry,ssh-connection) [preauth]
+фев 17 06:36:27 vm2002143548 sshd[8445]: Invalid user raspberry from 45.141.84.25 port 44690
+фев 17 06:36:27 vm2002143548 sshd[8445]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:36:27 vm2002143548 sshd[8445]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:36:29 vm2002143548 sshd[8445]: Failed password for invalid user raspberry from 45.141.84.25 port 44690 ssh2
+фев 17 06:36:30 vm2002143548 sshd[8445]: Disconnecting invalid user raspberry 45.141.84.25 port 44690: Change of username or service not allowed: (raspberry,ssh-connection) -> (111111,ssh-connection) [preauth]
+фев 17 06:36:31 vm2002143548 sshd[8447]: Invalid user 111111 from 45.141.84.25 port 7940
+фев 17 06:36:31 vm2002143548 sshd[8447]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:36:31 vm2002143548 sshd[8447]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:36:33 vm2002143548 sshd[8447]: Failed password for invalid user 111111 from 45.141.84.25 port 7940 ssh2
+фев 17 06:36:34 vm2002143548 sshd[8447]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:36:35 vm2002143548 sshd[8447]: Failed password for invalid user 111111 from 45.141.84.25 port 7940 ssh2
+фев 17 06:36:36 vm2002143548 sshd[8447]: Disconnecting invalid user 111111 45.141.84.25 port 7940: Change of username or service not allowed: (111111,ssh-connection) -> (backup,ssh-connection) [preauth]
+фев 17 06:36:36 vm2002143548 sshd[8447]: [0;1;39m[0;1;31m[0;1;39mPAM 1 more authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:36:39 vm2002143548 sshd[8449]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25  user=backup[0m
+фев 17 06:36:41 vm2002143548 sshd[8449]: Failed password for backup from 45.141.84.25 port 41833 ssh2
+фев 17 06:36:41 vm2002143548 sshd[8449]: Disconnecting authenticating user backup 45.141.84.25 port 41833: Change of username or service not allowed: (backup,ssh-connection) -> (admin,ssh-connection) [preauth]
+фев 17 06:36:42 vm2002143548 sshd[8451]: Invalid user admin from 45.141.84.25 port 4665
+фев 17 06:36:42 vm2002143548 sshd[8451]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:36:42 vm2002143548 sshd[8451]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:36:44 vm2002143548 sshd[8451]: Failed password for invalid user admin from 45.141.84.25 port 4665 ssh2
+фев 17 06:36:44 vm2002143548 sshd[8451]: Disconnecting invalid user admin 45.141.84.25 port 4665: Change of username or service not allowed: (admin,ssh-connection) -> (operator,ssh-connection) [preauth]
+фев 17 06:36:45 vm2002143548 sshd[8453]: Invalid user operator from 45.141.84.25 port 23646
+фев 17 06:36:45 vm2002143548 sshd[8453]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:36:45 vm2002143548 sshd[8453]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:36:47 vm2002143548 sshd[8453]: Failed password for invalid user operator from 45.141.84.25 port 23646 ssh2
+фев 17 06:36:47 vm2002143548 sshd[8453]: Disconnecting invalid user operator 45.141.84.25 port 23646: Change of username or service not allowed: (operator,ssh-connection) -> (111111,ssh-connection) [preauth]
+фев 17 06:36:50 vm2002143548 sshd[8455]: Invalid user 111111 from 45.141.84.25 port 42713
+фев 17 06:36:50 vm2002143548 sshd[8455]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:36:50 vm2002143548 sshd[8455]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:36:52 vm2002143548 sshd[8455]: Failed password for invalid user 111111 from 45.141.84.25 port 42713 ssh2
+фев 17 06:36:52 vm2002143548 sshd[8455]: Disconnecting invalid user 111111 45.141.84.25 port 42713: Change of username or service not allowed: (111111,ssh-connection) -> (operator,ssh-connection) [preauth]
+фев 17 06:36:53 vm2002143548 sshd[8457]: Invalid user operator from 45.141.84.25 port 7641
+фев 17 06:36:53 vm2002143548 sshd[8457]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:36:53 vm2002143548 sshd[8457]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:36:55 vm2002143548 sshd[8457]: Failed password for invalid user operator from 45.141.84.25 port 7641 ssh2
+фев 17 06:36:55 vm2002143548 sshd[8457]: Disconnecting invalid user operator 45.141.84.25 port 7641: Change of username or service not allowed: (operator,ssh-connection) -> (111111,ssh-connection) [preauth]
+фев 17 06:36:57 vm2002143548 sshd[8459]: Invalid user 111111 from 45.141.84.25 port 29626
+фев 17 06:36:57 vm2002143548 sshd[8459]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:36:57 vm2002143548 sshd[8459]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:36:59 vm2002143548 sshd[8459]: Failed password for invalid user 111111 from 45.141.84.25 port 29626 ssh2
+фев 17 06:37:00 vm2002143548 sshd[8459]: Disconnecting invalid user 111111 45.141.84.25 port 29626: Change of username or service not allowed: (111111,ssh-connection) -> (admin,ssh-connection) [preauth]
+фев 17 06:37:00 vm2002143548 sshd[8461]: Invalid user admin from 45.141.84.25 port 51772
+фев 17 06:37:01 vm2002143548 sshd[8461]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:37:01 vm2002143548 sshd[8461]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:37:03 vm2002143548 sshd[8461]: Failed password for invalid user admin from 45.141.84.25 port 51772 ssh2
+фев 17 06:37:04 vm2002143548 sshd[8461]: Disconnecting invalid user admin 45.141.84.25 port 51772: Change of username or service not allowed: (admin,ssh-connection) -> (test,ssh-connection) [preauth]
+фев 17 06:37:06 vm2002143548 sshd[8463]: Invalid user test from 45.141.84.25 port 10284
+фев 17 06:37:06 vm2002143548 sshd[8463]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:37:06 vm2002143548 sshd[8463]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:37:08 vm2002143548 sshd[8463]: Failed password for invalid user test from 45.141.84.25 port 10284 ssh2
+фев 17 06:37:08 vm2002143548 sshd[8463]: Disconnecting invalid user test 45.141.84.25 port 10284: Change of username or service not allowed: (test,ssh-connection) -> (user,ssh-connection) [preauth]
+фев 17 06:37:10 vm2002143548 sshd[8465]: Invalid user user from 45.141.84.25 port 37378
+фев 17 06:37:11 vm2002143548 sshd[8465]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:37:11 vm2002143548 sshd[8465]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:37:12 vm2002143548 sshd[8465]: Failed password for invalid user user from 45.141.84.25 port 37378 ssh2
+фев 17 06:37:12 vm2002143548 sshd[8465]: Disconnecting invalid user user 45.141.84.25 port 37378: Change of username or service not allowed: (user,ssh-connection) -> (anonymous,ssh-connection) [preauth]
+фев 17 06:37:13 vm2002143548 sshd[8468]: Invalid user anonymous from 45.141.84.25 port 60991
+фев 17 06:37:13 vm2002143548 sshd[8468]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:37:13 vm2002143548 sshd[8468]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:37:15 vm2002143548 sshd[8468]: Failed password for invalid user anonymous from 45.141.84.25 port 60991 ssh2
+фев 17 06:37:16 vm2002143548 sshd[8468]: Disconnecting invalid user anonymous 45.141.84.25 port 60991: Change of username or service not allowed: (anonymous,ssh-connection) -> (111111,ssh-connection) [preauth]
+фев 17 06:37:16 vm2002143548 sshd[8470]: Invalid user 111111 from 45.141.84.25 port 14775
+фев 17 06:37:16 vm2002143548 sshd[8470]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:37:16 vm2002143548 sshd[8470]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:37:18 vm2002143548 sshd[8470]: Failed password for invalid user 111111 from 45.141.84.25 port 14775 ssh2
+фев 17 06:37:18 vm2002143548 sshd[8470]: Disconnecting invalid user 111111 45.141.84.25 port 14775: Change of username or service not allowed: (111111,ssh-connection) -> (default,ssh-connection) [preauth]
+фев 17 06:37:19 vm2002143548 sshd[8472]: Invalid user default from 45.141.84.25 port 27713
+фев 17 06:37:20 vm2002143548 sshd[8472]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:37:20 vm2002143548 sshd[8472]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:37:22 vm2002143548 sshd[8472]: Failed password for invalid user default from 45.141.84.25 port 27713 ssh2
+фев 17 06:37:22 vm2002143548 sshd[8472]: Disconnecting invalid user default 45.141.84.25 port 27713: Change of username or service not allowed: (default,ssh-connection) -> (amanda,ssh-connection) [preauth]
+фев 17 06:37:22 vm2002143548 sshd[8474]: Invalid user amanda from 45.141.84.25 port 40389
+фев 17 06:37:22 vm2002143548 sshd[8474]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:37:22 vm2002143548 sshd[8474]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:37:24 vm2002143548 sshd[8474]: Failed password for invalid user amanda from 45.141.84.25 port 40389 ssh2
+фев 17 06:37:24 vm2002143548 sshd[8474]: Disconnecting invalid user amanda 45.141.84.25 port 40389: Change of username or service not allowed: (amanda,ssh-connection) -> (admin,ssh-connection) [preauth]
+фев 17 06:37:26 vm2002143548 sshd[8476]: Invalid user admin from 45.141.84.25 port 55391
+фев 17 06:37:26 vm2002143548 sshd[8476]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:37:26 vm2002143548 sshd[8476]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:37:28 vm2002143548 sshd[8476]: Failed password for invalid user admin from 45.141.84.25 port 55391 ssh2
+фев 17 06:37:28 vm2002143548 sshd[8476]: Disconnecting invalid user admin 45.141.84.25 port 55391: Change of username or service not allowed: (admin,ssh-connection) -> (ftp,ssh-connection) [preauth]
+фев 17 06:37:28 vm2002143548 sshd[8478]: Invalid user ftp from 45.141.84.25 port 4073
+фев 17 06:37:28 vm2002143548 sshd[8478]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:37:28 vm2002143548 sshd[8478]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:37:30 vm2002143548 sshd[8478]: Failed password for invalid user ftp from 45.141.84.25 port 4073 ssh2
+фев 17 06:37:31 vm2002143548 sshd[8478]: Disconnecting invalid user ftp 45.141.84.25 port 4073: Change of username or service not allowed: (ftp,ssh-connection) -> (ubnt,ssh-connection) [preauth]
+фев 17 06:37:31 vm2002143548 sshd[8480]: Invalid user ubnt from 45.141.84.25 port 23564
+фев 17 06:37:31 vm2002143548 sshd[8480]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:37:31 vm2002143548 sshd[8480]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:37:33 vm2002143548 sshd[8480]: Failed password for invalid user ubnt from 45.141.84.25 port 23564 ssh2
+фев 17 06:37:33 vm2002143548 sshd[8480]: Disconnecting invalid user ubnt 45.141.84.25 port 23564: Change of username or service not allowed: (ubnt,ssh-connection) -> (root,ssh-connection) [preauth]
+фев 17 06:37:36 vm2002143548 sshd[8482]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25  user=root[0m
+фев 17 06:37:37 vm2002143548 sshd[8482]: Failed password for root from 45.141.84.25 port 45335 ssh2
+фев 17 06:37:38 vm2002143548 sshd[8482]: Disconnecting authenticating user root 45.141.84.25 port 45335: Change of username or service not allowed: (root,ssh-connection) -> (admin,ssh-connection) [preauth]
+фев 17 06:37:41 vm2002143548 sshd[8484]: Invalid user admin from 45.141.84.25 port 12351
+фев 17 06:37:41 vm2002143548 sshd[8484]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:37:41 vm2002143548 sshd[8484]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:37:43 vm2002143548 sshd[8484]: Failed password for invalid user admin from 45.141.84.25 port 12351 ssh2
+фев 17 06:37:43 vm2002143548 sshd[8484]: Disconnecting invalid user admin 45.141.84.25 port 12351: Change of username or service not allowed: (admin,ssh-connection) -> (root,ssh-connection) [preauth]
+фев 17 06:37:44 vm2002143548 sshd[8486]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25  user=root[0m
+фев 17 06:37:46 vm2002143548 sshd[8486]: Failed password for root from 45.141.84.25 port 28109 ssh2
+фев 17 06:37:46 vm2002143548 sshd[8486]: Disconnecting authenticating user root 45.141.84.25 port 28109: Change of username or service not allowed: (root,ssh-connection) -> (administrator,ssh-connection) [preauth]
+фев 17 06:37:48 vm2002143548 sshd[8488]: Invalid user administrator from 45.141.84.25 port 43034
+фев 17 06:37:48 vm2002143548 sshd[8488]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:37:48 vm2002143548 sshd[8488]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:37:50 vm2002143548 sshd[8488]: Failed password for invalid user administrator from 45.141.84.25 port 43034 ssh2
+фев 17 06:37:50 vm2002143548 sshd[8488]: Disconnecting invalid user administrator 45.141.84.25 port 43034: Change of username or service not allowed: (administrator,ssh-connection) -> (admin,ssh-connection) [preauth]
+фев 17 06:37:52 vm2002143548 sshd[8490]: Invalid user admin from 45.141.84.25 port 61922
+фев 17 06:37:52 vm2002143548 sshd[8490]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:37:52 vm2002143548 sshd[8490]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:37:53 vm2002143548 sshd[8490]: Failed password for invalid user admin from 45.141.84.25 port 61922 ssh2
+фев 17 06:37:53 vm2002143548 sshd[8490]: Disconnecting invalid user admin 45.141.84.25 port 61922: Change of username or service not allowed: (admin,ssh-connection) -> (123321,ssh-connection) [preauth]
+фев 17 06:37:55 vm2002143548 sshd[8492]: Invalid user 123321 from 45.141.84.25 port 15156
+фев 17 06:37:56 vm2002143548 sshd[8492]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:37:56 vm2002143548 sshd[8492]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:37:58 vm2002143548 sshd[8492]: Failed password for invalid user 123321 from 45.141.84.25 port 15156 ssh2
+фев 17 06:37:58 vm2002143548 sshd[8492]: Disconnecting invalid user 123321 45.141.84.25 port 15156: Change of username or service not allowed: (123321,ssh-connection) -> (111111,ssh-connection) [preauth]
+фев 17 06:38:01 vm2002143548 sshd[8494]: Invalid user 111111 from 45.141.84.25 port 50365
+фев 17 06:38:01 vm2002143548 sshd[8494]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:38:01 vm2002143548 sshd[8494]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:38:03 vm2002143548 sshd[8494]: Failed password for invalid user 111111 from 45.141.84.25 port 50365 ssh2
+фев 17 06:38:03 vm2002143548 sshd[8494]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:38:05 vm2002143548 sshd[8494]: Failed password for invalid user 111111 from 45.141.84.25 port 50365 ssh2
+фев 17 06:38:05 vm2002143548 sshd[8494]: Disconnecting invalid user 111111 45.141.84.25 port 50365: Change of username or service not allowed: (111111,ssh-connection) -> (user,ssh-connection) [preauth]
+фев 17 06:38:05 vm2002143548 sshd[8494]: [0;1;39m[0;1;31m[0;1;39mPAM 1 more authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:38:06 vm2002143548 sshd[8496]: Invalid user user from 45.141.84.25 port 25336
+фев 17 06:38:07 vm2002143548 sshd[8496]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:38:07 vm2002143548 sshd[8496]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:38:09 vm2002143548 sshd[8496]: Failed password for invalid user user from 45.141.84.25 port 25336 ssh2
+фев 17 06:38:09 vm2002143548 sshd[8496]: Disconnecting invalid user user 45.141.84.25 port 25336: Change of username or service not allowed: (user,ssh-connection) -> (pi,ssh-connection) [preauth]
+фев 17 06:38:11 vm2002143548 sshd[8498]: Invalid user pi from 45.141.84.25 port 50679
+фев 17 06:38:11 vm2002143548 sshd[8498]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:38:11 vm2002143548 sshd[8498]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:38:13 vm2002143548 sshd[8498]: Failed password for invalid user pi from 45.141.84.25 port 50679 ssh2
+фев 17 06:38:13 vm2002143548 sshd[8498]: Disconnecting invalid user pi 45.141.84.25 port 50679: Change of username or service not allowed: (pi,ssh-connection) -> (ftp,ssh-connection) [preauth]
+фев 17 06:38:15 vm2002143548 sshd[8500]: Invalid user ftp from 45.141.84.25 port 11840
+фев 17 06:38:15 vm2002143548 sshd[8500]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:38:15 vm2002143548 sshd[8500]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:38:17 vm2002143548 sshd[8500]: Failed password for invalid user ftp from 45.141.84.25 port 11840 ssh2
+фев 17 06:38:18 vm2002143548 sshd[8500]: Disconnecting invalid user ftp 45.141.84.25 port 11840: Change of username or service not allowed: (ftp,ssh-connection) -> (admin,ssh-connection) [preauth]
+фев 17 06:38:19 vm2002143548 sshd[8502]: Invalid user admin from 45.141.84.25 port 36688
+фев 17 06:38:19 vm2002143548 sshd[8502]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:38:19 vm2002143548 sshd[8502]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:38:21 vm2002143548 sshd[8502]: Failed password for invalid user admin from 45.141.84.25 port 36688 ssh2
+фев 17 06:38:21 vm2002143548 sshd[8502]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:38:23 vm2002143548 sshd[8502]: Failed password for invalid user admin from 45.141.84.25 port 36688 ssh2
+фев 17 06:38:23 vm2002143548 sshd[8502]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:38:25 vm2002143548 sshd[8502]: Failed password for invalid user admin from 45.141.84.25 port 36688 ssh2
+фев 17 06:38:26 vm2002143548 sshd[8502]: Disconnecting invalid user admin 45.141.84.25 port 36688: Change of username or service not allowed: (admin,ssh-connection) -> (user,ssh-connection) [preauth]
+фев 17 06:38:26 vm2002143548 sshd[8502]: [0;1;39m[0;1;31m[0;1;39mPAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:38:27 vm2002143548 sshd[8504]: Invalid user user from 45.141.84.25 port 17653
+фев 17 06:38:27 vm2002143548 sshd[8504]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:38:27 vm2002143548 sshd[8504]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:38:29 vm2002143548 sshd[8504]: Failed password for invalid user user from 45.141.84.25 port 17653 ssh2
+фев 17 06:38:29 vm2002143548 sshd[8504]: Disconnecting invalid user user 45.141.84.25 port 17653: Change of username or service not allowed: (user,ssh-connection) -> (admin,ssh-connection) [preauth]
+фев 17 06:38:31 vm2002143548 sshd[8506]: Invalid user admin from 45.141.84.25 port 43268
+фев 17 06:38:31 vm2002143548 sshd[8506]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:38:31 vm2002143548 sshd[8506]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:38:33 vm2002143548 sshd[8506]: Failed password for invalid user admin from 45.141.84.25 port 43268 ssh2
+фев 17 06:38:34 vm2002143548 sshd[8506]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:38:36 vm2002143548 sshd[8506]: Failed password for invalid user admin from 45.141.84.25 port 43268 ssh2
+фев 17 06:38:36 vm2002143548 sshd[8506]: Disconnecting invalid user admin 45.141.84.25 port 43268: Change of username or service not allowed: (admin,ssh-connection) -> (user,ssh-connection) [preauth]
+фев 17 06:38:36 vm2002143548 sshd[8506]: [0;1;39m[0;1;31m[0;1;39mPAM 1 more authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:38:36 vm2002143548 sshd[8508]: Invalid user user from 45.141.84.25 port 10875
+фев 17 06:38:36 vm2002143548 sshd[8508]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:38:36 vm2002143548 sshd[8508]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:38:38 vm2002143548 sshd[8508]: Failed password for invalid user user from 45.141.84.25 port 10875 ssh2
+фев 17 06:38:38 vm2002143548 sshd[8508]: Disconnecting invalid user user 45.141.84.25 port 10875: Change of username or service not allowed: (user,ssh-connection) -> (administrator,ssh-connection) [preauth]
+фев 17 06:38:39 vm2002143548 sshd[8510]: Invalid user administrator from 45.141.84.25 port 27057
+фев 17 06:38:40 vm2002143548 sshd[8510]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:38:40 vm2002143548 sshd[8510]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:38:41 vm2002143548 sshd[8510]: Failed password for invalid user administrator from 45.141.84.25 port 27057 ssh2
+фев 17 06:38:42 vm2002143548 sshd[8510]: Disconnecting invalid user administrator 45.141.84.25 port 27057: Change of username or service not allowed: (administrator,ssh-connection) -> (admin,ssh-connection) [preauth]
+фев 17 06:38:43 vm2002143548 sshd[8512]: Invalid user admin from 45.141.84.25 port 44931
+фев 17 06:38:43 vm2002143548 sshd[8512]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:38:43 vm2002143548 sshd[8512]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:38:46 vm2002143548 sshd[8512]: Failed password for invalid user admin from 45.141.84.25 port 44931 ssh2
+фев 17 06:38:46 vm2002143548 sshd[8512]: Disconnecting invalid user admin 45.141.84.25 port 44931: Change of username or service not allowed: (admin,ssh-connection) -> (123321,ssh-connection) [preauth]
+фев 17 06:38:47 vm2002143548 sshd[8514]: Invalid user 123321 from 45.141.84.25 port 64486
+фев 17 06:38:47 vm2002143548 sshd[8514]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:38:47 vm2002143548 sshd[8514]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:38:48 vm2002143548 sshd[8514]: Failed password for invalid user 123321 from 45.141.84.25 port 64486 ssh2
+фев 17 06:38:49 vm2002143548 sshd[8514]: Disconnecting invalid user 123321 45.141.84.25 port 64486: Change of username or service not allowed: (123321,ssh-connection) -> (ubnt,ssh-connection) [preauth]
+фев 17 06:38:50 vm2002143548 sshd[8516]: Invalid user ubnt from 45.141.84.25 port 13033
+фев 17 06:38:50 vm2002143548 sshd[8516]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:38:50 vm2002143548 sshd[8516]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:38:52 vm2002143548 sshd[8516]: Failed password for invalid user ubnt from 45.141.84.25 port 13033 ssh2
+фев 17 06:38:52 vm2002143548 sshd[8516]: Disconnecting invalid user ubnt 45.141.84.25 port 13033: Change of username or service not allowed: (ubnt,ssh-connection) -> (pi,ssh-connection) [preauth]
+фев 17 06:38:53 vm2002143548 sshd[8518]: Invalid user pi from 45.141.84.25 port 22914
+фев 17 06:38:53 vm2002143548 sshd[8518]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:38:53 vm2002143548 sshd[8518]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:38:55 vm2002143548 sshd[8518]: Failed password for invalid user pi from 45.141.84.25 port 22914 ssh2
+фев 17 06:38:55 vm2002143548 sshd[8518]: Disconnecting invalid user pi 45.141.84.25 port 22914: Change of username or service not allowed: (pi,ssh-connection) -> (user,ssh-connection) [preauth]
+фев 17 06:38:55 vm2002143548 sshd[8520]: Invalid user user from 45.141.84.25 port 31398
+фев 17 06:38:55 vm2002143548 sshd[8520]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:38:55 vm2002143548 sshd[8520]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:38:57 vm2002143548 sshd[8520]: Failed password for invalid user user from 45.141.84.25 port 31398 ssh2
+фев 17 06:38:57 vm2002143548 sshd[8520]: Disconnecting invalid user user 45.141.84.25 port 31398: Change of username or service not allowed: (user,ssh-connection) -> (ftpuser,ssh-connection) [preauth]
+фев 17 06:38:57 vm2002143548 sshd[8522]: Invalid user ftpuser from 45.141.84.25 port 40101
+фев 17 06:38:57 vm2002143548 sshd[8522]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:38:57 vm2002143548 sshd[8522]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:39:00 vm2002143548 sshd[8522]: Failed password for invalid user ftpuser from 45.141.84.25 port 40101 ssh2
+фев 17 06:39:00 vm2002143548 sshd[8522]: Disconnecting invalid user ftpuser 45.141.84.25 port 40101: Change of username or service not allowed: (ftpuser,ssh-connection) -> (123321,ssh-connection) [preauth]
+фев 17 06:39:01 vm2002143548 sshd[8524]: Invalid user 123321 from 45.141.84.25 port 50409
+фев 17 06:39:01 vm2002143548 sshd[8524]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:39:01 vm2002143548 sshd[8524]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:39:03 vm2002143548 sshd[8524]: Failed password for invalid user 123321 from 45.141.84.25 port 50409 ssh2
+фев 17 06:39:03 vm2002143548 sshd[8524]: Disconnecting invalid user 123321 45.141.84.25 port 50409: Change of username or service not allowed: (123321,ssh-connection) -> (root,ssh-connection) [preauth]
+фев 17 06:39:04 vm2002143548 sshd[8526]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25  user=root[0m
+фев 17 06:39:05 vm2002143548 sshd[8526]: Failed password for root from 45.141.84.25 port 60593 ssh2
+фев 17 06:39:05 vm2002143548 sshd[8526]: Disconnecting authenticating user root 45.141.84.25 port 60593: Change of username or service not allowed: (root,ssh-connection) -> (111111,ssh-connection) [preauth]
+фев 17 06:39:06 vm2002143548 sshd[8528]: Invalid user 111111 from 45.141.84.25 port 4043
+фев 17 06:39:06 vm2002143548 sshd[8528]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:39:06 vm2002143548 sshd[8528]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:39:08 vm2002143548 sshd[8528]: Failed password for invalid user 111111 from 45.141.84.25 port 4043 ssh2
+фев 17 06:39:08 vm2002143548 sshd[8528]: Disconnecting invalid user 111111 45.141.84.25 port 4043: Change of username or service not allowed: (111111,ssh-connection) -> (ftpuser,ssh-connection) [preauth]
+фев 17 06:39:09 vm2002143548 sshd[8530]: Invalid user ftpuser from 45.141.84.25 port 11770
+фев 17 06:39:09 vm2002143548 sshd[8530]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:39:09 vm2002143548 sshd[8530]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:39:11 vm2002143548 sshd[8530]: Failed password for invalid user ftpuser from 45.141.84.25 port 11770 ssh2
+фев 17 06:39:11 vm2002143548 sshd[8530]: Disconnecting invalid user ftpuser 45.141.84.25 port 11770: Change of username or service not allowed: (ftpuser,ssh-connection) -> (admin,ssh-connection) [preauth]
+фев 17 06:39:11 vm2002143548 sshd[8532]: Invalid user admin from 45.141.84.25 port 24400
+фев 17 06:39:11 vm2002143548 sshd[8532]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:39:11 vm2002143548 sshd[8532]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:39:14 vm2002143548 sshd[8532]: Failed password for invalid user admin from 45.141.84.25 port 24400 ssh2
+фев 17 06:39:14 vm2002143548 sshd[8532]: Disconnecting invalid user admin 45.141.84.25 port 24400: Change of username or service not allowed: (admin,ssh-connection) -> (administrator,ssh-connection) [preauth]
+фев 17 06:39:15 vm2002143548 sshd[8534]: Invalid user administrator from 45.141.84.25 port 35055
+фев 17 06:39:15 vm2002143548 sshd[8534]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:39:15 vm2002143548 sshd[8534]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:39:17 vm2002143548 sshd[8534]: Failed password for invalid user administrator from 45.141.84.25 port 35055 ssh2
+фев 17 06:39:17 vm2002143548 sshd[8534]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:39:19 vm2002143548 sshd[8534]: Failed password for invalid user administrator from 45.141.84.25 port 35055 ssh2
+фев 17 06:39:19 vm2002143548 sshd[8534]: Disconnecting invalid user administrator 45.141.84.25 port 35055: Change of username or service not allowed: (administrator,ssh-connection) -> (admin,ssh-connection) [preauth]
+фев 17 06:39:19 vm2002143548 sshd[8534]: [0;1;39m[0;1;31m[0;1;39mPAM 1 more authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:39:20 vm2002143548 sshd[8536]: Invalid user admin from 45.141.84.25 port 54589
+фев 17 06:39:20 vm2002143548 sshd[8536]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:39:20 vm2002143548 sshd[8536]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:39:22 vm2002143548 sshd[8536]: Failed password for invalid user admin from 45.141.84.25 port 54589 ssh2
+фев 17 06:39:22 vm2002143548 sshd[8536]: Disconnecting invalid user admin 45.141.84.25 port 54589: Change of username or service not allowed: (admin,ssh-connection) -> (administrator,ssh-connection) [preauth]
+фев 17 06:39:23 vm2002143548 sshd[8538]: Invalid user administrator from 45.141.84.25 port 64920
+фев 17 06:39:23 vm2002143548 sshd[8538]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:39:23 vm2002143548 sshd[8538]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:39:25 vm2002143548 sshd[8538]: Failed password for invalid user administrator from 45.141.84.25 port 64920 ssh2
+фев 17 06:39:25 vm2002143548 sshd[8538]: Disconnecting invalid user administrator 45.141.84.25 port 64920: Change of username or service not allowed: (administrator,ssh-connection) -> (admin,ssh-connection) [preauth]
+фев 17 06:39:25 vm2002143548 sshd[8540]: Invalid user admin from 45.141.84.25 port 10737
+фев 17 06:39:25 vm2002143548 sshd[8540]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:39:25 vm2002143548 sshd[8540]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:39:27 vm2002143548 sshd[8540]: Failed password for invalid user admin from 45.141.84.25 port 10737 ssh2
+фев 17 06:39:27 vm2002143548 sshd[8540]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:39:30 vm2002143548 sshd[8540]: Failed password for invalid user admin from 45.141.84.25 port 10737 ssh2
+фев 17 06:39:30 vm2002143548 sshd[8540]: Disconnecting invalid user admin 45.141.84.25 port 10737: Change of username or service not allowed: (admin,ssh-connection) -> (pi,ssh-connection) [preauth]
+фев 17 06:39:30 vm2002143548 sshd[8540]: [0;1;39m[0;1;31m[0;1;39mPAM 1 more authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:39:30 vm2002143548 sshd[8542]: Invalid user pi from 45.141.84.25 port 29390
+фев 17 06:39:30 vm2002143548 sshd[8542]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:39:30 vm2002143548 sshd[8542]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:39:33 vm2002143548 sshd[8542]: Failed password for invalid user pi from 45.141.84.25 port 29390 ssh2
+фев 17 06:39:33 vm2002143548 sshd[8542]: Disconnecting invalid user pi 45.141.84.25 port 29390: Change of username or service not allowed: (pi,ssh-connection) -> (ftpuser,ssh-connection) [preauth]
+фев 17 06:39:35 vm2002143548 sshd[8544]: Invalid user ftpuser from 45.141.84.25 port 44741
+фев 17 06:39:35 vm2002143548 sshd[8544]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:39:35 vm2002143548 sshd[8544]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:39:37 vm2002143548 sshd[8544]: Failed password for invalid user ftpuser from 45.141.84.25 port 44741 ssh2
+фев 17 06:39:37 vm2002143548 sshd[8544]: Disconnecting invalid user ftpuser 45.141.84.25 port 44741: Change of username or service not allowed: (ftpuser,ssh-connection) -> (111111,ssh-connection) [preauth]
+фев 17 06:39:38 vm2002143548 sshd[8546]: Invalid user 111111 from 45.141.84.25 port 60703
+фев 17 06:39:39 vm2002143548 sshd[8546]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:39:39 vm2002143548 sshd[8546]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:39:41 vm2002143548 sshd[8546]: Failed password for invalid user 111111 from 45.141.84.25 port 60703 ssh2
+фев 17 06:39:41 vm2002143548 sshd[8546]: Disconnecting invalid user 111111 45.141.84.25 port 60703: Change of username or service not allowed: (111111,ssh-connection) -> (root,ssh-connection) [preauth]
+фев 17 06:39:42 vm2002143548 sshd[8548]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25  user=root[0m
+фев 17 06:39:44 vm2002143548 sshd[8548]: Failed password for root from 45.141.84.25 port 18893 ssh2
+фев 17 06:39:47 vm2002143548 sshd[8548]: Failed password for root from 45.141.84.25 port 18893 ssh2
+фев 17 06:39:47 vm2002143548 sshd[8548]: Disconnecting authenticating user root 45.141.84.25 port 18893: Change of username or service not allowed: (root,ssh-connection) -> (administrator,ssh-connection) [preauth]
+фев 17 06:39:47 vm2002143548 sshd[8548]: [0;1;39m[0;1;31m[0;1;39mPAM 1 more authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25  user=root[0m
+фев 17 06:39:47 vm2002143548 sshd[8550]: Invalid user administrator from 45.141.84.25 port 60669
+фев 17 06:39:47 vm2002143548 sshd[8550]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:39:47 vm2002143548 sshd[8550]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:39:49 vm2002143548 sshd[8550]: Failed password for invalid user administrator from 45.141.84.25 port 60669 ssh2
+фев 17 06:39:50 vm2002143548 sshd[8550]: Disconnecting invalid user administrator 45.141.84.25 port 60669: Change of username or service not allowed: (administrator,ssh-connection) -> (111111,ssh-connection) [preauth]
+фев 17 06:39:53 vm2002143548 sshd[8552]: Invalid user 111111 from 45.141.84.25 port 22473
+фев 17 06:39:53 vm2002143548 sshd[8552]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:39:53 vm2002143548 sshd[8552]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:39:55 vm2002143548 sshd[8552]: Failed password for invalid user 111111 from 45.141.84.25 port 22473 ssh2
+фев 17 06:39:56 vm2002143548 sshd[8552]: Disconnecting invalid user 111111 45.141.84.25 port 22473: Change of username or service not allowed: (111111,ssh-connection) -> (operator,ssh-connection) [preauth]
+фев 17 06:39:57 vm2002143548 sshd[8554]: Invalid user operator from 45.141.84.25 port 51877
+фев 17 06:39:57 vm2002143548 sshd[8554]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:39:57 vm2002143548 sshd[8554]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:39:59 vm2002143548 sshd[8554]: Failed password for invalid user operator from 45.141.84.25 port 51877 ssh2
+фев 17 06:39:59 vm2002143548 sshd[8554]: Disconnecting invalid user operator 45.141.84.25 port 51877: Change of username or service not allowed: (operator,ssh-connection) -> (root,ssh-connection) [preauth]
+фев 17 06:40:01 vm2002143548 sshd[8556]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25  user=root[0m
+фев 17 06:40:02 vm2002143548 sshd[8556]: Failed password for root from 45.141.84.25 port 8973 ssh2
+фев 17 06:40:05 vm2002143548 sshd[8556]: Failed password for root from 45.141.84.25 port 8973 ssh2
+фев 17 06:40:05 vm2002143548 sshd[8556]: Disconnecting authenticating user root 45.141.84.25 port 8973: Change of username or service not allowed: (root,ssh-connection) -> (111111,ssh-connection) [preauth]
+фев 17 06:40:05 vm2002143548 sshd[8556]: [0;1;39m[0;1;31m[0;1;39mPAM 1 more authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25  user=root[0m
+фев 17 06:40:07 vm2002143548 sshd[8558]: Invalid user 111111 from 45.141.84.25 port 44253
+фев 17 06:40:07 vm2002143548 sshd[8558]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:40:07 vm2002143548 sshd[8558]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:40:09 vm2002143548 sshd[8558]: Failed password for invalid user 111111 from 45.141.84.25 port 44253 ssh2
+фев 17 06:40:09 vm2002143548 sshd[8558]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:40:11 vm2002143548 sshd[8558]: Failed password for invalid user 111111 from 45.141.84.25 port 44253 ssh2
+фев 17 06:40:11 vm2002143548 sshd[8558]: Disconnecting invalid user 111111 45.141.84.25 port 44253: Change of username or service not allowed: (111111,ssh-connection) -> (admin,ssh-connection) [preauth]
+фев 17 06:40:11 vm2002143548 sshd[8558]: [0;1;39m[0;1;31m[0;1;39mPAM 1 more authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:40:13 vm2002143548 sshd[8560]: Invalid user admin from 45.141.84.25 port 14788
+фев 17 06:40:13 vm2002143548 sshd[8560]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:40:13 vm2002143548 sshd[8560]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:40:15 vm2002143548 sshd[8560]: Failed password for invalid user admin from 45.141.84.25 port 14788 ssh2
+фев 17 06:40:15 vm2002143548 sshd[8560]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:40:18 vm2002143548 sshd[8560]: Failed password for invalid user admin from 45.141.84.25 port 14788 ssh2
+фев 17 06:40:18 vm2002143548 sshd[8560]: Disconnecting invalid user admin 45.141.84.25 port 14788: Change of username or service not allowed: (admin,ssh-connection) -> (root,ssh-connection) [preauth]
+фев 17 06:40:18 vm2002143548 sshd[8560]: [0;1;39m[0;1;31m[0;1;39mPAM 1 more authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:40:21 vm2002143548 sshd[8562]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25  user=root[0m
+фев 17 06:40:23 vm2002143548 sshd[8562]: Failed password for root from 45.141.84.25 port 60162 ssh2
+фев 17 06:40:24 vm2002143548 sshd[8562]: Disconnecting authenticating user root 45.141.84.25 port 60162: Change of username or service not allowed: (root,ssh-connection) -> (client,ssh-connection) [preauth]
+фев 17 06:40:26 vm2002143548 sshd[8564]: Invalid user client from 45.141.84.25 port 27260
+фев 17 06:40:26 vm2002143548 sshd[8564]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:40:26 vm2002143548 sshd[8564]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:40:29 vm2002143548 sshd[8564]: Failed password for invalid user client from 45.141.84.25 port 27260 ssh2
+фев 17 06:40:29 vm2002143548 sshd[8564]: Disconnecting invalid user client 45.141.84.25 port 27260: Change of username or service not allowed: (client,ssh-connection) -> (webconfig,ssh-connection) [preauth]
+фев 17 06:40:31 vm2002143548 sshd[8566]: Invalid user webconfig from 45.141.84.25 port 58223
+фев 17 06:40:31 vm2002143548 sshd[8566]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:40:31 vm2002143548 sshd[8566]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:40:33 vm2002143548 sshd[8566]: Failed password for invalid user webconfig from 45.141.84.25 port 58223 ssh2
+фев 17 06:40:33 vm2002143548 sshd[8566]: Disconnecting invalid user webconfig 45.141.84.25 port 58223: Change of username or service not allowed: (webconfig,ssh-connection) -> (nobody,ssh-connection) [preauth]
+фев 17 06:40:35 vm2002143548 sshd[8568]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25  user=nobody[0m
+фев 17 06:40:36 vm2002143548 sshd[8568]: Failed password for nobody from 45.141.84.25 port 18853 ssh2
+фев 17 06:40:36 vm2002143548 sshd[8568]: Disconnecting authenticating user nobody 45.141.84.25 port 18853: Change of username or service not allowed: (nobody,ssh-connection) -> (test,ssh-connection) [preauth]
+фев 17 06:40:37 vm2002143548 sshd[8570]: Invalid user test from 45.141.84.25 port 31858
+фев 17 06:40:37 vm2002143548 sshd[8570]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:40:37 vm2002143548 sshd[8570]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.141.84.25[0m
+фев 17 06:40:39 vm2002143548 sshd[8570]: Failed password for invalid user test from 45.141.84.25 port 31858 ssh2
+фев 17 06:40:39 vm2002143548 sshd[8570]: Connection closed by invalid user test 45.141.84.25 port 31858 [preauth]
+фев 17 06:41:07 vm2002143548 sshd[8572]: Invalid user admin from 185.232.67.6 port 55245
+фев 17 06:41:07 vm2002143548 sshd[8572]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 06:41:07 vm2002143548 sshd[8572]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.232.67.6[0m
+фев 17 06:41:09 vm2002143548 sshd[8572]: Failed password for invalid user admin from 185.232.67.6 port 55245 ssh2
+фев 17 06:41:12 vm2002143548 sshd[8572]: Disconnecting invalid user admin 185.232.67.6 port 55245: Change of username or service not allowed: (admin,ssh-connection) -> (user,ssh-connection) [preauth]
+фев 17 06:41:50 vm2002143548 sshd[8574]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=14.29.224.2  user=root[0m
+фев 17 06:41:53 vm2002143548 sshd[8574]: Failed password for root from 14.29.224.2 port 56050 ssh2
+фев 17 06:41:53 vm2002143548 sshd[8574]: Connection closed by authenticating user root 14.29.224.2 port 56050 [preauth]
+фев 17 06:53:18 vm2002143548 sshd[8577]: Did not receive identification string from 103.35.140.70 port 58404
+фев 17 06:58:42 vm2002143548 sshd[8579]: Connection closed by 139.162.122.110 port 45962 [preauth]
+фев 17 06:58:43 vm2002143548 sshd[8581]: Invalid user  from 139.162.122.110 port 46198
+фев 17 06:58:43 vm2002143548 sshd[8581]: Failed none for invalid user  from 139.162.122.110 port 46198 ssh2
+фев 17 06:58:43 vm2002143548 sshd[8581]: Connection closed by invalid user  139.162.122.110 port 46198 [preauth]
+фев 17 07:00:34 vm2002143548 sshd[8583]: Received disconnect from 89.248.174.216 port 42374:11: Bye Bye [preauth]
+фев 17 07:00:34 vm2002143548 sshd[8583]: Disconnected from 89.248.174.216 port 42374 [preauth]
+фев 17 07:07:09 vm2002143548 sshd[8587]: Received disconnect from 89.248.174.216 port 54549:11: Bye Bye [preauth]
+фев 17 07:07:09 vm2002143548 sshd[8587]: Disconnected from 89.248.174.216 port 54549 [preauth]
+фев 17 07:12:16 vm2002143548 sshd[8591]: Unable to negotiate with 103.99.0.97 port 55945: no matching key exchange method found. Their offer: diffie-hellman-group1-sha1 [preauth]
+фев 17 07:17:01 vm2002143548 CRON[8593]: pam_unix(cron:session): session opened for user root by (uid=0)
+фев 17 07:17:01 vm2002143548 CRON[8594]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+фев 17 07:17:01 vm2002143548 CRON[8593]: pam_unix(cron:session): session closed for user root
+фев 17 07:22:47 vm2002143548 sshd[8597]: Invalid user admin from 185.232.67.5 port 45617
+фев 17 07:22:47 vm2002143548 sshd[8597]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 07:22:47 vm2002143548 sshd[8597]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.232.67.5[0m
+фев 17 07:22:49 vm2002143548 sshd[8597]: Failed password for invalid user admin from 185.232.67.5 port 45617 ssh2
+фев 17 07:22:52 vm2002143548 sshd[8597]: Disconnecting invalid user admin 185.232.67.5 port 45617: Change of username or service not allowed: (admin,ssh-connection) -> (user,ssh-connection) [preauth]
+фев 17 07:24:51 vm2002143548 sshd[8600]: Did not receive identification string from 123.25.15.134 port 13340
+фев 17 07:24:55 vm2002143548 sshd[8602]: Invalid user noc from 123.25.15.134 port 55408
+фев 17 07:24:56 vm2002143548 sshd[8602]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 07:24:56 vm2002143548 sshd[8602]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=123.25.15.134[0m
+фев 17 07:24:58 vm2002143548 sshd[8602]: Failed password for invalid user noc from 123.25.15.134 port 55408 ssh2
+фев 17 07:24:58 vm2002143548 sshd[8602]: Connection closed by invalid user noc 123.25.15.134 port 55408 [preauth]
+фев 17 07:26:47 vm2002143548 sshd[8604]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=218.76.171.129  user=root[0m
+фев 17 07:26:48 vm2002143548 sshd[8604]: Failed password for root from 218.76.171.129 port 55283 ssh2
+фев 17 07:26:49 vm2002143548 sshd[8604]: Connection closed by authenticating user root 218.76.171.129 port 55283 [preauth]
+фев 17 07:37:05 vm2002143548 sshd[8608]: Invalid user support from 27.78.14.83 port 51432
+фев 17 07:38:27 vm2002143548 sshd[8610]: Invalid user admin from 185.232.67.6 port 34545
+фев 17 07:38:27 vm2002143548 sshd[8610]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 07:38:27 vm2002143548 sshd[8610]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.232.67.6[0m
+фев 17 07:38:27 vm2002143548 sshd[8614]: Invalid user admin from 27.78.14.83 port 33880
+фев 17 07:38:28 vm2002143548 sshd[8610]: Failed password for invalid user admin from 185.232.67.6 port 34545 ssh2
+фев 17 07:38:30 vm2002143548 sshd[8614]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 07:38:30 vm2002143548 sshd[8614]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=27.78.14.83[0m
+фев 17 07:38:32 vm2002143548 sshd[8610]: Disconnecting invalid user admin 185.232.67.6 port 34545: Change of username or service not allowed: (admin,ssh-connection) -> (user,ssh-connection) [preauth]
+фев 17 07:38:32 vm2002143548 sshd[8614]: Failed password for invalid user admin from 27.78.14.83 port 33880 ssh2
+фев 17 07:38:34 vm2002143548 sshd[8614]: Connection closed by invalid user admin 27.78.14.83 port 33880 [preauth]
+фев 17 07:38:43 vm2002143548 sshd[8611]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=27.78.14.83  user=root[0m
+фев 17 07:38:44 vm2002143548 sshd[8611]: Failed password for root from 27.78.14.83 port 43016 ssh2
+фев 17 07:38:45 vm2002143548 sshd[8611]: Connection closed by authenticating user root 27.78.14.83 port 43016 [preauth]
+фев 17 07:39:24 vm2002143548 sshd[8616]: Invalid user user from 27.78.14.83 port 38754
+фев 17 07:39:27 vm2002143548 sshd[8616]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 07:39:27 vm2002143548 sshd[8616]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=27.78.14.83[0m
+фев 17 07:39:29 vm2002143548 sshd[8616]: Failed password for invalid user user from 27.78.14.83 port 38754 ssh2
+фев 17 07:39:29 vm2002143548 sshd[8616]: Connection closed by invalid user user 27.78.14.83 port 38754 [preauth]
+фев 17 07:49:19 vm2002143548 sshd[8619]: Invalid user admin from 185.232.67.5 port 60158
+фев 17 07:49:19 vm2002143548 sshd[8619]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 07:49:19 vm2002143548 sshd[8619]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.232.67.5[0m
+фев 17 07:49:21 vm2002143548 sshd[8619]: Failed password for invalid user admin from 185.232.67.5 port 60158 ssh2
+фев 17 07:49:23 vm2002143548 sshd[8619]: Disconnecting invalid user admin 185.232.67.5 port 60158: Change of username or service not allowed: (admin,ssh-connection) -> (user,ssh-connection) [preauth]
+фев 17 07:50:26 vm2002143548 sshd[8621]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=218.76.171.129  user=root[0m
+фев 17 07:50:29 vm2002143548 sshd[8621]: Failed password for root from 218.76.171.129 port 60808 ssh2
+фев 17 07:50:31 vm2002143548 sshd[8621]: Connection closed by authenticating user root 218.76.171.129 port 60808 [preauth]
+фев 17 08:06:18 vm2002143548 sshd[8625]: Invalid user admin from 185.232.67.6 port 36487
+фев 17 08:06:18 vm2002143548 sshd[8625]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 08:06:18 vm2002143548 sshd[8625]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.232.67.6[0m
+фев 17 08:06:19 vm2002143548 sshd[8625]: Failed password for invalid user admin from 185.232.67.6 port 36487 ssh2
+фев 17 08:06:23 vm2002143548 sshd[8625]: Disconnecting invalid user admin 185.232.67.6 port 36487: Change of username or service not allowed: (admin,ssh-connection) -> (user,ssh-connection) [preauth]
+фев 17 08:17:01 vm2002143548 CRON[8628]: pam_unix(cron:session): session opened for user root by (uid=0)
+фев 17 08:17:01 vm2002143548 CRON[8629]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+фев 17 08:17:01 vm2002143548 CRON[8628]: pam_unix(cron:session): session closed for user root
+фев 17 08:44:37 vm2002143548 sshd[8633]: Invalid user admin from 185.232.67.5 port 53820
+фев 17 08:44:37 vm2002143548 sshd[8633]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 08:44:37 vm2002143548 sshd[8633]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.232.67.5[0m
+фев 17 08:44:38 vm2002143548 sshd[8633]: Failed password for invalid user admin from 185.232.67.5 port 53820 ssh2
+фев 17 08:44:39 vm2002143548 sshd[8633]: Disconnecting invalid user admin 185.232.67.5 port 53820: Change of username or service not allowed: (admin,ssh-connection) -> (user,ssh-connection) [preauth]
+фев 17 08:54:18 vm2002143548 sshd[8637]: Invalid user admin from 185.232.67.6 port 58994
+фев 17 08:54:18 vm2002143548 sshd[8637]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 08:54:18 vm2002143548 sshd[8637]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.232.67.6[0m
+фев 17 08:54:20 vm2002143548 sshd[8637]: Failed password for invalid user admin from 185.232.67.6 port 58994 ssh2
+фев 17 08:54:21 vm2002143548 sshd[8637]: Disconnecting invalid user admin 185.232.67.6 port 58994: Change of username or service not allowed: (admin,ssh-connection) -> (user,ssh-connection) [preauth]
+фев 17 09:17:01 vm2002143548 CRON[8644]: pam_unix(cron:session): session opened for user root by (uid=0)
+фев 17 09:17:01 vm2002143548 CRON[8645]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+фев 17 09:17:01 vm2002143548 CRON[8644]: pam_unix(cron:session): session closed for user root
+фев 17 09:33:33 vm2002143548 sshd[8649]: Connection closed by 162.243.129.184 port 55386 [preauth]
+фев 17 09:34:58 vm2002143548 sshd[8651]: Invalid user admin from 185.232.67.6 port 57378
+фев 17 09:34:58 vm2002143548 sshd[8651]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 09:34:58 vm2002143548 sshd[8651]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.232.67.6[0m
+фев 17 09:35:00 vm2002143548 sshd[8651]: Failed password for invalid user admin from 185.232.67.6 port 57378 ssh2
+фев 17 09:35:02 vm2002143548 sshd[8651]: Disconnecting invalid user admin 185.232.67.6 port 57378: Change of username or service not allowed: (admin,ssh-connection) -> (user,ssh-connection) [preauth]
+фев 17 09:38:03 vm2002143548 sshd[8654]: Did not receive identification string from 202.53.87.62 port 61469
+фев 17 09:38:17 vm2002143548 sshd[8655]: Invalid user ubnt from 202.53.87.62 port 62282
+фев 17 09:38:22 vm2002143548 sshd[8655]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 09:38:22 vm2002143548 sshd[8655]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=202.53.87.62[0m
+фев 17 09:38:24 vm2002143548 sshd[8655]: Failed password for invalid user ubnt from 202.53.87.62 port 62282 ssh2
+фев 17 09:38:33 vm2002143548 sshd[8655]: Connection closed by invalid user ubnt 202.53.87.62 port 62282 [preauth]
+фев 17 09:40:38 vm2002143548 sshd[8659]: Invalid user admin from 185.232.67.5 port 57325
+фев 17 09:40:38 vm2002143548 sshd[8659]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 09:40:38 vm2002143548 sshd[8659]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.232.67.5[0m
+фев 17 09:40:40 vm2002143548 sshd[8659]: Failed password for invalid user admin from 185.232.67.5 port 57325 ssh2
+фев 17 09:40:42 vm2002143548 sshd[8659]: Disconnecting invalid user admin 185.232.67.5 port 57325: Change of username or service not allowed: (admin,ssh-connection) -> (user,ssh-connection) [preauth]
+фев 17 10:06:03 vm2002143548 sshd[8663]: Accepted password for root from 31.6.105.100 port 52841 ssh2
+фев 17 10:06:03 vm2002143548 sshd[8663]: pam_unix(sshd:session): session opened for user root by (uid=0)
+фев 17 10:06:03 vm2002143548 systemd[1]: Created slice User Slice of root.
+-- Subject: Запуск юнита user-0.slice завершен
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Процесс запуска юнита user-0.slice был завершен.
+-- 
+-- Результат: RESULT.
+фев 17 10:06:03 vm2002143548 systemd[1]: Starting User Manager for UID 0...
+-- Subject: Начинается запуск юнита user@0.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Начат процесс запуска юнита user@0.service.
+фев 17 10:06:03 vm2002143548 systemd[1]: Started Session 82 of user root.
+-- Subject: Запуск юнита session-82.scope завершен
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Процесс запуска юнита session-82.scope был завершен.
+-- 
+-- Результат: RESULT.
+фев 17 10:06:03 vm2002143548 systemd-logind[856]: New session 82 of user root.
+-- Subject: Для пользователя root создан новый сеанс 82
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- Documentation: https://www.freedesktop.org/wiki/Software/systemd/multiseat
+-- 
+-- Для пользователя root создан новый сеанс с идентификатором 82.
+-- 
+-- Главный процесс нового сеанса имеет индентификатор 8663.
+фев 17 10:06:03 vm2002143548 systemd[8665]: pam_unix(systemd-user:session): session opened for user root by (uid=0)
+фев 17 10:06:03 vm2002143548 systemd[8665]: Listening on GnuPG cryptographic agent and passphrase cache (restricted).
+-- Subject: Запуск юнита UNIT завершен
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Процесс запуска юнита UNIT был завершен.
+-- 
+-- Результат: RESULT.
+фев 17 10:06:03 vm2002143548 systemd[8665]: Reached target Paths.
+-- Subject: Запуск юнита UNIT завершен
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Процесс запуска юнита UNIT был завершен.
+-- 
+-- Результат: RESULT.
+фев 17 10:06:03 vm2002143548 systemd[8665]: Listening on GnuPG cryptographic agent and passphrase cache (access for web browsers).
+-- Subject: Запуск юнита UNIT завершен
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Процесс запуска юнита UNIT был завершен.
+-- 
+-- Результат: RESULT.
+фев 17 10:06:03 vm2002143548 systemd[8665]: Reached target Timers.
+-- Subject: Запуск юнита UNIT завершен
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Процесс запуска юнита UNIT был завершен.
+-- 
+-- Результат: RESULT.
+фев 17 10:06:03 vm2002143548 systemd[8665]: Listening on GnuPG network certificate management daemon.
+-- Subject: Запуск юнита UNIT завершен
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Процесс запуска юнита UNIT был завершен.
+-- 
+-- Результат: RESULT.
+фев 17 10:06:03 vm2002143548 systemd[8665]: Listening on GnuPG cryptographic agent and passphrase cache.
+-- Subject: Запуск юнита UNIT завершен
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Процесс запуска юнита UNIT был завершен.
+-- 
+-- Результат: RESULT.
+фев 17 10:06:03 vm2002143548 systemd[8665]: Listening on GnuPG cryptographic agent (ssh-agent emulation).
+-- Subject: Запуск юнита UNIT завершен
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Процесс запуска юнита UNIT был завершен.
+-- 
+-- Результат: RESULT.
+фев 17 10:06:03 vm2002143548 systemd[8665]: Reached target Sockets.
+-- Subject: Запуск юнита UNIT завершен
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Процесс запуска юнита UNIT был завершен.
+-- 
+-- Результат: RESULT.
+фев 17 10:06:03 vm2002143548 systemd[8665]: Reached target Basic System.
+-- Subject: Запуск юнита UNIT завершен
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Процесс запуска юнита UNIT был завершен.
+-- 
+-- Результат: RESULT.
+фев 17 10:06:03 vm2002143548 systemd[1]: Started User Manager for UID 0.
+-- Subject: Запуск юнита user@0.service завершен
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Процесс запуска юнита user@0.service был завершен.
+-- 
+-- Результат: RESULT.
+фев 17 10:06:03 vm2002143548 systemd[8665]: Reached target Default.
+-- Subject: Запуск юнита UNIT завершен
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Процесс запуска юнита UNIT был завершен.
+-- 
+-- Результат: RESULT.
+фев 17 10:06:03 vm2002143548 systemd[8665]: Startup finished in 91ms.
+-- Subject: Завершен запуск менеджера пользовательского сеанса
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Менеджер пользовательского сеанса для пользователя с идентификатором 0
+-- был запущен. Все службы, стоявшие в очереди на запуск, также были запущены. Тем 
+-- не менее, прочие службы могут все еще находиться в процессе запуска, либо могут
+-- быть запущены позднее.
+-- 
+-- Запуск менеджера занял 91935 микросекунд.
+фев 17 10:06:08 vm2002143548 sshd[8800]: Did not receive identification string from 14.183.189.144 port 50152
+фев 17 10:06:59 vm2002143548 sudo[8801]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt update[0m
+фев 17 10:06:59 vm2002143548 sudo[8801]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:06:59 vm2002143548 systemd-resolved[14685]: [0;1;39m[0;1;31m[0;1;39mServer returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.[0m
+фев 17 10:07:08 vm2002143548 sudo[8801]: pam_unix(sudo:session): session closed for user root
+фев 17 10:07:10 vm2002143548 sudo[9039]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt install -y mongodb[0m
+фев 17 10:07:10 vm2002143548 sudo[9039]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:07:28 vm2002143548 systemd[1]: Reloading.
+фев 17 10:07:29 vm2002143548 groupadd[9362]: group added to /etc/group: name=mongodb, GID=116
+фев 17 10:07:29 vm2002143548 groupadd[9362]: group added to /etc/gshadow: name=mongodb
+фев 17 10:07:29 vm2002143548 groupadd[9362]: new group: name=mongodb, GID=116
+фев 17 10:07:29 vm2002143548 useradd[9366]: new user: name=mongodb, UID=111, GID=116, home=/var/lib/mongodb, shell=/usr/sbin/nologin
+фев 17 10:07:29 vm2002143548 chage[9372]: changed password expiry for mongodb
+фев 17 10:07:29 vm2002143548 systemd[1]: Reloading.
+фев 17 10:07:30 vm2002143548 systemd[1]: Reloading.
+фев 17 10:07:30 vm2002143548 systemd[1]: Starting Daily apt download activities...
+-- Subject: Начинается запуск юнита apt-daily.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Начат процесс запуска юнита apt-daily.service.
+фев 17 10:07:30 vm2002143548 systemd[1]: Started An object/document-oriented database.
+-- Subject: Запуск юнита mongodb.service завершен
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Процесс запуска юнита mongodb.service был завершен.
+-- 
+-- Результат: RESULT.
+фев 17 10:07:30 vm2002143548 systemd[1]: Started Daily apt download activities.
+-- Subject: Запуск юнита apt-daily.service завершен
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Процесс запуска юнита apt-daily.service был завершен.
+-- 
+-- Результат: RESULT.
+фев 17 10:07:30 vm2002143548 systemd[1]: Reloading.
+фев 17 10:07:31 vm2002143548 systemd[1]: Reloading.
+фев 17 10:07:35 vm2002143548 sudo[9039]: pam_unix(sudo:session): session closed for user root
+фев 17 10:08:07 vm2002143548 sudo[9604]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/bin/systemctl status mongodb[0m
+фев 17 10:08:07 vm2002143548 sudo[9604]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:08:27 vm2002143548 sshd[9607]: Did not receive identification string from 42.115.215.173 port 57146
+фев 17 10:08:43 vm2002143548 sshd[9608]: Invalid user noc from 42.115.215.173 port 64818
+фев 17 10:08:46 vm2002143548 sshd[9608]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 10:08:46 vm2002143548 sshd[9608]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=42.115.215.173[0m
+фев 17 10:08:48 vm2002143548 sshd[9608]: Failed password for invalid user noc from 42.115.215.173 port 64818 ssh2
+фев 17 10:08:48 vm2002143548 sshd[9608]: Connection closed by invalid user noc 42.115.215.173 port 64818 [preauth]
+фев 17 10:08:51 vm2002143548 sudo[9610]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/sbin/ufw allow 27017[0m
+фев 17 10:08:51 vm2002143548 sudo[9610]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:08:51 vm2002143548 kernel: nf_conntrack version 0.5.0 (16384 buckets, 65536 max)
+фев 17 10:08:51 vm2002143548 kernel: ip6_tables: (C) 2000-2006 Netfilter Core Team
+фев 17 10:08:51 vm2002143548 sudo[9610]: pam_unix(sudo:session): session closed for user root
+фев 17 10:09:11 vm2002143548 sudo[9641]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/node bin/www[0m
+фев 17 10:09:11 vm2002143548 sudo[9641]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:09:19 vm2002143548 sudo[9641]: pam_unix(sudo:session): session closed for user root
+фев 17 10:09:53 vm2002143548 sudo[9685]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt install redis-server[0m
+фев 17 10:09:53 vm2002143548 sudo[9685]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:09:58 vm2002143548 systemd[1]: Reloading.
+фев 17 10:09:59 vm2002143548 groupadd[9861]: group added to /etc/group: name=redis, GID=117
+фев 17 10:09:59 vm2002143548 groupadd[9861]: group added to /etc/gshadow: name=redis
+фев 17 10:09:59 vm2002143548 groupadd[9861]: new group: name=redis, GID=117
+фев 17 10:09:59 vm2002143548 useradd[9865]: new user: name=redis, UID=112, GID=117, home=/var/lib/redis, shell=/usr/sbin/nologin
+фев 17 10:09:59 vm2002143548 usermod[9871]: change user 'redis' password
+фев 17 10:09:59 vm2002143548 chage[9876]: changed password expiry for redis
+фев 17 10:09:59 vm2002143548 systemd[1]: Reloading.
+фев 17 10:10:00 vm2002143548 systemd[1]: Reloading.
+фев 17 10:10:00 vm2002143548 systemd[1]: Starting Advanced key-value store...
+-- Subject: Начинается запуск юнита redis-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Начат процесс запуска юнита redis-server.service.
+фев 17 10:10:00 vm2002143548 systemd[1]: redis-server.service: Can't open PID file /var/run/redis/redis-server.pid (yet?) after start: No such file or directory
+фев 17 10:10:00 vm2002143548 systemd[1]: Started Advanced key-value store.
+-- Subject: Запуск юнита redis-server.service завершен
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Процесс запуска юнита redis-server.service был завершен.
+-- 
+-- Результат: RESULT.
+фев 17 10:10:00 vm2002143548 systemd[1]: Reloading.
+фев 17 10:10:01 vm2002143548 systemd[1]: Reloading.
+фев 17 10:10:05 vm2002143548 sudo[9685]: pam_unix(sudo:session): session closed for user root
+фев 17 10:10:24 vm2002143548 sudo[10060]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/node bin/www[0m
+фев 17 10:10:24 vm2002143548 sudo[10060]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:11:16 vm2002143548 sudo[10099]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-key add -[0m
+фев 17 10:11:16 vm2002143548 sudo[10099]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:11:18 vm2002143548 sudo[10099]: pam_unix(sudo:session): session closed for user root
+фев 17 10:11:30 vm2002143548 sudo[10253]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-key adv --keyserver hkps://keys.openpgp.org --recv-keys 0x0A9AF2115F4687BD29803A206B73A36E6026DFCA[0m
+фев 17 10:11:30 vm2002143548 sudo[10253]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:11:30 vm2002143548 systemd-resolved[14685]: [0;1;39m[0;1;31m[0;1;39mServer returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.[0m
+фев 17 10:11:41 vm2002143548 sudo[10253]: pam_unix(sudo:session): session closed for user root
+фев 17 10:11:49 vm2002143548 sudo[10380]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get install apt-transport-https[0m
+фев 17 10:11:49 vm2002143548 sudo[10380]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:11:54 vm2002143548 sudo[10380]: pam_unix(sudo:session): session closed for user root
+фев 17 10:13:11 vm2002143548 sudo[10458]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get update -y[0m
+фев 17 10:13:11 vm2002143548 sudo[10458]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:13:11 vm2002143548 systemd-resolved[14685]: [0;1;39m[0;1;31m[0;1;39mServer returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.[0m
+фев 17 10:13:14 vm2002143548 sudo[10458]: pam_unix(sudo:session): session closed for user root
+фев 17 10:13:19 vm2002143548 sudo[10703]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get install -y erlang-base erlang-asn1 erlang-crypto erlang-eldap erlang-ftp erlang-inets erlang-mnesia erlang-os-mon erlang-parsetools erlang-public-key erlang-runtime-tools erlang-snmp erlang-ssl erlang-syntax-tools erlang-tftp erlang-tools erlang-xmerl[0m
+фев 17 10:13:19 vm2002143548 sudo[10703]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:13:20 vm2002143548 sudo[10703]: pam_unix(sudo:session): session closed for user root
+фев 17 10:14:27 vm2002143548 sudo[10714]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/bin/nano /etc/apt/sources.list.d/bintray.erlang.list[0m
+фев 17 10:14:27 vm2002143548 sudo[10714]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:15:17 vm2002143548 sudo[10714]: pam_unix(sudo:session): session closed for user root
+фев 17 10:15:18 vm2002143548 sshd[10716]: Received disconnect from 113.240.247.163 port 59098:11: Bye Bye [preauth]
+фев 17 10:15:18 vm2002143548 sshd[10716]: Disconnected from 113.240.247.163 port 59098 [preauth]
+фев 17 10:15:19 vm2002143548 sudo[10718]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/bin/nano /etc/apt/sources.list.d/bintray.erlang.list[0m
+фев 17 10:15:19 vm2002143548 sudo[10718]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:15:21 vm2002143548 sudo[10718]: pam_unix(sudo:session): session closed for user root
+фев 17 10:15:24 vm2002143548 sudo[10720]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get update -y[0m
+фев 17 10:15:24 vm2002143548 sudo[10720]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:15:25 vm2002143548 systemd-resolved[14685]: [0;1;39m[0;1;31m[0;1;39mServer returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.[0m
+фев 17 10:15:28 vm2002143548 sudo[10720]: pam_unix(sudo:session): session closed for user root
+фев 17 10:15:37 vm2002143548 sudo[11021]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get install -y erlang-base erlang-asn1 erlang-crypto erlang-eldap erlang-ftp erlang-inets erlang-mnesia erlang-os-mon erlang-parsetools erlang-public-key erlang-runtime-tools erlang-snmp erlang-ssl erlang-syntax-tools erlang-tftp erlang-tools erlang-xmerl[0m
+фев 17 10:15:37 vm2002143548 sudo[11021]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:15:44 vm2002143548 groupadd[11207]: group added to /etc/group: name=epmd, GID=118
+фев 17 10:15:44 vm2002143548 groupadd[11207]: group added to /etc/gshadow: name=epmd
+фев 17 10:15:44 vm2002143548 groupadd[11207]: new group: name=epmd, GID=118
+фев 17 10:15:44 vm2002143548 useradd[11211]: new user: name=epmd, UID=113, GID=118, home=/var/run/epmd, shell=/usr/sbin/nologin
+фев 17 10:15:44 vm2002143548 usermod[11217]: change user 'epmd' password
+фев 17 10:15:44 vm2002143548 chage[11222]: changed password expiry for epmd
+фев 17 10:15:44 vm2002143548 systemd[1]: Reloading.
+фев 17 10:15:45 vm2002143548 systemd[1]: Reloading.
+фев 17 10:15:45 vm2002143548 systemd[1]: Reloading.
+фев 17 10:15:45 vm2002143548 systemd[1]: Listening on Erlang Port Mapper Daemon Activation Socket.
+-- Subject: Запуск юнита epmd.socket завершен
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Процесс запуска юнита epmd.socket был завершен.
+-- 
+-- Результат: RESULT.
+фев 17 10:15:45 vm2002143548 systemd[1]: Started Erlang Port Mapper Daemon.
+-- Subject: Запуск юнита epmd.service завершен
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Процесс запуска юнита epmd.service был завершен.
+-- 
+-- Результат: RESULT.
+фев 17 10:15:50 vm2002143548 sudo[11021]: pam_unix(sudo:session): session closed for user root
+фев 17 10:16:18 vm2002143548 sudo[11482]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/bin/nano /etc/apt/preferences.d/erlang[0m
+фев 17 10:16:18 vm2002143548 sudo[11482]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:16:30 vm2002143548 sudo[11482]: pam_unix(sudo:session): session closed for user root
+фев 17 10:16:34 vm2002143548 sudo[11484]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-cache policy[0m
+фев 17 10:16:34 vm2002143548 sudo[11484]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:16:35 vm2002143548 sudo[11484]: pam_unix(sudo:session): session closed for user root
+фев 17 10:17:01 vm2002143548 CRON[11488]: pam_unix(cron:session): session opened for user root by (uid=0)
+фев 17 10:17:01 vm2002143548 CRON[11489]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+фев 17 10:17:01 vm2002143548 CRON[11488]: pam_unix(cron:session): session closed for user root
+фев 17 10:17:36 vm2002143548 sudo[11491]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get update[0m
+фев 17 10:17:36 vm2002143548 sudo[11491]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:17:37 vm2002143548 systemd-resolved[14685]: [0;1;39m[0;1;31m[0;1;39mServer returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.[0m
+фев 17 10:17:41 vm2002143548 sudo[11491]: pam_unix(sudo:session): session closed for user root
+фев 17 10:17:59 vm2002143548 sudo[11791]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/tee /etc/apt/sources.list.d/rabbitmq.list[0m
+фев 17 10:17:59 vm2002143548 sudo[11791]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:17:59 vm2002143548 sudo[11791]: pam_unix(sudo:session): session closed for user root
+фев 17 10:18:10 vm2002143548 sudo[11794]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-key add -[0m
+фев 17 10:18:10 vm2002143548 sudo[11794]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:18:11 vm2002143548 sudo[11794]: pam_unix(sudo:session): session closed for user root
+фев 17 10:18:17 vm2002143548 sudo[11918]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get update[0m
+фев 17 10:18:17 vm2002143548 sudo[11918]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:18:17 vm2002143548 systemd-resolved[14685]: [0;1;39m[0;1;31m[0;1;39mServer returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.[0m
+фев 17 10:18:17 vm2002143548 systemd-resolved[14685]: [0;1;39m[0;1;31m[0;1;39mServer returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.[0m
+фев 17 10:18:17 vm2002143548 systemd-resolved[14685]: [0;1;39m[0;1;31m[0;1;39mServer returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.[0m
+фев 17 10:18:20 vm2002143548 sudo[11918]: pam_unix(sudo:session): session closed for user root
+фев 17 10:18:25 vm2002143548 sudo[12275]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get install rabbitmq-server[0m
+фев 17 10:18:25 vm2002143548 sudo[12275]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:18:26 vm2002143548 sudo[12275]: pam_unix(sudo:session): session closed for user root
+фев 17 10:18:34 vm2002143548 sshd[12279]: Did not receive identification string from 183.89.70.94 port 59222
+фев 17 10:19:06 vm2002143548 sudo[12280]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get install rabbitmq-server[0m
+фев 17 10:19:06 vm2002143548 sudo[12280]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:19:08 vm2002143548 sudo[12280]: pam_unix(sudo:session): session closed for user root
+фев 17 10:19:31 vm2002143548 sudo[12284]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get install rabbitmq-server[0m
+фев 17 10:19:31 vm2002143548 sudo[12284]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:19:32 vm2002143548 sudo[12284]: pam_unix(sudo:session): session closed for user root
+фев 17 10:19:47 vm2002143548 sudo[12288]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get update[0m
+фев 17 10:19:47 vm2002143548 sudo[12288]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:19:47 vm2002143548 systemd-resolved[14685]: [0;1;39m[0;1;31m[0;1;39mServer returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.[0m
+фев 17 10:19:47 vm2002143548 systemd-resolved[14685]: [0;1;39m[0;1;31m[0;1;39mServer returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.[0m
+фев 17 10:19:47 vm2002143548 systemd-resolved[14685]: [0;1;39m[0;1;31m[0;1;39mServer returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.[0m
+фев 17 10:19:50 vm2002143548 sudo[12288]: pam_unix(sudo:session): session closed for user root
+фев 17 10:20:33 vm2002143548 sudo[12643]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/bin/nano /etc/apt/preferences.d/erlang[0m
+фев 17 10:20:33 vm2002143548 sudo[12643]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:20:36 vm2002143548 sudo[12643]: pam_unix(sudo:session): session closed for user root
+фев 17 10:20:42 vm2002143548 sudo[12645]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/bin/nano /etc/apt/sources.list.d/bintray.erlang.list[0m
+фев 17 10:20:42 vm2002143548 sudo[12645]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:20:55 vm2002143548 sudo[12645]: pam_unix(sudo:session): session closed for user root
+фев 17 10:20:57 vm2002143548 sudo[12647]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get update[0m
+фев 17 10:20:57 vm2002143548 sudo[12647]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:20:57 vm2002143548 systemd-resolved[14685]: [0;1;39m[0;1;31m[0;1;39mServer returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.[0m
+фев 17 10:20:57 vm2002143548 systemd-resolved[14685]: [0;1;39m[0;1;31m[0;1;39mServer returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.[0m
+фев 17 10:20:57 vm2002143548 systemd-resolved[14685]: [0;1;39m[0;1;31m[0;1;39mServer returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.[0m
+фев 17 10:21:00 vm2002143548 sudo[12647]: pam_unix(sudo:session): session closed for user root
+фев 17 10:21:06 vm2002143548 sudo[12947]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get install rabbitmq-server[0m
+фев 17 10:21:06 vm2002143548 sudo[12947]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:21:07 vm2002143548 sudo[12947]: pam_unix(sudo:session): session closed for user root
+фев 17 10:22:20 vm2002143548 sshd[12953]: Did not receive identification string from 192.82.64.222 port 33000
+фев 17 10:22:24 vm2002143548 sshd[12954]: Invalid user user from 192.82.64.222 port 45050
+фев 17 10:22:24 vm2002143548 sshd[12954]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 10:22:24 vm2002143548 sshd[12954]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.82.64.222[0m
+фев 17 10:22:27 vm2002143548 sshd[12954]: Failed password for invalid user user from 192.82.64.222 port 45050 ssh2
+фев 17 10:22:30 vm2002143548 sshd[12954]: Connection closed by invalid user user 192.82.64.222 port 45050 [preauth]
+фев 17 10:30:01 vm2002143548 sudo[12957]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/bin/nano /etc/apt/preferences.d/erlang[0m
+фев 17 10:30:01 vm2002143548 sudo[12957]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:30:24 vm2002143548 sudo[12957]: pam_unix(sudo:session): session closed for user root
+фев 17 10:31:37 vm2002143548 sudo[12961]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-key add -[0m
+фев 17 10:31:37 vm2002143548 sudo[12961]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:31:37 vm2002143548 sudo[12961]: pam_unix(sudo:session): session closed for user root
+фев 17 10:31:45 vm2002143548 sudo[13148]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/tee /etc/apt/sources.list.d/rabbitmq.list[0m
+фев 17 10:31:45 vm2002143548 sudo[13148]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:31:45 vm2002143548 sudo[13148]: pam_unix(sudo:session): session closed for user root
+фев 17 10:31:55 vm2002143548 sudo[13150]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt update[0m
+фев 17 10:31:55 vm2002143548 sudo[13150]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:31:55 vm2002143548 systemd-resolved[14685]: [0;1;39m[0;1;31m[0;1;39mServer returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.[0m
+фев 17 10:32:06 vm2002143548 sudo[13150]: pam_unix(sudo:session): session closed for user root
+фев 17 10:32:09 vm2002143548 sudo[13459]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt -y install erlang[0m
+фев 17 10:32:09 vm2002143548 sudo[13459]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:33:06 vm2002143548 epmd[11315]: epmd: Mon Feb 17 10:33:06 2020: got KILL_REQ - terminates normal
+фев 17 10:33:07 vm2002143548 systemd[1]: Reloading.
+фев 17 10:33:32 vm2002143548 systemd[1]: Reloading.
+фев 17 10:33:32 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:33:34 vm2002143548 systemd[1]: Reloading.
+фев 17 10:33:34 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:33:34 vm2002143548 systemd[1]: Reloading.
+фев 17 10:33:35 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:33:44 vm2002143548 systemd[1]: Reloading.
+фев 17 10:33:44 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:33:48 vm2002143548 sudo[13459]: pam_unix(sudo:session): session closed for user root
+фев 17 10:33:56 vm2002143548 sudo[18013]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get install rabbitmq-server[0m
+фев 17 10:33:56 vm2002143548 sudo[18013]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:34:02 vm2002143548 systemd[1]: Reloading.
+фев 17 10:34:02 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:34:02 vm2002143548 groupadd[18090]: group added to /etc/group: name=rabbitmq, GID=119
+фев 17 10:34:02 vm2002143548 groupadd[18090]: group added to /etc/gshadow: name=rabbitmq
+фев 17 10:34:02 vm2002143548 groupadd[18090]: new group: name=rabbitmq, GID=119
+фев 17 10:34:02 vm2002143548 useradd[18096]: new user: name=rabbitmq, UID=114, GID=119, home=/var/lib/rabbitmq, shell=/usr/sbin/nologin
+фев 17 10:34:02 vm2002143548 chage[18102]: changed password expiry for rabbitmq
+фев 17 10:34:02 vm2002143548 chfn[18105]: changed user 'rabbitmq' information
+фев 17 10:34:03 vm2002143548 systemd[1]: Reloading.
+фев 17 10:34:03 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:34:03 vm2002143548 systemd[1]: Reloading.
+фев 17 10:34:03 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:34:03 vm2002143548 systemd[1]: Reloading.
+фев 17 10:34:04 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:34:04 vm2002143548 systemd[1]: Starting RabbitMQ Messaging Server...
+-- Subject: Начинается запуск юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Начат процесс запуска юнита rabbitmq-server.service.
+фев 17 10:34:05 vm2002143548 rabbitmq[18195]: Waiting for rabbit@vm2002143548
+фев 17 10:34:05 vm2002143548 rabbitmq[18195]: pid is 18203
+фев 17 10:34:07 vm2002143548 rabbitmq[18195]: Error: process_not_running
+фев 17 10:34:07 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Control process exited, code=exited status=70[0m
+фев 17 10:34:07 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Failed with result 'exit-code'.[0m
+фев 17 10:34:07 vm2002143548 systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start RabbitMQ Messaging Server.[0m
+-- Subject: Ошибка юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Произошел сбой юнита rabbitmq-server.service.
+-- 
+-- Результат: RESULT.
+фев 17 10:34:07 vm2002143548 systemd[1]: Reloading.
+фев 17 10:34:07 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:34:11 vm2002143548 sudo[18013]: pam_unix(sudo:session): session closed for user root
+фев 17 10:35:19 vm2002143548 sudo[18702]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/sudo apt-get install rabbitmq-server[0m
+фев 17 10:35:19 vm2002143548 sudo[18702]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:35:19 vm2002143548 sudo[18703]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get install rabbitmq-server[0m
+фев 17 10:35:19 vm2002143548 sudo[18703]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:35:22 vm2002143548 systemd[1]: Reloading.
+фев 17 10:35:22 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:35:22 vm2002143548 systemd[1]: Reloading.
+фев 17 10:35:23 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:35:23 vm2002143548 systemd[1]: Starting RabbitMQ Messaging Server...
+-- Subject: Начинается запуск юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Начат процесс запуска юнита rabbitmq-server.service.
+фев 17 10:35:24 vm2002143548 rabbitmq[18778]: Waiting for rabbit@vm2002143548
+фев 17 10:35:24 vm2002143548 rabbitmq[18778]: pid is 18799
+фев 17 10:35:26 vm2002143548 rabbitmq[18778]: Error: process_not_running
+фев 17 10:35:26 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Control process exited, code=exited status=70[0m
+фев 17 10:35:26 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Failed with result 'exit-code'.[0m
+фев 17 10:35:26 vm2002143548 systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start RabbitMQ Messaging Server.[0m
+-- Subject: Ошибка юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Произошел сбой юнита rabbitmq-server.service.
+-- 
+-- Результат: RESULT.
+фев 17 10:35:29 vm2002143548 sudo[18703]: pam_unix(sudo:session): session closed for user root
+фев 17 10:35:29 vm2002143548 sudo[18702]: pam_unix(sudo:session): session closed for user root
+фев 17 10:36:32 vm2002143548 sudo[19256]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/sbin/service rabbitmq status[0m
+фев 17 10:36:32 vm2002143548 sudo[19256]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:36:32 vm2002143548 sudo[19256]: pam_unix(sudo:session): session closed for user root
+фев 17 10:37:00 vm2002143548 sudo[19262]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/bin/systemctl start rabbitmq-server[0m
+фев 17 10:37:00 vm2002143548 sudo[19262]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:37:00 vm2002143548 systemd[1]: Starting RabbitMQ Messaging Server...
+-- Subject: Начинается запуск юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Начат процесс запуска юнита rabbitmq-server.service.
+фев 17 10:37:02 vm2002143548 rabbitmq[19266]: Waiting for rabbit@vm2002143548
+фев 17 10:37:02 vm2002143548 rabbitmq[19266]: pid is 19290
+фев 17 10:37:04 vm2002143548 rabbitmq[19266]: Error: process_not_running
+фев 17 10:37:04 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Control process exited, code=exited status=70[0m
+фев 17 10:37:04 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Failed with result 'exit-code'.[0m
+фев 17 10:37:04 vm2002143548 systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start RabbitMQ Messaging Server.[0m
+-- Subject: Ошибка юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Произошел сбой юнита rabbitmq-server.service.
+-- 
+-- Результат: RESULT.
+фев 17 10:37:04 vm2002143548 sudo[19262]: pam_unix(sudo:session): session closed for user root
+фев 17 10:37:13 vm2002143548 sudo[19708]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get install rabbitmq-server[0m
+фев 17 10:37:13 vm2002143548 sudo[19708]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:37:27 vm2002143548 sudo[19708]: pam_unix(sudo:session): session closed for user root
+фев 17 10:37:35 vm2002143548 sudo[19712]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get install rabbitmq-server[0m
+фев 17 10:37:35 vm2002143548 sudo[19712]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:37:39 vm2002143548 systemd[1]: Reloading.
+фев 17 10:37:39 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:37:39 vm2002143548 systemd[1]: Reloading.
+фев 17 10:37:39 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:37:39 vm2002143548 systemd[1]: Starting RabbitMQ Messaging Server...
+-- Subject: Начинается запуск юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Начат процесс запуска юнита rabbitmq-server.service.
+фев 17 10:37:41 vm2002143548 rabbitmq[19787]: Waiting for rabbit@vm2002143548
+фев 17 10:37:41 vm2002143548 rabbitmq[19787]: pid is 19800
+фев 17 10:37:43 vm2002143548 rabbitmq[19787]: Error: process_not_running
+фев 17 10:37:43 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Control process exited, code=exited status=70[0m
+фев 17 10:37:43 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Failed with result 'exit-code'.[0m
+фев 17 10:37:43 vm2002143548 systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start RabbitMQ Messaging Server.[0m
+-- Subject: Ошибка юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Произошел сбой юнита rabbitmq-server.service.
+-- 
+-- Результат: RESULT.
+фев 17 10:37:46 vm2002143548 sudo[19712]: pam_unix(sudo:session): session closed for user root
+фев 17 10:38:37 vm2002143548 sudo[20261]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get remove rabbitmq-server[0m
+фев 17 10:38:37 vm2002143548 sudo[20261]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:38:40 vm2002143548 systemd[1]: Reloading.
+фев 17 10:38:40 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:38:40 vm2002143548 systemd[1]: Reloading.
+фев 17 10:38:40 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:38:40 vm2002143548 systemd[1]: Reloading.
+фев 17 10:38:41 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:38:43 vm2002143548 sudo[20261]: pam_unix(sudo:session): session closed for user root
+фев 17 10:38:46 vm2002143548 sudo[20379]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get install rabbitmq-server[0m
+фев 17 10:38:46 vm2002143548 sudo[20379]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:38:49 vm2002143548 systemd[1]: Reloading.
+фев 17 10:38:49 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:38:49 vm2002143548 systemd[1]: Reloading.
+фев 17 10:38:49 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:38:49 vm2002143548 systemd[1]: Reloading.
+фев 17 10:38:50 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:38:50 vm2002143548 systemd[1]: Starting RabbitMQ Messaging Server...
+-- Subject: Начинается запуск юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Начат процесс запуска юнита rabbitmq-server.service.
+фев 17 10:38:51 vm2002143548 rabbitmq[20506]: Waiting for rabbit@vm2002143548
+фев 17 10:38:51 vm2002143548 rabbitmq[20506]: pid is 20534
+фев 17 10:38:53 vm2002143548 rabbitmq[20506]: Error: process_not_running
+фев 17 10:38:53 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Control process exited, code=exited status=70[0m
+фев 17 10:38:53 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Failed with result 'exit-code'.[0m
+фев 17 10:38:53 vm2002143548 systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start RabbitMQ Messaging Server.[0m
+-- Subject: Ошибка юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Произошел сбой юнита rabbitmq-server.service.
+-- 
+-- Результат: RESULT.
+фев 17 10:38:53 vm2002143548 systemd[1]: Reloading.
+фев 17 10:38:53 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:38:56 vm2002143548 sudo[20379]: pam_unix(sudo:session): session closed for user root
+фев 17 10:41:14 vm2002143548 sshd[21015]: Invalid user admin from 185.232.67.6 port 38121
+фев 17 10:41:14 vm2002143548 sshd[21015]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 10:41:14 vm2002143548 sshd[21015]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.232.67.6[0m
+фев 17 10:41:17 vm2002143548 sshd[21015]: Failed password for invalid user admin from 185.232.67.6 port 38121 ssh2
+фев 17 10:41:17 vm2002143548 sshd[21015]: Disconnecting invalid user admin 185.232.67.6 port 38121: Change of username or service not allowed: (admin,ssh-connection) -> (user,ssh-connection) [preauth]
+фев 17 10:46:14 vm2002143548 sudo[21022]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get uninstall rabbitmq-server[0m
+фев 17 10:46:14 vm2002143548 sudo[21022]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:46:14 vm2002143548 sudo[21022]: pam_unix(sudo:session): session closed for user root
+фев 17 10:46:20 vm2002143548 sudo[21025]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get remove rabbitmq-server[0m
+фев 17 10:46:20 vm2002143548 sudo[21025]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:46:23 vm2002143548 systemd[1]: Reloading.
+фев 17 10:46:23 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:46:24 vm2002143548 systemd[1]: Reloading.
+фев 17 10:46:24 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:46:24 vm2002143548 systemd[1]: Reloading.
+фев 17 10:46:24 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:46:27 vm2002143548 sudo[21025]: pam_unix(sudo:session): session closed for user root
+фев 17 10:51:31 vm2002143548 sudo[21155]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt autoremove[0m
+фев 17 10:51:31 vm2002143548 sudo[21155]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:51:38 vm2002143548 sudo[21155]: pam_unix(sudo:session): session closed for user root
+фев 17 10:51:44 vm2002143548 sudo[21196]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get install rabbitmq-server[0m
+фев 17 10:51:44 vm2002143548 sudo[21196]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:51:49 vm2002143548 systemd[1]: Reloading.
+фев 17 10:51:49 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:51:49 vm2002143548 systemd[1]: Reloading.
+фев 17 10:51:50 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:51:50 vm2002143548 systemd[1]: Reloading.
+фев 17 10:51:50 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:51:50 vm2002143548 systemd[1]: Reloading.
+фев 17 10:51:50 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:51:50 vm2002143548 systemd[1]: Starting RabbitMQ Messaging Server...
+-- Subject: Начинается запуск юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Начат процесс запуска юнита rabbitmq-server.service.
+фев 17 10:51:52 vm2002143548 rabbitmq[21364]: Waiting for rabbit@vm2002143548
+фев 17 10:51:52 vm2002143548 rabbitmq[21364]: pid is 21384
+фев 17 10:51:54 vm2002143548 rabbitmq[21364]: Error: process_not_running
+фев 17 10:51:54 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Control process exited, code=exited status=70[0m
+фев 17 10:51:54 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Failed with result 'exit-code'.[0m
+фев 17 10:51:54 vm2002143548 systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start RabbitMQ Messaging Server.[0m
+-- Subject: Ошибка юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Произошел сбой юнита rabbitmq-server.service.
+-- 
+-- Результат: RESULT.
+фев 17 10:51:57 vm2002143548 sudo[21196]: pam_unix(sudo:session): session closed for user root
+фев 17 10:56:08 vm2002143548 sudo[21862]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/bin/nano /etc/hosts[0m
+фев 17 10:56:08 vm2002143548 sudo[21862]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:56:23 vm2002143548 sudo[21862]: pam_unix(sudo:session): session closed for user root
+фев 17 10:56:26 vm2002143548 sudo[21864]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get install rabbitmq-server[0m
+фев 17 10:56:26 vm2002143548 sudo[21864]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:56:29 vm2002143548 systemd[1]: Reloading.
+фев 17 10:56:29 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:56:29 vm2002143548 systemd[1]: Reloading.
+фев 17 10:56:30 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:56:30 vm2002143548 systemd[1]: Starting RabbitMQ Messaging Server...
+-- Subject: Начинается запуск юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Начат процесс запуска юнита rabbitmq-server.service.
+фев 17 10:56:31 vm2002143548 rabbitmq[21941]: Waiting for rabbit@vm2002143548
+фев 17 10:56:31 vm2002143548 rabbitmq[21941]: pid is 21957
+фев 17 10:56:33 vm2002143548 rabbitmq[21941]: Error: process_not_running
+фев 17 10:56:33 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Control process exited, code=exited status=70[0m
+фев 17 10:56:33 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Failed with result 'exit-code'.[0m
+фев 17 10:56:33 vm2002143548 systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start RabbitMQ Messaging Server.[0m
+-- Subject: Ошибка юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Произошел сбой юнита rabbitmq-server.service.
+-- 
+-- Результат: RESULT.
+фев 17 10:56:35 vm2002143548 sudo[21864]: pam_unix(sudo:session): session closed for user root
+фев 17 10:56:41 vm2002143548 sudo[22419]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get remove rabbitmq-server[0m
+фев 17 10:56:41 vm2002143548 sudo[22419]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:56:44 vm2002143548 systemd[1]: Reloading.
+фев 17 10:56:44 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:56:44 vm2002143548 systemd[1]: Reloading.
+фев 17 10:56:44 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:56:45 vm2002143548 systemd[1]: Reloading.
+фев 17 10:56:45 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:56:48 vm2002143548 sudo[22419]: pam_unix(sudo:session): session closed for user root
+фев 17 10:56:54 vm2002143548 sudo[22534]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt autoremove[0m
+фев 17 10:56:54 vm2002143548 sudo[22534]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:57:00 vm2002143548 sudo[22534]: pam_unix(sudo:session): session closed for user root
+фев 17 10:57:09 vm2002143548 sudo[22573]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt cache clean[0m
+фев 17 10:57:09 vm2002143548 sudo[22573]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:57:09 vm2002143548 sudo[22573]: pam_unix(sudo:session): session closed for user root
+фев 17 10:57:17 vm2002143548 sudo[22575]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get install rabbitmq-server[0m
+фев 17 10:57:17 vm2002143548 sudo[22575]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:57:22 vm2002143548 systemd[1]: Reloading.
+фев 17 10:57:22 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:57:22 vm2002143548 systemd[1]: Reloading.
+фев 17 10:57:22 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:57:22 vm2002143548 systemd[1]: Reloading.
+фев 17 10:57:22 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:57:23 vm2002143548 systemd[1]: Reloading.
+фев 17 10:57:23 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 10:57:23 vm2002143548 systemd[1]: Starting RabbitMQ Messaging Server...
+-- Subject: Начинается запуск юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Начат процесс запуска юнита rabbitmq-server.service.
+фев 17 10:57:24 vm2002143548 rabbitmq[22740]: Waiting for rabbit@vm2002143548
+фев 17 10:57:24 vm2002143548 rabbitmq[22740]: pid is 22744
+фев 17 10:57:26 vm2002143548 rabbitmq[22740]: Error: process_not_running
+фев 17 10:57:26 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Control process exited, code=exited status=70[0m
+фев 17 10:57:26 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Failed with result 'exit-code'.[0m
+фев 17 10:57:26 vm2002143548 systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start RabbitMQ Messaging Server.[0m
+-- Subject: Ошибка юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Произошел сбой юнита rabbitmq-server.service.
+-- 
+-- Результат: RESULT.
+фев 17 10:57:29 vm2002143548 sudo[22575]: pam_unix(sudo:session): session closed for user root
+фев 17 10:57:53 vm2002143548 sudo[23223]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/bin/journalctl -xe[0m
+фев 17 10:57:53 vm2002143548 sudo[23223]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 10:59:11 vm2002143548 sudo[23223]: pam_unix(sudo:session): session closed for user root
+фев 17 10:59:15 vm2002143548 sudo[23226]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/bin/nano /etc/hosts[0m
+фев 17 10:59:15 vm2002143548 sudo[23226]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 11:00:26 vm2002143548 sudo[23226]: pam_unix(sudo:session): session closed for user root
+фев 17 11:01:30 vm2002143548 sshd[23229]: Did not receive identification string from 14.186.124.138 port 61665
+фев 17 11:01:39 vm2002143548 sshd[23231]: Invalid user Administrator from 14.186.124.138 port 54174
+фев 17 11:01:40 vm2002143548 sshd[23231]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 11:01:40 vm2002143548 sshd[23231]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=14.186.124.138[0m
+фев 17 11:01:41 vm2002143548 sshd[23231]: Failed password for invalid user Administrator from 14.186.124.138 port 54174 ssh2
+фев 17 11:01:41 vm2002143548 sshd[23231]: Connection closed by invalid user Administrator 14.186.124.138 port 54174 [preauth]
+фев 17 11:02:54 vm2002143548 sudo[23233]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get install rabbitmq-server[0m
+фев 17 11:02:54 vm2002143548 sudo[23233]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 11:02:58 vm2002143548 systemd[1]: Reloading.
+фев 17 11:02:58 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 11:02:58 vm2002143548 systemd[1]: Reloading.
+фев 17 11:02:58 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 11:02:58 vm2002143548 systemd[1]: Starting RabbitMQ Messaging Server...
+-- Subject: Начинается запуск юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Начат процесс запуска юнита rabbitmq-server.service.
+фев 17 11:03:00 vm2002143548 rabbitmq[23317]: Waiting for rabbit@localhost
+фев 17 11:03:00 vm2002143548 rabbitmq[23317]: pid is 23331
+фев 17 11:03:02 vm2002143548 rabbitmq[23317]: Error: process_not_running
+фев 17 11:03:02 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Control process exited, code=exited status=70[0m
+фев 17 11:03:02 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Failed with result 'exit-code'.[0m
+фев 17 11:03:02 vm2002143548 systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start RabbitMQ Messaging Server.[0m
+-- Subject: Ошибка юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Произошел сбой юнита rabbitmq-server.service.
+-- 
+-- Результат: RESULT.
+фев 17 11:03:06 vm2002143548 sudo[23233]: pam_unix(sudo:session): session closed for user root
+фев 17 11:04:24 vm2002143548 sudo[23787]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/bin/nano /etc/hosts[0m
+фев 17 11:04:24 vm2002143548 sudo[23787]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 11:05:21 vm2002143548 sudo[23787]: pam_unix(sudo:session): session closed for user root
+фев 17 11:05:23 vm2002143548 sudo[23789]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get install rabbitmq-server[0m
+фев 17 11:05:23 vm2002143548 sudo[23789]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 11:05:27 vm2002143548 systemd[1]: Reloading.
+фев 17 11:05:27 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 11:05:27 vm2002143548 systemd[1]: Reloading.
+фев 17 11:05:27 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 11:05:27 vm2002143548 systemd[1]: Starting RabbitMQ Messaging Server...
+-- Subject: Начинается запуск юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Начат процесс запуска юнита rabbitmq-server.service.
+фев 17 11:05:29 vm2002143548 rabbitmq[23867]: Waiting for rabbit@localhost
+фев 17 11:05:29 vm2002143548 rabbitmq[23867]: pid is 23880
+фев 17 11:05:30 vm2002143548 rabbitmq[23867]: Error: process_not_running
+фев 17 11:05:30 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Control process exited, code=exited status=70[0m
+фев 17 11:05:30 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Failed with result 'exit-code'.[0m
+фев 17 11:05:30 vm2002143548 systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start RabbitMQ Messaging Server.[0m
+-- Subject: Ошибка юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Произошел сбой юнита rabbitmq-server.service.
+-- 
+-- Результат: RESULT.
+фев 17 11:05:33 vm2002143548 sudo[23789]: pam_unix(sudo:session): session closed for user root
+фев 17 11:08:58 vm2002143548 sshd[24344]: Invalid user admin from 185.232.67.6 port 52454
+фев 17 11:08:58 vm2002143548 sshd[24344]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 11:08:58 vm2002143548 sshd[24344]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.232.67.6[0m
+фев 17 11:09:00 vm2002143548 sshd[24344]: Failed password for invalid user admin from 185.232.67.6 port 52454 ssh2
+фев 17 11:09:03 vm2002143548 sshd[24344]: Disconnecting invalid user admin 185.232.67.6 port 52454: Change of username or service not allowed: (admin,ssh-connection) -> (user,ssh-connection) [preauth]
+фев 17 11:09:37 vm2002143548 sudo[24346]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/var/www/ep ; USER=root ; COMMAND=/usr/bin/apt-get install --fix-broken[0m
+фев 17 11:09:37 vm2002143548 sudo[24346]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+фев 17 11:09:39 vm2002143548 systemd[1]: Reloading.
+фев 17 11:09:40 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 11:09:40 vm2002143548 systemd[1]: Reloading.
+фев 17 11:09:40 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mepmd.socket: Socket unit configuration has changed while unit has been running, no open socket file descriptor left. The socket unit is not functional until restarted.[0m
+фев 17 11:09:40 vm2002143548 systemd[1]: Starting RabbitMQ Messaging Server...
+-- Subject: Начинается запуск юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Начат процесс запуска юнита rabbitmq-server.service.
+фев 17 11:09:41 vm2002143548 rabbitmq[24425]: Waiting for rabbit@localhost
+фев 17 11:09:41 vm2002143548 rabbitmq[24425]: pid is 24430
+фев 17 11:09:43 vm2002143548 rabbitmq[24425]: Error: process_not_running
+фев 17 11:09:43 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Control process exited, code=exited status=70[0m
+фев 17 11:09:43 vm2002143548 systemd[1]: [0;1;39m[0;1;31m[0;1;39mrabbitmq-server.service: Failed with result 'exit-code'.[0m
+фев 17 11:09:43 vm2002143548 systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start RabbitMQ Messaging Server.[0m
+-- Subject: Ошибка юнита rabbitmq-server.service
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Произошел сбой юнита rabbitmq-server.service.
+-- 
+-- Результат: RESULT.
+фев 17 11:09:46 vm2002143548 sudo[24346]: pam_unix(sudo:session): session closed for user root
+фев 17 11:11:56 vm2002143548 sshd[24901]: Did not receive identification string from 159.192.82.30 port 52323
+фев 17 11:12:52 vm2002143548 sshd[24902]: Invalid user admin from 185.232.67.5 port 37478
+фев 17 11:12:52 vm2002143548 sshd[24902]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+фев 17 11:12:52 vm2002143548 sshd[24902]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.232.67.5[0m
+фев 17 11:12:53 vm2002143548 sshd[24902]: Failed password for invalid user admin from 185.232.67.5 port 37478 ssh2
+фев 17 11:12:54 vm2002143548 sshd[24902]: Disconnecting invalid user admin 185.232.67.5 port 37478: Change of username or service not allowed: (admin,ssh-connection) -> (user,ssh-connection) [preauth]

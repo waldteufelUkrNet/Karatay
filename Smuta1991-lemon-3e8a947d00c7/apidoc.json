@@ -1,0 +1,9 @@
+{
+  "name": "Movamba doc",
+  "version": "0.1.0",
+  "description": "Movamba doc",
+  "apidoc": {
+    "title": "Movamba doc",
+    "url" : "http://lemon.peakscircle.software:1337/doc"
+  }
+}
